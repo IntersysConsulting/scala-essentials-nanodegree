@@ -1,12 +1,10 @@
 import Dependencies._
 
-
 resolvers += Resolver.sonatypeRepo("releases")
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.7")
 
-// if your project uses multiple Scala versions, use this for cross building
-addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.7" cross CrossVersion.binary)
+enablePlugins(TutPlugin)
 
 lazy val root = (project in file(".")).
   settings(
