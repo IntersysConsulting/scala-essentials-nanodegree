@@ -91,6 +91,32 @@ f1p(3)
 
 // Select/Design examples of Parametric Polymorphism from ML/Unsupervised Learning/ or numerical problems.
 // Use an inferior language like C/Go to explain that lack of generics leads to repetition/boilerplate and more bugs.
-// Explain people that modern languages support some form of generics.
-// Java, C++, C#, Scala, Haskell
-// Pull good advice from books like "Effective Java" on generics.
+// Examples of parametric polymorphism:
+
+case class Pair[A, B](first: A, second: B) {
+  def swap: Pair[B, A] = Pair(second, first)
+}
+
+// Valuable links on generics:
+// https://blogs.msdn.microsoft.com/dsyme/2011/03/15/netc-generics-history-some-photos-from-feb-1999/  <== Don Syme remember how he was told
+// by product team members that "generics is for academics only"
+// For example, one possible alternative to generics in go is "Copy & Paste":
+// https://appliedgo.net/generics/
+
+// https://docs.oracle.com/javase/10/docs/api/java/util/package-summary.html  <== Java Collections API. Uses generics
+// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections#systemcollections-classes <== Advice from Microsoft to prefer generic collections instead of legacy types in the `System.Collections` namespace
+
+// Use scaladoc for Immutable List:
+// https://www.scala-lang.org/api/current/scala/collection/immutable/List.html to explain some generic/parametric algorithm/method implementations:
+
+// Example of a method that uses ad-hoc polymorphism
+// https://github.com/non/spire/blob/master/examples/src/main/scala/spire/example/kmeans.scala#L48-L73
+
+// Generics is not the same than Parametric Polymorphism
+// Parametric Polymorphism refers to type variables, or parameters, that are fully polymorphic. When unconstrained by a typeclass, their final, concrete type can be anything.
+
+// Support for generics in Scala: https://softwareengineering.stackexchange.com/a/215383
+// http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.176.5300&rep=rep1&type=pdf
+// "Type Classes as Objects and Implicits" by Oliveira, Moors, Odersky
+// (stored in Documents -- Mac)
+// See page 17, for a table with some of the features supported in Scala for Generic Programming.
