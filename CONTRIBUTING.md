@@ -91,9 +91,8 @@ Consider the following relevant dirs and docs:
     * `authors.md` 
     * `docs/` contains the markdown resources of the modules.
         * `moduleX.md` is the content of the module X.
-    * `slides/` contains the makdown resources of the slides.
-        * `moduleX.md` is the content of the module X. 
-
+* `slides/` contains the makdown resources of the slides.
+    * `moduleX.md` is the content of the module X. 
 **Repository structure**:
 
 ```text
@@ -103,6 +102,10 @@ Consider the following relevant dirs and docs:
 |- publish.sh
 |- build.sbt
 |- project/...
+|- slides/
+    |- module1.md
+    |- module2.md
+    |- ...
 |- src/
     |- main/
         |- scala/
@@ -116,6 +119,7 @@ Consider the following relevant dirs and docs:
         |    |- microsite/
         |        |- data/
         |        |    |- menu.yml
+        |        |- slides/...
         |        |- js/...
         |        |- img/...
         |- tut/
@@ -125,19 +129,16 @@ Consider the following relevant dirs and docs:
             |    |- module2.md
             |    |- module3.md
             |    |- ...
-            |- slides/
-            |    |- index.md
-            |    |- module1.md
-            |    |- module2.md
-            |    |- module3.md
-            |    |- ...
             |- index.md
-            |- ...
+            |- docs.md
+            |- slides.md
             
 ```
 ## Development
 
-The development of each module should occur on a separate and individual branch (e.g. `feat/module1`, `feat/module7`). When finish the development, please create a PR onto the `develop` branch. 
+The development of each module should occur on a separate and individual branch that derives from `develop` 
+(e.g. `feat/module1`, `feat/module7`). When finish the development, please create a PR onto 
+the `develop` branch. 
 
 ## Publishing
 
