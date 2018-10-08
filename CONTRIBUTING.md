@@ -82,7 +82,7 @@ sudo apt install pandoc
 
 ## Github Repository
 
-The nanodegree's content and learning material will be hosted in [this github repository](). 
+The nanodegree's content and learning material will be hosted in [this github repository](https://github.com/IntersysConsulting/scala-essentials-nanodegree). 
 
 Consider the following relevant dirs and docs:
 * `publish.sh` is a bash script used to publish the content microsite.
