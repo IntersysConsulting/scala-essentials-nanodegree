@@ -33,7 +33,7 @@ do
 			rm -rf target/
 			sbt makeMicrosite
 			makeSlides
-			sbt pushSite
+			sbt ghpagesPushSite
 			exit
 			;;
 	esac
