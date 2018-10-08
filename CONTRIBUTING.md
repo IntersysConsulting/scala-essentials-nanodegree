@@ -29,7 +29,7 @@ Content owners:
 * Mauricio Martín Saavedra Contreras
 * Rafael Avila 
 * Rodrigo Hernández Mota
-* Oscar Vargar Torres
+* Oscar Vargas Torres
 
 ## About the content
 
