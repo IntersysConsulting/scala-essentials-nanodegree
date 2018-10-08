@@ -1,5 +1,7 @@
 # Essential Scala Nanodegree -- Intersys Consulting
 
+[![Join the chat at https://gitter.im/IntersysConsulting/scala-essentials-nanodegree](https://badges.gitter.im/IntersysConsulting/scala-essentials-nanodegree.svg)](https://gitter.im/IntersysConsulting/scala-essentials-nanodegree?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Syllabus
 
 ### Module 1: Introduction
