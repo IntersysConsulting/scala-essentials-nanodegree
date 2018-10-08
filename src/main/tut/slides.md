@@ -4,4 +4,7 @@ title:  "Slides"
 section: "slides"
 position: 3
 ---
-{% include_relative slides/index.md %}
+
+# Scala Essentials - Slides
+
+Welcome to the **Scala Essential Slides** site!

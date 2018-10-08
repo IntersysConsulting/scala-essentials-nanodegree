@@ -15,6 +15,7 @@ lazy val root = (project in file(".")).
     micrositeDescription      := "Scala Essentials Nanodegree",
     micrositeBaseUrl	      := "/scala-essentials-nanodegree",
     micrositeDocumentationUrl := "/scala-essentials-nanodegree/docs.html",
+    micrositeStaticDirectory  := (resourceDirectory in Compile).value / "microsite" / "slides",
     micrositeAuthor           := "Intersys Consulting" ,
     micrositeHomepage         := "https://intersysconsulting.github.io/scala-essentials-nanodegree",
     micrositeGithubOwner      := "intersysconsulting",

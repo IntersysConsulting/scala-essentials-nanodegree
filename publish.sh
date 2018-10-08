@@ -5,8 +5,8 @@ makeSlides () {
   do
 	module="$(basename $slide .md)"
 	echo "Generating reveal.js slide for: $module"
-	pandoc --from markdown+tex_math_single_backslash+inline_code_attributes --standalone --mathjax --variable colorlinks=true --to revealjs --output target/site/slides/${module}.html -V revealjs-url=http://lab.hakim.se/reveal-js -V theme:night src/main/tut/slides/${module}.md
-  done < <(find src/main/tut/slides -name "module*")	
+	pandoc --from markdown+tex_math_single_backslash+inline_code_attributes --standalone --mathjax --variable colorlinks=true --to revealjs --output src/main/resources/microsite/slides/${module}.html -V theme:night slides/${module}.md
+  done < <(find slides -name "module*")	
 }
 
 while [ ! $# -eq 0 ]
@@ -23,16 +23,16 @@ do
 			echo "Local mode..."
 			rm -rf target/
 			rm -rf _site
-            		sbt makeMicrosite
 			makeSlides
+            		sbt makeMicrosite
 			jekyll serve -s target/site
 			exit
 			;;
 		--site | -s)
 			echo "Publishing microsite procedure..."
 			rm -rf target/
-			sbt makeMicrosite
 			makeSlides
+			sbt makeMicrosite
 			sbt ghpagesPushSite
 			exit
 			;;
