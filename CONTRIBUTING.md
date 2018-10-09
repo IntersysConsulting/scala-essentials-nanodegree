@@ -7,7 +7,7 @@ Congratulations! You have been selected as a content owner for the  **Scala Esse
 
 The **Scala Essentials** nanodegree aims to provide a comprehensive tour of the Scala Programming Language for begginers. 
 
-You can see the design document [here](https://docs.google.com/document/d/1HZ1Rsn46x_BVAo8scSyVr9r5IesyTyHhGptjW1n_T6A/edit?usp=sharing).
+You can see a complete definition of the Syllabus [here](https://intersysconsulting.github.io/scala-essentials-nanodegree/).
 
 **Modules**:
 1. Introduction
@@ -26,10 +26,10 @@ You can see the design document [here](https://docs.google.com/document/d/1HZ1Rs
 As a content owner your job is to design and create the content of at least one module. You can build a small team with other content owners to assist on the content creation. Please consider that each conent owner has full responsibility of their own modules. 
 
 Content owners:
-* Mauricio Martín Saavedra Contreras
-* Rafael Avila 
-* Rodrigo Hernández Mota
-* Oscar Vargas Torres
+* [Mauricio Martín Saavedra Contreras](https://gitter.im/MMSaavedraC)
+* [Rafael Avila]()
+* [Rodrigo Hernández Mota](https://gitter.im/rhdzmota)
+* [Oscar Vargas Torres](https://gitter.im/oscarvarto)
 
 ## About the content
 
@@ -39,7 +39,7 @@ A module should have content for two different situtations:
 
 The source content for each module in the markdown language is going to be safetly stored in a github repository. [Github pages](https://pages.github.com/) is used to publish the documentation and slides. 
 
-The particular content for each module can be found in the agenda of [the design document](https://docs.google.com/document/d/1HZ1Rsn46x_BVAo8scSyVr9r5IesyTyHhGptjW1n_T6A/edit?usp=sharing). 
+The particular content for each module can be found in the agenda of [the official Syllabus](https://intersysconsulting.github.io/scala-essentials-nanodegree/). 
 
 ## Requirements
 
@@ -49,36 +49,11 @@ As a content owner, you'll need the following tools in order to successfuly cont
 
 * The [git](https://git-scm.com/) open source distributed version control system.
 * A [github](http://github.com) account and access to the [Intersys Consulting](https://github.com/intersysconsulting) organization on the platform.
-* At least Java 8 and the Scala Build Tool [SBT](https://www.scala-sbt.org/1.x/docs/Setup.html).
+* Java V8 or newer and the Scala Build Tool [SBT](https://www.scala-sbt.org/1.x/docs/Setup.html).
 * The [Jekyll](https://jekyllrb.com/) site generator. 
 * [Pandoc](https://pandoc.org/), the file converter tool. 
 
-A setup script on a **debian-based OS** should look similar to:
-```bash
-#!/bin/bash
-
-# Install git
-sudo apt install git
-
-# Install java 8
-sudo apt install openjdk-8-jdk
-
-# Install SBT
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-sudo apt update
-sudo apt install sbt
-sbt about
-
-# Install Ruby and Jekyll
-sudo apt install ruby ruby-dev build-essential
-export GEM_HOME=$HOME/gems
-export PATH=$HOME/gems/bin:$PATH
-gem install jekyll bundler
-
-# Install pandoc
-sudo apt install pandoc
-```
+See the `setup/debian-based.sh` file for a **debian-based OS** setup script example. 
 
 ## Github Repository
 
@@ -93,6 +68,7 @@ Consider the following relevant dirs and docs:
         * `moduleX.md` is the content of the module X.
 * `slides/` contains the makdown resources of the slides.
     * `moduleX.md` is the content of the module X. 
+
 **Repository structure**:
 
 ```text
@@ -136,9 +112,23 @@ Consider the following relevant dirs and docs:
 ```
 ## Development
 
-The development of each module should occur on a separate and individual branch that derives from `develop` 
-(e.g. `feat/module1`, `feat/module7`). When finish the development, please create a PR onto 
-the `develop` branch. 
+Content development should follow the [gitflow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) guideline:
+
+* `master` : branch that contains the stable version of the nanodegree.
+* `develop` : branch that contains the current work (development). 
+* `feature/x` : branch created from `develop` that implements a new feature `x` where `x` is the name of the feature using the **kebab case** naming convention (e.g. `feature/this-is-feat-x`). 
+* `bugfix/x` : branch created from `develop` that fixes a given bug `x` following the **kebab case** naming convention.
+* `hotfix/x` : branch created from `master` that fixes an urgent matter `x` following the **kebab case** naming convention. This branch should be merged into `master` and `develop` when approved. 
+ 
+### Content creation
+
+Consider the following guideline:
+
+1. Pull the latest copy of the `develop` branch.
+2. Create your own `feature/moduleX` branch (e.g. `feature/module3`, `feature/module5`).
+3. Add the content and slides at `src/main/tut/docs/moduleX.md` and `slides/moduleX.md`. You can add working code examples/exercies in `src/main/scala/...`. 
+4. Commit your work into your branch and test your content. Push to the remote. 
+5. Create a PR of your branch with `develop` and solve any conflicts and reviews.
 
 ## Publishing
 
@@ -151,6 +141,6 @@ See the full site in local mode with: `./publish.sh --local`
 This will publish the site at: `http://localhost:4000/scala-essentials/`
 
 ### Github pages
-Only the content on the develop/master branch should be published to github pages with: `./publish.sh --site`
+Only the content on the `master` branch should be published to github pages with: `./publish.sh --site`
 
 ##
