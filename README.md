@@ -1,5 +1,7 @@
 # Scala Essentials Nanodegree 
 
+[![Join the chat at https://gitter.im/IntersysConsulting/scala-essentials-nanodegree](https://badges.gitter.im/IntersysConsulting/scala-essentials-nanodegree.svg)](https://gitter.im/IntersysConsulting/scala-essentials-nanodegree?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## About this nanodegree
 
 Scala has positioned itself as the de facto language for Data Engineering. Several of the major big data frameworks and 
