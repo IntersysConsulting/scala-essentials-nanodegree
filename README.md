@@ -44,7 +44,7 @@ Prospectus students must:
     
     
     
-## What you will learn
+## What you'll learn
 
 This nanodegree aims to create proficient Scala developers. For doing so, we layout the foundational concepts that 
 every Scala programmer should master.    
