@@ -1,0 +1,97 @@
+options:
+
+    #############################
+    # DOCUMENTATION
+    #############################
+
+  - title: Welcome!
+    url: docs.html
+    menu_type: docs
+
+  - title: M1 - Introduction
+    url: docs/module1.html
+    menu_type: docs
+
+  - title: M2 - Essentials
+    url: docs/module2.html
+    menu_type: docs
+
+  - title: M3 - Objects and classes
+    url: docs/module3.html
+    menu_type: docs
+
+  - title: M4 - Functions
+    url: docs/module4.html
+    menu_type: docs
+
+  - title: M5 - Traits for data modelling
+    url: docs/module5.html
+    menu_type: docs
+
+  - title: M6 - Sequencing computation
+    url: docs/module6.html
+    menu_type: docs
+
+  - title: M7 - Idiomatic Scala
+    url: docs/module7.html
+    menu_type: docs
+
+  - title: M8 - Type classes
+    url: docs/module8.html
+    menu_type: docs
+
+  - title: M9 - Functional programming
+    url: docs/module9.html
+    menu_type: docs
+
+  - title: M10 - Popular frameworks and toolkits
+    url: docs/module10.html
+    menu_type: docs
+
+    #############################
+    # SLIDES
+    #############################
+
+  - title: Welcome!
+    url: slides.html
+    menu_type: slides
+
+  - title: M1 - Introduction
+    url: slides/module1.html
+    menu_type: slides
+
+  - title: M2 - Essentials
+    url: slides/module2.html
+    menu_type: slides
+
+  - title: M3 - Objects and classes
+    url: slides/module3.html
+    menu_type: slides
+
+  - title: M4 - Functions
+    url: slides/module4.html
+    menu_type: slides
+
+  - title: M5 - Traits for data modelling
+    url: slides/module5.html
+    menu_type: slides
+
+  - title: M6 - Sequencing computation
+    url: slides/module6.html
+    menu_type: slides
+
+  - title: M7 - Idiomatic Scala
+    url: slides/module7.html
+    menu_type: slides
+
+  - title: M8 - Type classes
+    url: slides/module8.html
+    menu_type: slides
+
+  - title: M9 - Functional programming
+    url: slides/module9.html
+    menu_type: slides
+
+  - title: M10 - Popular frameworks and toolkits
+    url: slides/module10.html
+    menu_type: slides
