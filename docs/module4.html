@@ -1,5 +1,569 @@
 <html><head><title>Scala Essentials: Functions</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Intersys Consulting" /><meta name="description" content="Scala Essentials Nanodegree" /><meta name="og:image" content="/scala-essentials-nanodegree/img/poster.png" /><meta name="og:title" content="Scala Essentials: Functions" /><meta name="og:site_name" content="Scala Essentials" /><meta name="og:url" content="https://intersysconsulting.github.io/scala-essentials-nanodegree" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala Essentials Nanodegree" /><link rel="icon" type="image/png" href="/scala-essentials-nanodegree/img/favicon.png" /><meta name="twitter:title" content="Scala Essentials: Functions" /><meta name="twitter:image" content="https://intersysconsulting.github.io/scala-essentials-nanodegreeimg/poster.png" /><meta name="twitter:description" content="Scala Essentials Nanodegree" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/scala-essentials-nanodegree/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/scala-essentials-nanodegree/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/scala-essentials-nanodegree/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/scala-essentials-nanodegree/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/scala-essentials-nanodegree/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/scala-essentials-nanodegree/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/scala-essentials-nanodegree/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/scala-essentials-nanodegree/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/scala-essentials-nanodegree/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/scala-essentials-nanodegree/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/scala-essentials-nanodegree/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/scala-essentials-nanodegree/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/scala-essentials-nanodegree/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/scala-essentials-nanodegree/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/scala-essentials-nanodegree/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/scala-essentials-nanodegree/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/scala-essentials-nanodegree/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/scala-essentials-nanodegree/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/scala-essentials-nanodegree/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/scala-essentials-nanodegree/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/highlight/styles/default.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/style.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/palette.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/codemirror.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/scala-essentials-nanodegree/" class="brand"><div class="brand-wrapper"><span>Scala Essentials</span></div></a></li> <li><a href="/scala-essentials-nanodegree/docs.html" class="">Welcome!</a></li> <li><a href="/scala-essentials-nanodegree/docs/module1.html" class="">M1 - Introduction</a></li> <li><a href="/scala-essentials-nanodegree/docs/module2.html" class="">M2 - Essentials</a></li> <li><a href="/scala-essentials-nanodegree/docs/module3.html" class="">M3 - Objects and classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module4.html" class="">M4 - Functions</a></li> <li><a href="/scala-essentials-nanodegree/docs/module5.html" class="">M5 - Traits for data modelling</a></li> <li><a href="/scala-essentials-nanodegree/docs/module6.html" class="">M6 - Sequencing computation</a></li> <li><a href="/scala-essentials-nanodegree/docs/module7.html" class="">M7 - Idiomatic Scala</a></li> <li><a href="/scala-essentials-nanodegree/docs/module8.html" class="">M8 - Type classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module9.html" class="">M9 - Functional programming</a></li> <li><a href="/scala-essentials-nanodegree/docs/module10.html" class="">M10 - Popular frameworks and toolkits</a></li>           </ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="intersysconsulting" data-github-repo="scala-essentials-nanodegree"><div class="content-wrapper"><section><h1 id="module-4-functions">Module 4: Functions</h1>
 
+<p><strong>Note</strong>: <a href="https://www.scala-lang.org/files/archive/spec/2.12/">Scala Language Specification</a>
+can be used as an authoritative reference in case of doubts.</p>
+
+<h2 id="function-types">Function types</h2>
+
+<p>The following is an example of a simple function:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">triple</span> <span class="k">=</span> <span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>The <em>type</em> of this function literal is: <code class="highlighter-rouge">Int =&gt; Int</code>. We could have used
+the <em>type annotation</em> to define triple:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">triple</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">n</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>That can be read like:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">triple</code> is a function that accepts an <code class="highlighter-rouge">Int</code> parameter and returns an
+<code class="highlighter-rouge">Int</code></p>
+</blockquote>
+
+<p>In general, to declare a <strong>function type</strong>, write:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="n">A</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="o">...)</span> <span class="k">=&gt;</span> <span class="n">C</span>
+<span class="n">println</span><span class="o">(</span><span class="s">"Hello, World!"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>where</p>
+
+<ul>
+  <li><code class="highlighter-rouge">A</code>, <code class="highlighter-rouge">B</code>, … are the types of the input parameters; and</li>
+  <li><code class="highlighter-rouge">C</code> is the type of the result.</li>
+</ul>
+
+<hr />
+
+<h3 id="naming-conventions">Naming conventions</h3>
+
+<p>Scala names are case sensitive. See <a href="https://docs.scala-lang.org/style/naming-conventions.html#constants-values-variable-and-methods">Naming conventions for constants, values, variables
+and methods</a>.</p>
+
+<p>Can you tell why the following would <em>not</em> be a good name?</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nc">Triple</span> <span class="k">=</span> <span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Float</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mf">3.0f</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>According to <a href="https://www.scala-lang.org/files/archive/spec/2.12/03-types.html#function-types">Function Types</a>:</p>
+
+<ul>
+  <li>Function types associate to the right, e.g. <code class="highlighter-rouge">S =&gt; T =&gt; U</code> is the
+same as <code class="highlighter-rouge">S =&gt; (T =&gt; U)</code>.</li>
+  <li>An argument type of the form <code class="highlighter-rouge">=&gt; T</code> represents a call-by-name
+parameter of type <code class="highlighter-rouge">T</code>.</li>
+</ul>
+
+<h3 id="relationship-between-methods-and-functions-etaexpansion">Relationship between methods and functions: eta–expansion</h3>
+
+<p>There is a close relationship between methods and functions, by means of
+the <a href="https://www.scala-lang.org/files/archive/spec/2.12/06-expressions.html#method-values">Eta–expansion</a>. For example,</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">f1</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">#</span> <span class="nc">Placeholder</span> <span class="n">syntax</span>
+<span class="k">val</span> <span class="n">f2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">f1</span> <span class="k">_</span>
+
+<span class="k">#</span> <span class="n">eta</span><span class="o">-</span><span class="n">expansion</span><span class="k">:</span> <span class="kt">equivalent</span> <span class="kt">to</span> <span class="kt">placeholder</span> <span class="kt">syntax</span>
+<span class="k">val</span> <span class="n">f3</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">n</span> <span class="k">=&gt;</span> <span class="n">f1</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Given this close relationship, you will find methods referred to as
+“functions”, although they are not strictly the same.</p>
+
+<h3 id="return-value-of-a-block">Return value of a block</h3>
+
+<p>The last expression of a block becomes the value that the function
+returns. For example, the following method returns the value of <code class="highlighter-rouge">r</code>
+after the <code class="highlighter-rouge">for</code> loop (no need for the <code class="highlighter-rouge">return</code> keyword):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">fac</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">r</span> <span class="k">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="k">&lt;-</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span><span class="o">)</span>
+    <span class="n">r</span> <span class="k">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">i</span>
+  <span class="n">r</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="recursive-functionsmethods-must-specify-the-return-type">Recursive functions/methods must specify the return type</h3>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">fac</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="mi">1</span>
+  <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="varargs-syntax">Varargs syntax</h3>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Int*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="o">(</span><span class="n">arg</span> <span class="k">&lt;-</span> <span class="n">args</span><span class="o">)</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">arg</span>
+  <span class="n">result</span>
+
+<span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="n">sum</span><span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">5</span><span class="k">:</span> <span class="k">_</span><span class="kt">*</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="procedures-have-unit-return-value">Procedures have <code class="highlighter-rouge">Unit</code> return value</h3>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">box</span><span class="o">(</span><span class="n">s</span> <span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Look carefully: no =
+</span>  <span class="c1">// contents elided
+</span><span class="o">}</span>
+
+<span class="c1">// (Equivalent) Explicit return type
+</span><span class="k">def</span> <span class="n">box</span><span class="o">(</span><span class="n">s</span> <span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">// contents elided
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="scaladoc-for-function1">Scaladoc for <code class="highlighter-rouge">Function1</code></h3>
+
+<p>Open <a href="https://www.scala-lang.org/api/current/">Current Scala Standard Library Scaladoc</a> and search documentation for trait <code class="highlighter-rouge">Function1</code>.
+You should see documentation for important methods like <code class="highlighter-rouge">apply</code>, <code class="highlighter-rouge">andThen</code> and
+<code class="highlighter-rouge">compose</code>.</p>
+
+<h4 id="apply"><code class="highlighter-rouge">apply</code></h4>
+
+<p>In the following example (taken from <code class="highlighter-rouge">Function1</code> scaladoc), the
+definition of <code class="highlighter-rouge">succ</code> is a shorthand for the anonymous class definition
+<code class="highlighter-rouge">anonfun1</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">Main</span> <span class="k">extends</span> <span class="nc">App</span> <span class="o">{</span>
+   <span class="k">val</span> <span class="n">succ</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="k">val</span> <span class="n">anonfun1</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Function1</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">Int</span><span class="o">]</span> <span class="o">{</span>
+     <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="o">}</span>
+   <span class="n">assert</span><span class="o">(</span><span class="n">succ</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">==</span> <span class="n">anonfun1</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="compose"><code class="highlighter-rouge">compose</code></h4>
+
+<p>It has the following signature</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">compose</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">g</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">T1</span><span class="o">)</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">R</span>
+</code></pre></div></div>
+
+<p>It models the mathematical function composition. For example, if
+(f(x) = x + 1) and (g(x) = 2x),</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+(f \cdot g)(x) &= f(g(x)) = 2x + 1 \\
+(g \cdot f)(x) &= g(f(x)) = 2(x + 1)
+\end{align} %]]></script>
+
+<p>Using Scala:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">x</span> <span class="k">=&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1">// f "after" g, or g "then" f
+// fg(x) = 2x + 1
+</span><span class="k">val</span> <span class="n">fg</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">f</span> <span class="n">compose</span> <span class="n">g</span>
+
+<span class="c1">// g "after" f, or f "then" g
+// gf1(x) = 2(x + 1)
+</span><span class="k">val</span> <span class="n">gf1</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">f</span> <span class="n">andThen</span> <span class="n">g</span>
+<span class="n">gf1</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+<span class="c1">// equivalently
+</span><span class="k">val</span> <span class="n">gf2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">g</span> <span class="n">compose</span> <span class="n">f</span>
+<span class="n">gf2</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="scala-universal-tostring-method">Scala “Universal” <code class="highlighter-rouge">toString</code> method</h4>
+
+<p>Scala creates a <code class="highlighter-rouge">toString</code> method automatically for all classes.
+Functions also get a default (useless, and pretty arbitrary)
+implementation for <code class="highlighter-rouge">toString</code> method.</p>
+
+<p>Notice that <code class="highlighter-rouge">FunctionN</code> traits are not sealed, so you could <code class="highlighter-rouge">override</code> it’s implementation to get a
+more meaningful implementation.</p>
+
+<hr />
+
+<h2 id="composition">Composition</h2>
+
+<p>We have reviewed composition in the mathematical sense. This may seem
+too theoretical, but is a wonderful tool to get complex solutions from
+smaller building blocks. We are going to use <code class="highlighter-rouge">atto</code>, a parsing library
+that has uses <code class="highlighter-rouge">andThen</code> to build a new parser from smaller parsers.
+Spend some time studying the section on <a href="http://tpolecat.github.io/atto/docs/first-steps.html">basic parsers</a>.</p>
+
+<h3 id="exercises">Exercises</h3>
+
+<ul>
+  <li>Discuss your understanding on Basic Parsers with others. Study
+first.</li>
+  <li>Following tutorial, replicate the example given in your development
+machine.</li>
+</ul>
+
+<h2 id="currying">Currying</h2>
+
+<p>Let’s take a look at <code class="highlighter-rouge">Functions2</code> trait scaladoc. It is used for
+functions that accept <em>two</em> arguments. For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span>
+<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4312</span><span class="o">/</span><span class="mi">10930542</span><span class="k">@</span><span class="mi">54</span><span class="n">e7c69a</span>
+</code></pre></div></div>
+
+<p>A <em>curried</em> version of the above is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$4365</span><span class="o">/</span><span class="mi">948731219</span><span class="k">@</span><span class="mi">55</span><span class="n">a8c538</span>
+</code></pre></div></div>
+
+<p>From <a href="http://www.informit.com/store/scala-for-the-impatient-9780134540634?ranMID=24808">Scala for the Impatient, 2nd Edition</a>:</p>
+
+<hr />
+
+<p>Currying (named after logician Haskell Brooks Curry) is the process of
+turning a function that takes two arguments into a function that takes
+one argument. That function returns a function that consumes the second
+argument.</p>
+
+<hr />
+
+<p>You can get a curried version of a <code class="highlighter-rouge">FunctionN</code> by calling <code class="highlighter-rouge">curried</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="n">add1</span><span class="o">.</span><span class="n">curried</span> <span class="c1">// returns an equivalent of add2
+</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$4376</span><span class="o">/</span><span class="mi">670435817</span><span class="k">@</span><span class="mi">7</span><span class="n">af0d388</span>
+</code></pre></div></div>
+
+<p>On the other hand, you can call <code class="highlighter-rouge">Function.uncurried</code> to “uncurry”:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="nc">Function</span><span class="o">.</span><span class="n">uncurried</span><span class="o">(</span><span class="n">add2</span><span class="o">)</span> <span class="c1">// returns an equivalent of add1
+</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$4392</span><span class="o">/</span><span class="mi">1842120819</span><span class="k">@</span><span class="mi">33</span><span class="n">b1611b</span>
+</code></pre></div></div>
+
+<p>Currying buys us (at least) 2 things in Scala:</p>
+
+<ol>
+  <li>Partial application</li>
+  <li>Better type inference</li>
+</ol>
+
+<p>Partial application is the ability to apply only some of a function’s
+arguments. For example</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">add2</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
+<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4399</span><span class="o">/</span><span class="mi">346885573</span><span class="k">@</span><span class="mf">4817f9f</span><span class="mi">8</span>
+</code></pre></div></div>
+
+<p>Here is an example from the Scala Standard Library to explain the second
+point. Take a look at <code class="highlighter-rouge">List.foldRight()</code>’s type signature:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">foldRight</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">z</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">op</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">op</code> values are separate curried parameters. The <em>type
+inferencer</em> can figure out what <code class="highlighter-rouge">B</code> is from the type of <code class="highlighter-rouge">z</code>, and then it
+can use that information when analyzing the function that is passed for
+<code class="highlighter-rouge">op</code>.</p>
+
+<p>Notice that one way to achieve currying in Scala is by using multiple
+parameter lists.</p>
+
+<h2 id="generics-and-parametric-polymorphism">Generics and parametric polymorphism</h2>
+
+<p>Generics is a powerful tool from modern programming languages. Back in
+early 2000’s even some product team members from Microsoft considered
+that “generics [was] <a href="https://blogs.msdn.microsoft.com/dsyme/2011/03/15/netc-generics-history-some-photos-from-feb-1999/">for academics only</a>”.</p>
+
+<p>At the moment of writing, several mainstream languages feature generic
+collections in their Standard API/library. See for example:</p>
+
+<ul>
+  <li><a href="https://download.java.net/java/early_access/jdk11/docs/api/java.base/java/util/package-summary.html">Java Collections API</a></li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections">C# generics collections</a></li>
+</ul>
+
+<p>Scala has higher level of support for generic programming, than Java and
+C#. See:</p>
+
+<p>Oliveira, Bruno CdS, Adriaan Moors, and Martin Odersky.<br />
+“Type Classes as Objects and Implicits.”<br />
+In ACM Sigplan Notices, 45:341–360. ACM, 2010.</p>
+
+<p>Now, let’s review some of the basics.</p>
+
+<h3 id="polymorphism">Polymorphism</h3>
+
+<p>“Polymorphic” means “made of many forms”, in contrast with
+“monomorphic”, “made of one form”. In Scala, you can use several
+kinds of polymorphism:</p>
+
+<ul>
+  <li>Subtyping polymorphism (reviewed in “Objects and classes” Module)</li>
+  <li>Parametric polymorphism</li>
+  <li>Ad hoc (or constrained) polymorphism</li>
+</ul>
+
+<h4 id="subtypingdynamic-polymorphism">Subtyping/dynamic polymorphism</h4>
+
+<p>The following snippet illustrates subtyping polymorphism, and how we can
+constraint type parameters with the <a href="https://docs.scala-lang.org/tour/upper-type-bounds.html">upper type bound</a> <code class="highlighter-rouge">T &lt;: Shape</code> ().</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Shape</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Shape</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Circle</span><span class="o">(</span><span class="n">radius</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Shape</span>
+
+<span class="c1">// Constraining T to be a subtype of Shape
+// area is still a generic method
+</span><span class="k">def</span> <span class="n">area</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Shape</span><span class="o">](</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span>
+</code></pre></div></div>
+
+<p>Take a look at <a href="https://docs.scala-lang.org/tour/lower-type-bounds.html">lower type bounds</a> for documentation on lower type bounds.</p>
+
+<h4 id="parametric-polymorphism">Parametric polymorphism</h4>
+
+<p>Parametric polymorphism refers to type variables, or parameters, that
+are fully polymorphic. When <strong>unconstrained</strong> by a typeclass, their final,
+concrete type could be anything.</p>
+
+<p>Let’s use <code class="highlighter-rouge">List.map</code> as an example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">List[A]</code> is a polymorphic/generic collection. It can hold elements of
+the same arbitrary type <code class="highlighter-rouge">A</code>. In turn, <code class="highlighter-rouge">List.map</code> is a polymorphic
+method, that accepts any function that transforms an <code class="highlighter-rouge">A</code> into an
+arbitrary type <code class="highlighter-rouge">B</code>, and produces a <code class="highlighter-rouge">List</code> of elements of type <code class="highlighter-rouge">B</code>.</p>
+
+<p>Making <code class="highlighter-rouge">type A = Int</code>, <code class="highlighter-rouge">type B = String</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">ns</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">ss</span> <span class="k">=</span> <span class="n">ns</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p><em>Classes can be parametric</em> also, for example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">first</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">second</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">swap</span><span class="k">:</span> <span class="kt">Pair</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">second</span><span class="o">,</span> <span class="n">first</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="ad-hoc-polymorphism">Ad hoc polymorphism</h4>
+
+<hr />
+
+<p><strong>Prerequisite</strong>: Study <a href="https://docs.scala-lang.org/tutorials/FAQ/context-bounds.html">Context Bounds</a>.</p>
+
+<hr />
+
+<p>Types can be <em>constrained</em> in generic functions, by using <em>typeclasses</em>.
+Let’s start by reviewing <code class="highlighter-rouge">Ordering[T]</code> from the Scala Standard Library.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Type class Constraint
+</span><span class="k">import</span> <span class="nn">scala.math.Ordering.Implicits._</span>
+
+<span class="k">def</span> <span class="n">myMax</span><span class="o">[</span><span class="kt">T</span> <span class="kt">:</span> <span class="kt">Ordering</span><span class="o">](</span><span class="n">x</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span> <span class="n">x</span> <span class="k">else</span> <span class="n">y</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>The following (more advanced) example is an excerpt from an
+implementation of the <em>k-means</em> algorithm (<a href="https://github.com/non/spire">Spire</a> GitHub repository):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+  * Returns a collection of k points which are the centers of k clusters of
+  * `points0`.
+  */</span>
+<span class="k">def</span> <span class="n">kMeans</span><span class="o">[</span><span class="kt">V</span>, <span class="kt">@sp</span><span class="o">(</span><span class="kt">Double</span><span class="o">)</span> <span class="kt">A</span>, <span class="kt">CC</span><span class="o">[</span><span class="kt">V</span><span class="o">]</span> <span class="k">&lt;:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">V</span><span class="o">]](</span><span class="n">points0</span><span class="k">:</span> <span class="kt">CC</span><span class="o">[</span><span class="kt">V</span><span class="o">],</span> <span class="n">k</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span>
+    <span class="n">vs</span><span class="k">:</span> <span class="kt">NormedVectorSpace</span><span class="o">[</span><span class="kt">V</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">order</span><span class="k">:</span> <span class="kt">Order</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+    <span class="n">cbf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Nothing</span>, <span class="kt">V</span>, <span class="kt">CC</span><span class="o">[</span><span class="kt">V</span><span class="o">]],</span> <span class="n">ct</span><span class="k">:</span> <span class="kt">ClassTag</span><span class="o">[</span><span class="kt">V</span><span class="o">])</span><span class="k">:</span> <span class="kt">CC</span><span class="o">[</span><span class="kt">V</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+
+  <span class="c1">// code elided
+</span>
+  <span class="c1">// This is the main loop of the k-means algorithm. Given a new clustering
+</span>  <span class="c1">// and some previous assignments mapping each point to a cluster, we
+</span>  <span class="c1">// determine if the new clustering will cause any points to switch
+</span>  <span class="c1">// clusters. If so, we re-assign all points to their closest center in the
+</span>  <span class="c1">// clustering, then find new centers using the centroids of the points
+</span>  <span class="c1">// assigned to each cluster, rinse, repeat.
+</span>  <span class="nd">@tailrec</span>
+  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">assignments0</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Int</span><span class="o">],</span> <span class="n">clusters0</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">V</span><span class="o">])</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">V</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">assignments</span> <span class="k">=</span> <span class="n">assign</span><span class="o">(</span><span class="n">clusters0</span><span class="o">)</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">assignments</span> <span class="o">===</span> <span class="n">assignments0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">clusters0</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="n">clusters</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">.</span><span class="n">fill</span><span class="o">[</span><span class="kt">V</span><span class="o">](</span><span class="n">clusters0</span><span class="o">.</span><span class="n">length</span><span class="o">)(</span><span class="n">vs</span><span class="o">.</span><span class="n">zero</span><span class="o">)</span>
+      <span class="k">val</span> <span class="n">counts</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="n">clusters0</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
+      <span class="n">cfor</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="k">_</span> <span class="o">&lt;</span> <span class="n">points</span><span class="o">.</span><span class="n">length</span><span class="o">,</span> <span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="n">i</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="n">idx</span> <span class="k">=</span> <span class="n">assignments</span><span class="o">(</span><span class="n">i</span><span class="o">)</span>
+        <span class="n">clusters</span><span class="o">(</span><span class="n">idx</span><span class="o">)</span> <span class="k">=</span> <span class="n">clusters</span><span class="o">(</span><span class="n">idx</span><span class="o">)</span> <span class="o">+</span> <span class="n">points</span><span class="o">(</span><span class="n">i</span><span class="o">)</span>
+        <span class="n">counts</span><span class="o">(</span><span class="n">idx</span><span class="o">)</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="o">}</span>
+      <span class="n">cfor</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="k">_</span> <span class="o">&lt;</span> <span class="n">clusters</span><span class="o">.</span><span class="n">length</span><span class="o">,</span> <span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="n">j</span> <span class="k">=&gt;</span>
+        <span class="n">clusters</span><span class="o">(</span><span class="n">j</span><span class="o">)</span> <span class="k">=</span> <span class="n">clusters</span><span class="o">(</span><span class="n">j</span><span class="o">)</span> <span class="o">:/</span> <span class="n">vs</span><span class="o">.</span><span class="n">scalar</span><span class="o">.</span><span class="n">fromInt</span><span class="o">(</span><span class="n">counts</span><span class="o">(</span><span class="n">j</span><span class="o">))</span>
+      <span class="o">}</span>
+      <span class="n">loop</span><span class="o">(</span><span class="n">assignments</span><span class="o">,</span> <span class="n">clusters</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Notice there are several advanced uses of Scala features, including ad
+hoc polymorphism, specialization and implicits.</p>
+
+<h2 id="functions-and-dependency-injection">Functions and Dependency Injection</h2>
+
+<hr />
+
+<p><strong>Prerequisite</strong>: <a href="https://www.youtube.com/watch?v=ZasXwtTRkio">Dead-Simple Dependency Injection</a></p>
+
+<hr />
+
+<p>The following abstraction (<code class="highlighter-rouge">Reader[A]</code> monad), can be used to implement
+dependency injection in a functional way.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">Reader</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">def</span> <span class="n">reader</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">Reader</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Reader</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Reader</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="o">(</span><span class="k">_:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Reader</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">A</span><span class="o">](</span><span class="n">g</span><span class="k">:</span> <span class="kt">C</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Pulling in implicit conversion reader
+</span>  <span class="k">import</span> <span class="nn">Reader._</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> <span class="n">g</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="c1">// or "run"
+</span>  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">Reader</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">g</span><span class="o">(</span><span class="n">c</span><span class="o">))</span>
+  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Reader</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Reader</span><span class="o">[</span><span class="kt">C</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">g</span><span class="o">(</span><span class="n">c</span><span class="o">))(</span><span class="n">c</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Instead of implementing our own <code class="highlighter-rouge">Reader[A]</code> abstraction, we will use
+cats library implementation (to pull a more robust/complete
+implementation). Still, we will be using the same ideas/patterns.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.sql.</span><span class="o">{</span><span class="nc">Connection</span><span class="o">,</span> <span class="nc">DriverManager</span><span class="o">,</span> <span class="nc">PreparedStatement</span><span class="o">}</span>
+
+<span class="k">import</span> <span class="nn">cats.data.Reader</span>
+
+<span class="k">object</span> <span class="nc">DB</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Reader</span><span class="o">[</span><span class="kt">Connection</span>, <span class="kt">A</span><span class="o">]</span>
+  <span class="k">type</span> <span class="kt">UserId</span> <span class="o">=</span> <span class="nc">String</span>
+  <span class="k">type</span> <span class="kt">Pwd</span> <span class="o">=</span> <span class="nc">String</span>
+
+  <span class="k">implicit</span> <span class="k">def</span> <span class="n">reader</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">g</span><span class="k">:</span> <span class="kt">Connection</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Reader</span><span class="o">(</span><span class="n">g</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Reader</span><span class="o">(</span><span class="k">_</span> <span class="k">=&gt;</span> <span class="n">a</span><span class="o">)</span>
+  
+  <span class="c1">// Code elided
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<p>Some primitive operations that are delaying the definition of a
+<code class="highlighter-rouge">Connection</code> database:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">setUserPwd</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">UserId</span><span class="o">,</span>
+               <span class="n">pwd</span><span class="k">:</span> <span class="kt">Pwd</span><span class="o">)</span><span class="k">:</span> <span class="kt">Connection</span> <span class="o">=&gt;</span> <span class="nc">Unit</span> <span class="k">=</span>
+  <span class="n">c</span> <span class="k">=&gt;</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">stmt</span><span class="k">:</span> <span class="kt">PreparedStatement</span> <span class="o">=</span>
+      <span class="n">c</span><span class="o">.</span><span class="n">prepareStatement</span><span class="o">(</span><span class="s">"update users set pwd = ? where id  = ?"</span><span class="o">)</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">pwd</span><span class="o">)</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">executeUpdate</span><span class="o">()</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+  <span class="o">}</span>
+
+<span class="k">def</span> <span class="n">getUserPwd</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">UserId</span><span class="o">)</span><span class="k">:</span> <span class="kt">Connection</span> <span class="o">=&gt;</span> <span class="nc">Pwd</span> <span class="k">=</span>
+  <span class="n">c</span> <span class="k">=&gt;</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">stmt</span><span class="k">:</span> <span class="kt">PreparedStatement</span> <span class="o">=</span>
+      <span class="n">c</span><span class="o">.</span><span class="n">prepareStatement</span><span class="o">(</span><span class="s">"select pwd where id = ?"</span><span class="o">)</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">id</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">resultSet</span> <span class="k">=</span> <span class="n">stmt</span><span class="o">.</span><span class="n">executeQuery</span><span class="o">()</span>
+    <span class="k">val</span> <span class="n">pwd</span> <span class="k">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="n">getString</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="n">stmt</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+    <span class="n">pwd</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now we are able to express database “actions”, without referring to a
+database <code class="highlighter-rouge">Connection</code> at all:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">changePwd</span><span class="o">(</span><span class="n">userId</span><span class="k">:</span> <span class="kt">UserId</span><span class="o">,</span>
+              <span class="n">oldPwd</span><span class="k">:</span> <span class="kt">Pwd</span><span class="o">,</span>
+              <span class="n">newPwd</span><span class="k">:</span> <span class="kt">Pwd</span><span class="o">)</span><span class="k">:</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">Boolean</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">for</span> <span class="o">{</span>
+    <span class="n">pwd</span> <span class="k">&lt;-</span> <span class="n">getUserPwd</span><span class="o">(</span><span class="n">userId</span><span class="o">)</span>
+    <span class="n">eq</span> <span class="k">&lt;-</span> <span class="k">if</span> <span class="o">(</span><span class="n">pwd</span> <span class="o">==</span> <span class="n">oldPwd</span><span class="o">)</span> <span class="k">for</span> <span class="o">{</span>
+      <span class="k">_</span> <span class="k">&lt;-</span> <span class="n">setUserPwd</span><span class="o">(</span><span class="n">userId</span><span class="o">,</span> <span class="n">newPwd</span><span class="o">)</span>
+    <span class="o">}</span> <span class="k">yield</span> <span class="kc">true</span>
+    <span class="k">else</span> <span class="n">pure</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+  <span class="o">}</span> <span class="k">yield</span> <span class="n">eq</span>
+</code></pre></div></div>
+
+<p>And we can define different database connection providers: one for
+testing and some other for production purposes:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">ConnProvider</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span>
+<span class="o">}</span>
+
+<span class="k">lazy</span> <span class="k">val</span> <span class="n">sqliteTestDB</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=</span>
+  <span class="n">mkProvider</span><span class="o">(</span><span class="s">"org.sqlite.JDBC"</span><span class="o">,</span> <span class="s">"jdbc:sqlite::memory:"</span><span class="o">)</span>
+
+<span class="k">lazy</span> <span class="k">val</span> <span class="n">mysqlProdDB</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=</span>
+  <span class="n">mkProvider</span><span class="o">(</span>
+    <span class="s">"org.gjt.mm.mysql.Driver"</span><span class="o">,</span>
+    <span class="s">"jdbc:mysql://prod:3306/?user=one&amp;password=two"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>We can define <em>interpreters</em> to process our <code class="highlighter-rouge">DB[A]</code> actions:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">mkProvider</span><span class="o">(</span><span class="n">driver</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">url</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=</span>
+  <span class="k">new</span> <span class="nc">ConnProvider</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">DB</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="c1">//Class.forName(driver)
+</span>      <span class="k">val</span> <span class="n">conn</span> <span class="k">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">)</span>
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="n">f</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+      <span class="o">}</span>
+      <span class="k">finally</span> <span class="o">{</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>And “programs” or descriptions of the computations on our <code class="highlighter-rouge">DB[A]</code>
+actions. For example, next one describes how to change a user password,
+but without fixing the connection provider that eventually will be used:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">myProgram</span><span class="o">(</span><span class="n">userId</span><span class="k">:</span> <span class="kt">UserId</span><span class="o">)</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=&gt;</span> <span class="nc">Unit</span> <span class="k">=</span>
+  <span class="n">r</span> <span class="k">=&gt;</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"Enter old password"</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">oldPwd</span> <span class="k">=</span> <span class="n">readLine</span><span class="o">()</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"Ender new password"</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">newPwd</span> <span class="k">=</span> <span class="n">readLine</span><span class="o">()</span>
+    <span class="n">r</span><span class="o">(</span><span class="n">changePwd</span><span class="o">(</span><span class="n">userId</span><span class="o">,</span> <span class="n">oldPwd</span><span class="o">,</span> <span class="n">newPwd</span><span class="o">))</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>And finally, the actual “injection” of different implementations
+(Testing Vs. Production) of a <code class="highlighter-rouge">ConnectionProvider</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">runInTest</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span>
+  <span class="n">f</span><span class="o">(</span><span class="n">sqliteTestDB</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="n">runInProduction</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">ConnProvider</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span>
+  <span class="n">f</span><span class="o">(</span><span class="n">mysqlProdDB</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span>
+  <span class="n">runInTest</span><span class="o">(</span><span class="n">myProgram</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">)))</span>
+</code></pre></div></div>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/scala-essentials-nanodegree/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fsharp.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script><script>hljs.configure({languages:['scala','java','bash','haskell','fsharp','scala','python','java']});
 hljs.initHighlighting();
               </script><script src="/scala-essentials-nanodegree/js/mathjax-config.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML,https://oscarvarto.github.io/learning-scala/js/mathjax-config.js"></script><script>((window.gitter = {}).chat = {}).options = {
