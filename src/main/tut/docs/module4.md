@@ -128,10 +128,21 @@ val s = sum(1 to 5: _*)
 ### Procedures have `Unit` return value
 
 ```scala
+// Compiles, but discouraged
 def box(s : String) { // Look carefully: no =
   // contents elided
 }
+```
 
+******
+
+*Procedure syntax* is discouraged. See [Procedure Syntax].
+
+[Procedure Syntax]: https://docs.scala-lang.org/style/declarations.html#procedure-syntax
+
+******
+
+```scala
 // (Equivalent) Explicit return type
 def box(s : String): Unit = {
   // contents elided
