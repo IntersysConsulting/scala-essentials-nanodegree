@@ -3,13 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="author">
+  <meta name="author" content="Rodrigo Hernández Mota">
   <title>Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -29,27 +66,588 @@
 
 <section>
   <h1 class="title">Introduction</h1>
-  <p class="author">author</p>
+  <p class="author">Rodrigo Hernández Mota</p>
 </section>
 
-<section id="consultant-branding" class="slide level3">
-<h3>Consultant branding</h3>
-<p>add consultant branding</p>
-</section>
-<section id="training-objectives" class="slide level3">
-<h3>Training objectives</h3>
-<p>add a couple of training objectives</p>
-</section>
-<section id="what-skills-will-the-trainee-obtain" class="slide level3">
-<h3>What skills will the trainee obtain?</h3>
-<p>add the skills the trainee will obtain</p>
-</section>
-<section id="agenda" class="slide level3">
-<h3>Agenda</h3>
-<p>specify the agenda</p>
-</section>
-<section class="slide level3">
+<section class="slide level2">
 
+<h3 id="rodrigo-hernández-mota">Rodrigo Hernández Mota</h3>
+<p>@<a href="https://www.linkedin.com/in/rhdzmota">rhdzmota</a><br />
+Data and ML Engineer</p>
+</section>
+<section id="training-objectives" class="slide level2">
+<h2>Training objectives</h2>
+<ul>
+<li>Provide a the resources to understand the context and history of the Scala programming language.</li>
+<li>Present the setup and tools that will be used along this Nanodegree. ​</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="what-skills-will-the-trainee-obtain">What skills will the trainee obtain?</h3>
+<ul>
+<li>Understanding of the <em>how</em> and <em>why</em> Scala is positioned as the de facto big data language.</li>
+<li>Configure and setup their local environment for Scala development. </li>
+</ul>
+</section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ol type="1">
+<li>Why Scala?</li>
+<li>Getting started!</li>
+<li>Productivity tools.</li>
+</ol>
+</section>
+<section id="what-have-you-heard-about-scala" class="slide level2">
+<h2>What have you heard about Scala?</h2>
+<p>(let's be honest)</p>
+</section>
+<section id="first-impressions" class="slide level2">
+<h2>First impressions!</h2>
+</section>
+<section class="slide level2">
+
+<p>Consider the typical <strong>&quot;hello world&quot;</strong> application.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> com.<span class="fu">intersysconsulting</span>.<span class="fu">nanodegree</span>.<span class="fu">scalaessentials</span>.<span class="fu">examples</span>
+
+<span class="kw">object</span> Hello {
+  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = 
+    <span class="fu">println</span>(<span class="st">&quot;Welcome to the Scala Essentials Nanodegree!&quot;</span>)
+}</code></pre></div>
+<p>Any observations?</p>
+</section>
+<section class="slide level2">
+
+<p>Now consider a random <strong>&quot;one-liner&quot;</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="dv">1</span> to <span class="dv">10</span> filter { _ % <span class="dv">2</span> == <span class="dv">1</span> } flatMap {x =&gt; x to x + <span class="dv">1</span>}</code></pre></div>
+<p>Comments?</p>
+</section>
+<section id="is-scala-a-complex-language" class="slide level2">
+<h2>Is Scala a complex language?</h2>
+</section>
+<section class="slide level2">
+
+<p>No, but <a href="https://www.youtube.com/watch?v=ugHsIj60VfQ">simple concepts can have a huge impact</a>.</p>
+<figure>
+<img src="../img/grammar-size.png" alt="Grammar size" /><figcaption>Grammar size</figcaption>
+</figure>
+</section>
+<section id="so...-what-is-scala" class="slide level2">
+<h2>So... What is Scala?</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="according-to-the-official-website">According to the <a href="https://docs.scala-lang.org/tour/tour-of-scala.html">official website</a>:</h3>
+<blockquote>
+<p>Combination of <a href="https://www.scala-exercises.org/scala_tutorial/object_oriented_programming">object oriented</a> and <a href="https://www.scala-exercises.org/fp_in_scala/getting_started_with_functional_programming">functional</a> programming in a high-level and <a href="http://heather.miller.am/blog/types-in-scala.html">static typed</a> language.</p>
+</blockquote>
+<p>For most people this implies a paradigm shift!</p>
+</section>
+<section id="is-that-it" class="slide level2">
+<h2>Is that it?</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-is-object-oriented">Scala is object-oriented</h3>
+<p>Pure object-oriented language; <a href="https://docs.scala-lang.org/tour/unified-types.html">every value is an object</a> and every operation is a method call! Types and behaviour of objects are describes by <a href="https://docs.scala-lang.org/tour/classes.html">classes</a> and <a href="https://docs.scala-lang.org/tour/traits.html">traits</a>. Class composition is done via a <a href="https://docs.scala-lang.org/tour/mixin-class-composition.html">mixin-based</a> mechanisms that replaces multiple inheritance.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-is-functional">Scala is functional</h3>
+<p>In Scala <a href="https://docs.scala-lang.org/tour/unified-types.html">every function is a value</a>. It supports <a href="https://docs.scala-lang.org/tour/higher-order-functions.html">higher-order functions</a>, <a href="https://docs.scala-lang.org/tour/nested-functions.html">nesting</a>, <a href="https://alvinalexander.com/scala/fp-book/tail-recursive-algorithms">recursion</a>, and <a href="https://docs.scala-lang.org/tour/multiple-parameter-lists.html">currying</a>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> reverse[A](list: List[A]): List[A] = {
+  <span class="kw">def</span> <span class="fu">tailRecReverse</span>(result: List[A], prependOps: (List[A], A) =&gt; List[A])(current: List[A]): List[A] = current <span class="kw">match</span> {
+    <span class="kw">case</span> Nil =&gt; result
+    <span class="kw">case</span> head :: tail =&gt; <span class="fu">tailRecReverse</span>(<span class="fu">prependOps</span>(result, head), prependOps)(tail)
+  }
+  <span class="kw">val</span> reverseOp = <span class="fu">tailRecReverse</span>(List.<span class="fu">empty</span>[A], (xs: List[A], x: A) =&gt; x +: xs) _
+  <span class="fu">reverseOp</span>(list)
+}</code></pre></div>
+<p>(unnecessarily complex example)</p>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-is-statically-typed...-with-type-inference">Scala is statically typed... with type inference!</h3>
+<p>Scala has an strongly typed system that supports <a href="https://docs.scala-lang.org/tour/type-inference.html">type inference</a>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> courseName = <span class="st">&quot;Introduction&quot;</span>
+<span class="kw">def</span> <span class="fu">square</span>(x: Int) = x * x</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-has-different-runtimes">Scala has different runtimes</h3>
+<p><a href="https://www.scala-lang.org/">JVM</a> - <a href="https://www.scala-js.org/">JS</a> - <a href="https://scala-native.readthedocs.io">LLVM</a><br />
+<img src="../img/runtimes.png" alt="Runtimes" /></p>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-interops-with-java">Scala interops with Java</h3>
+<p>Scala has seamless interoperability with the Java Ecosystem.</p>
+<blockquote>
+<p>Scala classes are ultimately JVM classes. You can create Java objects, call their methods and inherit from Java classes transparently from Scala.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-has-lightweight-syntax">Scala has lightweight syntax</h3>
+<p><strong>Example</strong>: assume we want to know the number of underage persons on a group.</p>
+</section>
+<section class="slide level2">
+
+<h4 id="java-code">Java Code</h4>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> Example {
+
+  <span class="kw">public</span> <span class="kw">class</span> Person {
+    <span class="kw">public</span> <span class="dt">final</span> <span class="bu">String</span> name;
+    <span class="kw">public</span> <span class="dt">final</span> <span class="dt">int</span> age;
+    <span class="fu">Person</span>(<span class="bu">String</span> name, <span class="dt">int</span> age) {
+      <span class="kw">this</span>.<span class="fu">name</span> = name;
+      <span class="kw">this</span>.<span class="fu">age</span>  = age;
+    }
+  }
+
+  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
+    <span class="bu">ArrayList</span>&lt;Person&gt; peopleList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
+    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>));
+    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>));
+    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>));
+    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>));
+    Person[] people = <span class="kw">new</span> Person[<span class="dv">4</span>];
+    people = peopleList.<span class="fu">toArray</span>(people);
+    <span class="bu">ArrayList</span>&lt;Person&gt; minorList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
+    <span class="bu">ArrayList</span>&lt;Person&gt; adultList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
+    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; people.<span class="fu">length</span>; i++)
+      (people[i].<span class="fu">age</span> &lt; <span class="dv">18</span> ? minorList : adultList).<span class="fu">add</span>(people[i]);
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(minorList.<span class="fu">size</span>());
+    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(adultList.<span class="fu">size</span>());
+  }
+
+  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+    Example example = <span class="kw">new</span> <span class="fu">Example</span>();
+    example.<span class="fu">count</span>();
+  }
+}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h4 id="scala-code">Scala Code</h4>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Example <span class="kw">extends</span> App {
+  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)
+  <span class="kw">val</span> people = Array(
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))
+  <span class="kw">val</span> (minors, adults) = people <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)
+  <span class="fu">println</span>(minors.<span class="fu">length</span>)
+  <span class="fu">println</span>(adults.<span class="fu">length</span>)
+}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h4 id="scala-parallel-code">Scala Parallel Code</h4>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Example <span class="kw">extends</span> App {
+  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)
+  <span class="kw">val</span> people = Array(
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),
+    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))
+  <span class="kw">val</span> (minors, adults) = people.<span class="fu">par</span> <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)
+  <span class="fu">println</span>(minors.<span class="fu">length</span>)
+  <span class="fu">println</span>(adults.<span class="fu">length</span>)
+}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-empowers-concurrency-and-distribution">Scala empowers concurrency and distribution</h3>
+<p>You can use <a href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html">data-parallel operations</a> on collections, <a href="https://doc.akka.io/docs/akka/2.5/actors.html">actors</a> for concurrency/distribution or <a href="https://docs.scala-lang.org/overviews/core/futures.html">futures</a> for asynchronous programming. Scala was build with concurrency and <a href="https://docs.scala-lang.org/overviews/parallel-collections/configuration.html">parallelism</a> is mind.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> x = Future { <span class="fu">someExpensiveComputation</span>() }
+<span class="kw">val</span> y = Future { <span class="fu">someOtherExpensiveComputation</span>() }
+<span class="kw">val</span> z = <span class="kw">for</span> (a &lt;- x; b &lt;- y) <span class="kw">yield</span> a * b
+<span class="kw">for</span> (c &lt;- z) <span class="fu">println</span>(<span class="st">&quot;Result: &quot;</span> + c)
+<span class="fu">println</span>(<span class="st">&quot;Meanwhile, the main thread goes on!&quot;</span>)</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-in-the-industry">Scala in the industry</h3>
+<p>According to <a href="https://www.lightbend.com/scala">Lightbend</a>:</p>
+<blockquote>
+<p>Scala has taken over the world of Fast Data, which is what some are calling the next wave of computation engines [...] (ability to process event streams in real time).</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<h3 id="case-studies">Case Studies</h3>
+<ul>
+<li><a href="https://www.lightbend.com/case-studies/new-tweets-per-second-record-and-how?utm_source=website&amp;utm_medium=learn-case-studies&amp;utm_campaign=CASE-STUDY-new-tweets-per-second-record-and-how&amp;utm_term=none&amp;utm_content=none">Twitter</a> - New tweets per second record</li>
+<li><a href="https://www.lightbend.com/case-studies/paypal-blows-past-1-billion-transactions-per-day-using-just-8-vms-and-akka-scala-kafka-and-akka-streams?utm_source=website&amp;utm_medium=learn-case-studies&amp;utm_campaign=CASE-STUDY-paypal-blows-past-1-billion-transactions-per-day-using-just-8-vms-and-akka-scala-kafka-and-akka-streams&amp;utm_term=none&amp;utm_content=none">Paypal</a> - Blows past 1 billion transactions per day</li>
+<li><a href="https://www.lightbend.com/case-studies/walmart-boosts-conversions-by-20-with-lightbend-reactive-platform?utm_source=website&amp;utm_medium=learn-case-studies&amp;utm_campaign=CASE-STUDY-walmart-boosts-conversions-by-20-with-lightbend-reactive-platform&amp;utm_term=none&amp;utm_content=none">Walmart</a> - Boost conversion by 20%</li>
+<li><a href="https://www.lightbend.com/case-studies/samsung-strategy-and-innovation-center-executes-iot-vision-at-startup-speed-with-reactive-architecture?utm_source=website&amp;utm_medium=lb-case-study-banner-case-studies&amp;utm_campaign=CASE-STUDY-samsung-strategy-and-innovation-center-executes-iot-vision-at-startup-speed-with-reactive-architecture&amp;utm_term=none&amp;utm_content=none">Samsung</a> - Real time data platform for wearables</li>
+</ul>
+<p>And <a href="https://deanwampler.github.io/polyglotprogramming/papers/ExecutiveBriefing-WhatYouNeedToKnowAboutFastData.pdf">more</a>!</p>
+</section>
+<section class="slide level2">
+
+<h3 id="relevant-big-data-open-source-projects">Relevant big-data open source projects</h3>
+<p>Scala has a relevant impact on <a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://kafka.apache.org/">Apache Kafka</a>, <a href="https://flink.apache.org/">Apache Flink</a>, <a href="https://doc.akka.io/docs/akka/2.5.17/stream/index.html">Akka Streams</a> and more!</p>
+</section>
+<section class="slide level2">
+
+<h3 id="why-is-scala-in-such-position">Why is Scala in such position?</h3>
+</section>
+<section class="slide level2">
+
+<p>According to <a href="https://deanwampler.github.io/">Dean Wampler</a>, traditional big-data tools are <a href="https://www.youtube.com/watch?v=AHB6aJyhDSQ">inefficient and hard to implement</a>.</p>
+<p>Let's consider a <strong>word-count</strong> application.</p>
+</section>
+<section class="slide level2">
+
+<p><strong>WordCount Example</strong> using MapReduce with Java</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> org.apache.hadoop.*;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> WordCount {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> TokenizerMapper 
+        <span class="kw">extends</span> Mapper&lt;<span class="bu">Object</span>, <span class="bu">Text</span>, <span class="bu">Text</span>, IntWriter&gt; {
+        <span class="kw">private</span> <span class="dt">final</span> <span class="dt">static</span> IntWritable one = <span class="kw">new</span> <span class="fu">IntWritable</span>(<span class="dv">1</span>);
+        <span class="kw">private</span> <span class="bu">Text</span> word = <span class="kw">new</span> <span class="bu">Text</span>();
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">map</span>(<span class="bu">Object</span> key, <span class="bu">Text</span> value, <span class="bu">Context</span> context)
+            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {
+            <span class="bu">StringTokenizer</span> strTokenizer = <span class="kw">new</span> <span class="bu">StringTokenizer</span>(value.<span class="fu">toString</span>());
+            <span class="kw">while</span> (strTokenizer.<span class="fu">hasMoreTokens</span>()) {
+                word.<span class="fu">set</span>(strTokenizer.<span class="fu">nextToken</span>());
+                context.<span class="fu">write</span>(word, one);
+            }
+        }
+    }
+    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> IntSumReducer
+        <span class="kw">extends</span> Reduces&lt;<span class="bu">Text</span>, IntWritable, <span class="bu">Text</span>, IntWritable&gt; {
+        <span class="kw">private</span> IntWritable result = <span class="kw">new</span> <span class="fu">IntWritable</span>();
+        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">reduce</span>(<span class="bu">Text</span> key, Interable&lt;IntWritable&gt; values, <span class="bu">Context</span> context) 
+            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {
+            <span class="dt">int</span> sum = <span class="dv">0</span>;
+            <span class="kw">for</span> (IntWritable val : values) {
+                sum += val.<span class="fu">get</span>();
+            }
+            resut.<span class="fu">set</span>(sum);
+            context.<span class="fu">write</span>(key, result);
+        }
+    }
+}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<p><strong>Wordcount Example</strong> using Spark with Scala</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">sql</span>._
+
+<span class="kw">object</span> WordCount <span class="kw">extends</span> App <span class="kw">with</span> Context {
+  <span class="kw">import</span> spark.<span class="fu">implicits</span>._
+  <span class="kw">final</span> <span class="kw">case</span> <span class="kw">class</span> <span class="fu">WordCount</span>(word: String, count: Long)
+  <span class="kw">val</span> readPath = <span class="st">&quot;path/to/input/file&quot;</span>
+  <span class="kw">val</span> writePath = <span class="st">&quot;path/to/output/file&quot;</span>
+  <span class="kw">val</span> data: Dataset[String] = spark.<span class="fu">read</span>.<span class="fu">textFile</span>(readPath)
+  <span class="kw">val</span> wordCount: Dataset[WordCount] = data
+    .<span class="fu">flatMap</span>(_.<span class="fu">split</span>(<span class="st">&quot;&quot;&quot;\s+&quot;&quot;&quot;</span>)).<span class="fu">map</span>(_.<span class="fu">toLowerCase</span>.<span class="fu">replaceAll</span>(<span class="st">&quot;[^A-Za-z0-9]&quot;</span>, <span class="st">&quot;&quot;</span>)).<span class="fu">filter</span>(_.<span class="fu">length</span> &gt; <span class="dv">1</span>)
+    .<span class="fu">groupByKey</span>(identity).<span class="fu">count</span>().<span class="fu">map</span>({<span class="kw">case</span> (w, c) =&gt; <span class="fu">WordCount</span>(w, c)})
+    .<span class="fu">sort</span>($<span class="st">&quot;count&quot;</span>.<span class="fu">desc</span>)
+  wordCount.<span class="fu">coalesce</span>(<span class="dv">1</span>).<span class="fu">write</span>.<span class="fu">csv</span>(writePath)
+}</code></pre></div>
+<p>See the complete example <a href="https://github.com/RHDZMOTA/spark-wordcount/blob/develop/src/main/scala/com/hdzco/spark/example/App.scala">here</a>.</p>
+</section>
+<section class="slide level2">
+
+<p>Moreover, <a href="https://twitter.com/noelwelsh?lang=en">Noel Welsh</a> and <a href="https://twitter.com/davegurnell?lang=en">Dave Gurnell</a> in their book <a href="https://underscore.io/books/scala-with-cats/">Scala with cats</a> explain that:</p>
+<ul>
+<li><a href="http://mathworld.wolfram.com/Monoid.html">Monoid</a>s are used in Spark to perform parallel work on each partition and combine the results in a single node.</li>
+<li>Distributed systems use <em>commutative replicated data types</em> (<a href="https://github.com/noelwelsh/crdt">CRDT</a>s) to guarantee eventual consistency and to support reconciliation.</li>
+</ul>
+</section>
+<section id="how-do-we-get-started" class="slide level2">
+<h2>How do we get started?</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="installing-scala">Installing Scala</h3>
+<p>We can use the standalone scala compiler!</p>
+<pre class="commandline"><code>$ sudo apt install openjdk-8-jdk
+$ wget https://downloads.lightbend.com/scala/2.12.6/scala-2.12.6.deb
+$ sudo dpkg -i scala-2.12.6.deb</code></pre>
+<p>Change the <code>.deb</code> for <code>.msi</code> (Windows) or <code>.tgz</code> (Mac). Or see the <a href="https://www.scala-lang.org/download/">official documentation</a> for more options.</p>
+<p>(Students using <strong>Windows 10</strong> are encouraged to install <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL</a>)</p>
+</section>
+<section class="slide level2">
+
+<h3 id="hello-world">Hello, World!</h3>
+<p>Create a <code>helloworld.scala</code> file with the following content:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> HelloWorld {
+  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit =
+    <span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>)
+}</code></pre></div>
+<p>In the command line:</p>
+<pre class="commandline"><code>$ scala helloworld.scala
+$ scalac helloworld.scala &amp;&amp; scala HelloWorld</code></pre>
+</section>
+<section class="slide level2">
+
+<h3 id="using-the-scala-repl">Using the Scala REPL</h3>
+</section>
+<section class="slide level2">
+
+<p>You can launch the <a href="https://docs.scala-lang.org/overviews/repl/overview.html">Scala REPL</a> by simply typing <code>scala</code> in the command line.</p>
+<ul>
+<li>Scala tool for evaluation expressions (similar to <a href="https://ipython.org/">ipython</a>).</li>
+<li>Has build-in tab completion.</li>
+<li>Load scala files using <code>:load file.scala</code></li>
+<li>Paste mode using <code>:paste</code></li>
+<li>Get expression types with <code>:type</code></li>
+<li>Exit with <code>:q</code></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<pre class="commandline"><code>scala&gt; println(&quot;This is the Scala REPL&quot;)
+This is the Scala REPL
+
+scala&gt; def sum(x: Int, y: Int): Int = x + y
+sum: (x: Int, y: Int)Int
+
+scala&gt; :type sum _
+(Int, Int) =&gt; Int
+
+scala&gt; :load helloworld.scala
+Loading helloworld.scala...
+defined object HelloWorld
+
+scala&gt; HelloWorld.main(Array.empty)
+Hello, World!</code></pre>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-scripts-with-ammonite">Scala Scripts with Ammonite</h3>
+</section>
+<section class="slide level2">
+
+<p><a href="http://ammonite.io/#ScalaScripts">Scala scripts</a> are lightweight files containing Scala code that can be directly run from the command line.</p>
+<p>Install by running:</p>
+<pre class="commandline"><code>$ sudo sh -c &#39;(echo &quot;#!/usr/bin/env sh&quot; &amp;&amp; curl -L https://github.com/lihaoyi/Ammonite/releases/download/1.2.1/2.12-1.2.1) &gt; /usr/local/bin/amm &amp;&amp; chmod +x /usr/local/bin/amm&#39; &amp;&amp; amm</code></pre>
+</section>
+<section class="slide level2">
+
+<p>Create a file named <code>fibonacci.sc</code> containing:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> scala.<span class="fu">annotation</span>.<span class="fu">tailrec</span>
+
+<span class="kw">def</span> <span class="fu">fibonacci</span>(n: Int): List[BigInt] = {
+  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int): BigInt =
+    <span class="kw">if</span> (n &lt; <span class="dv">2</span>) <span class="dv">1</span> <span class="kw">else</span> <span class="fu">recFibo</span>(n - <span class="dv">1</span>) + <span class="fu">recFibo</span>(n - <span class="dv">2</span>)
+  <span class="kw">if</span> (n &lt;= <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> <span class="dv">0</span> :: (<span class="dv">0</span> until n).<span class="fu">toList</span>.<span class="fu">map</span>(recFibo)
+}
+
+<span class="kw">def</span> <span class="fu">tailRecFibonacci</span>(n: Int): List[BigInt] = {
+  @tailrec
+  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int, a: BigInt = <span class="dv">0</span>, b: BigInt = <span class="dv">1</span>): BigInt = n <span class="kw">match</span> {
+    <span class="kw">case</span> <span class="dv">0</span> =&gt; a
+    <span class="kw">case</span> <span class="dv">1</span> =&gt; b
+    <span class="kw">case</span> _ =&gt; <span class="fu">recFibo</span>(n<span class="dv">-1</span>, b, a+b)
+  }
+  <span class="kw">if</span> (n &lt; <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> (<span class="dv">0</span> to n).<span class="fu">toList</span>.<span class="fu">map</span>(<span class="fu">recFibo</span>(_))
+}
+
+@main
+<span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>): Unit = {
+  <span class="fu">println</span>(s<span class="st">&quot;Fibonacci sequence for i=$i : ${tailRecFibonacci(i).toString}&quot;</span>)
+}</code></pre></div>
+<p>Run the script with <code>amm fibonacci.sc 10</code></p>
+</section>
+<section class="slide level2">
+
+<p>You can import other scripts and Ivy Dependencies.</p>
+<p>Create a file <code>fibosum.sc</code> containing:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> $file.<span class="fu">fibonacci</span>
+<span class="kw">import</span> scala.<span class="fu">util</span>.<span class="fu">Try</span>
+
+<span class="kw">def</span> <span class="fu">fibosum</span>(i: Int)( fib: Int =&gt; List[BigInt]): BigInt = 
+  <span class="fu">fib</span>(i).<span class="fu">foldRight</span>(<span class="dv">0</span>: BigInt)(_ + _)
+
+@main 
+<span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>, tailrec: Boolean = <span class="kw">true</span>): Unit = {
+  <span class="kw">val</span> fiboSum = <span class="fu">fibosum</span>(i) _
+  <span class="kw">val</span> res: Option[BigInt] = <span class="fu">Try</span>(
+    <span class="kw">if</span> (tailrec) <span class="fu">fiboSum</span>(fibonacci.<span class="fu">tailRecFibonacci</span> _)
+    <span class="kw">else</span> <span class="fu">fiboSum</span>(fibonacci.<span class="fu">fibonacci</span> _)).<span class="fu">toOption</span> 
+  <span class="fu">println</span>(s<span class="st">&quot;The sum of the fibonacci sequence for i=$i is $res.&quot;</span>)
+}</code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Run the script with (you may need to <code>sudo apt install time</code>):</p>
+<ul>
+<li><code>time amm fibosum -i 40 -tailrec false</code></li>
+<li><code>time amm fibosum -i 40 -tailrec true</code></li>
+</ul>
+<p>Any difference? Implementation matters!</p>
+</section>
+<section class="slide level2">
+
+<h3 id="scala-projects-with-sbt">Scala projects with SBT</h3>
+</section>
+<section class="slide level2">
+
+<p><a href="https://www.scala-sbt.org/1.x/docs/index.html">SBT</a> is the most popular build tool for Scala Projects.</p>
+<p>Some relevant features:</p>
+<ul>
+<li>Scala-based <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build definition</a>!</li>
+<li>Continuous compilation and testing.</li>
+<li>Package and publish.</li>
+<li>Mixed Scala/Java projects.</li>
+<li>Scala REPL with project classes and dependencies on classpath.</li>
+<li><a href="https://www.scala-sbt.org/1.x/docs/Parallel-Execution.html">Parallel</a> task and test execution.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>You can install SBT by running:</p>
+<pre class="commandline"><code>$ echo &quot;deb https://dl.bintray.com/sbt/debian /&quot; | sudo tee -a /etc/apt/sources.list.d/sbt.list
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+$ sudo apt update &amp;&amp; sudo apt install sbt
+$ sbt about</code></pre>
+<p>See more installation instructions <a href="https://www.scala-sbt.org/1.x/docs/Setup.html">here</a>.</p>
+</section>
+<section class="slide level2">
+
+<p>Let's create a minimal project:</p>
+<pre class="commandline"><code>$ mkdir hello-world &amp;&amp; cd hello-world
+$ mkdir -p src/main/scala/example
+$ mkdir -p src/test/scala/example
+$ touch build.sbt</code></pre>
+</section>
+<section class="slide level2">
+
+<p>Create a source file at <code>src/main/scala/example/Hello.scala</code></p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">object</span> Hello {
+  <span class="kw">val</span> message = <span class="st">&quot;Hello, World!&quot;</span>
+  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = 
+    <span class="fu">println</span>(message)
+}</code></pre></div>
+<p>Now we can:</p>
+<ul>
+<li>Compile the project with <code>sbt compile</code></li>
+<li>Compile and run with <code>sbt run</code>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Add dependencies in the <code>build.sbt</code> file:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">ThisBuild / scalaVersion := <span class="st">&quot;2.12.7&quot;</span>
+ThisBuild / organization := <span class="st">&quot;com.example&quot;</span>
+
+<span class="kw">lazy</span> <span class="kw">val</span> hello = (project in <span class="fu">file</span>(<span class="st">&quot;.&quot;</span>))
+  .<span class="fu">settings</span>(
+    name := <span class="st">&quot;Hello&quot;</span>,
+    libraryDependencies += <span class="st">&quot;org.scalatest&quot;</span> %% <span class="st">&quot;scalatest&quot;</span> % <span class="st">&quot;3.0.5&quot;</span> % Test,
+  )</code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Now we can add tests in <code>src/test/scala/example/HelloSpec.scala</code></p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">import</span> org.<span class="fu">scalatest</span>.{FlatSpec, Matchers}
+
+<span class="kw">class</span> HelloSpec <span class="kw">extends</span> FlatSpec <span class="kw">with</span> Matchers {
+  <span class="st">&quot;The Hello object&quot;</span> should <span class="st">&quot;contain a message starting with &#39;Hello&#39;&quot;</span> in {
+    <span class="fu">assert</span>(Hello.<span class="fu">message</span> startsWith <span class="st">&quot;Hello&quot;</span>)
+  }
+}</code></pre></div>
+<p>Run tests with <code>sbt test</code></p>
+</section>
+<section class="slide level2">
+
+<p>We can use the Scala REPL with the dependencies and classes defined in our project with <code>sbt console</code></p>
+<pre class="commandline"><code>scala&gt; import example.Hello
+import example.Hello
+
+scala&gt; Hello.message
+res0: String = Hello, World!
+</code></pre>
+<p>For more information and features see <a href="https://www.scala-sbt.org/1.x/docs/sbt-by-example.html">sbt by example</a>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="giter8-templates">Giter8 templates</h3>
+</section>
+<section class="slide level2">
+
+<p>Current sbt versions allow to create new build definitions from a template using the <a href="https://www.scala-sbt.org/1.0/docs/sbt-new-and-Templates.html">new command</a>. <a href="http://www.foundweekends.org/giter8/">Giter8</a> contains the most popular templates.</p>
+<pre class="commandline"><code>$ sbt new {template-name}</code></pre>
+</section>
+<section class="slide level2">
+
+<p>Templates:</p>
+<ul>
+<li><code>scala/scala-seed.g8</code> - seed template for Scala</li>
+<li><code>akka/akka-quickstart-scala.g8</code> - akka quickstart</li>
+<li><code>holdenk/sparkProjectTemplate.g8</code> - spark template</li>
+</ul>
+<p>And <a href="https://github.com/foundweekends/giter8/wiki/giter8-templates">more</a>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="intellij-idea-ide">IntelliJ Idea IDE</h3>
+</section>
+<section class="slide level2">
+
+<p><a href="https://www.jetbrains.com/idea/download/">IntelliJ Idea</a> is one of the bests IDEs with <a href="https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html">Scala support</a>. We'll be using this IDE for the Nanodegree.</p>
+<p>Students are encouraged to donwload the Jetbrains <a href="https://www.jetbrains.com/toolbox/app/">Toolbox App</a>.</p>
+</section>
+<section class="slide level2">
+
+<p>We can <a href="https://www.jetbrains.com/help/idea/sbt-support.html">import SBT Projects</a> using IntelliJ</p>
+<pre class="commandline"><code>$ sbt new scala/scala-seed.g8
+$ idea . &amp;</code></pre>
+<p>Consider looking at the talk <a href="https://www.youtube.com/watch?v=z-2l-SKdFsY">Effective Scala development in IntelliJ Idea</a> by Mikhail Mutcianko for more information regarding tips &amp; tricks.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="personal-assignment">Personal Assignment!</h3>
+<ol type="1">
+<li>Use the <code>scala/hello-world.g8</code> giter8 template to create a project.</li>
+<li>Run the project using the <code>sbt run</code> command form the CLI.</li>
+<li>Use IntelliJ Idea to edit the project to print &quot;Howdy, World!&quot; instead of &quot;Hello, World!&quot;</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="study-material">Study Material</h3>
+</section>
+<section class="slide level2">
+
+<p>Talks and Conferences</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=3jg1AheF4n0">Working Hard to Keep It Simple</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=kkTFx3-duc8">Scala with Style</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=ecekSCX3B4Q">Scala, the Simple Parts</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=YXDm3WHZT5g">Plain Functional Programming</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=DFAdLCqDbLQ">Why Big Data Needs to be Functional</a> by Dean Wampler</li>
+<li><a href="https://www.youtube.com/watch?v=NW5h8d_ZyOs">Spark, the Ultimate Scala Collection</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=9lWrt6H6UdE">What's Different in Dotty</a> by Martin Odersky</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Other online resources</p>
+<ul>
+<li><a href="https://scala-lang.org/files/archive/spec/2.12/">Scala 2.12 language specification</a> official archive</li>
+<li><a href="https://docs.scala-lang.org/getting-started.html">Getting Started with Scala</a> official archive</li>
+<li><a href="https://www.artima.com/scalazine/articles/origins_of_scala.html">The Origins of Scala</a> by Bill Venners and Frank Sommers​</li>
+<li><a href="https://www.artima.com/scalazine/articles/goals_of_scala.html">Goals of Scala</a> by Bill Venners and Frank Sommers​</li>
+<li><a href="https://www.artima.com/scalazine/articles/scalas_type_system.html">Scala's Type System</a> by Bill Venners and Frank Sommers​</li>
+<li><a href="https://www.scala-lang.org/old/node/239.html">Scala's Prehistory</a> official archive</li>
+<li><a href="https://www.signifytechnology.com/blog/2018/01/why-scala">Why Scala?</a> by Martin Odersky</li>
+<li><a href="https://www.artima.com/pins1ed/">Programming in Scala</a> by Martin Odersky</li>
+</ul>
 </section>
     </div>
   </div>
