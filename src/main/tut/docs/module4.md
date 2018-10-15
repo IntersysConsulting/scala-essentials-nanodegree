@@ -34,9 +34,8 @@ That can be read like:
 
 In general, to declare a **function type**, write:
 
-```scala
+```text
 (A, B, ...) => C
-println("Hello, World!")
 ```
 
 where
@@ -228,7 +227,7 @@ more meaningful implementation.
 We have reviewed composition in the mathematical sense. This may seem
 too theoretical, but is a wonderful tool to get complex solutions from
 smaller building blocks. We are going to use `atto`, a parsing library
-that has uses `andThen` to build a new parser from smaller parsers.
+that uses `andThen` to build a new parser from smaller parsers.
 Spend some time studying the section on [basic parsers].
 
 [basic parsers]: http://tpolecat.github.io/atto/docs/first-steps.html
