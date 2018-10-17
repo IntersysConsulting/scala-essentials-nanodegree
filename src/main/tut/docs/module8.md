@@ -11,8 +11,6 @@ author: M.C. Oscar Vargas Torres
 
 [Typeclass pattern]: https://www.youtube.com/watch?v=sVMES4RZF-8
 
-------
-
 ## Implicits (reminder)
 
 Different definitions of `add`:
@@ -31,8 +29,6 @@ implicit val one: Int = 1
 def addOne(a: Int) = add3(a)
 ```
 
-------
-
 ### Context bound syntax
 
 `Ordering[T]` from the Scala Standard Library.
@@ -49,8 +45,6 @@ def myMax[T](x: T, y: T)(implicit ev: Ordering[T]): T =
   if (x > y) x else y
 ```
 
-------
-
 ## Example
 
 Let's say we have the following:
@@ -58,8 +52,6 @@ Let's say we have the following:
 ![Expression ADT]
 
 [Expression ADT]: diagrams/expression.png
-
-------
 
 with the following encoding:
 
@@ -74,8 +66,6 @@ case class Plus(lhs: Expression,
 case class Minus(lhs: Expression,
                  rhs: Expression) extends Expression
 ```
-
-------
 
 ### `JsonValue` ADT definition
 
@@ -97,8 +87,6 @@ case object JsonNull
 
 We are defining this because we plan to serialize `Expression`s to `JsonValue`s.
 
-------
-
 ### Serializing `Expression` to Json
 
 If we use this trait...
@@ -109,19 +97,13 @@ trait ConvertibleToJson {
 }
 ```
 
-. . .
-
 ... we have to implement `json` method in every subclass of `Expression`.
-
-------
 
 And we have created the following dependency (Unnecessary Coupling!):
 
 ![Expression-Json coupling]
 
 [Expression-Json coupling]: diagrams/expression-json.png
-
-------
 
 Let's define `Json[A]` typeclass:
 
@@ -144,8 +126,6 @@ See [Simulacrum].
 
 [Simulacrum]: https://bit.ly/2ROJvXH
 
-------
-
 Possible encoding of `Json[Expression]`:
 
 ```scala
@@ -162,15 +142,11 @@ object JsonImplicits {
 }
 ```
 
-------
-
 #### `case Number(value)`
 
 ```scala
 case Number(value) => JsonNumber(value)
 ```
-
-------
 
 #### `case Plus(lhs, rhs)`
 
@@ -184,8 +160,6 @@ case Plus(lhs, rhs) => JsonObject(
 )
 ```
 
-------
-
 #### `case Minus(lhs, rhs)`
 
 ```scala
@@ -197,8 +171,6 @@ case Minus(lhs, rhs) => JsonObject(
   )
 )
 ```
-
-------
 
 ### Typeclass usage
 
