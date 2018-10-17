@@ -114,15 +114,74 @@ def fac(n: Int): Int =
 
 ### Varargs syntax
 
+The term varargs is often used to refer to methods with a variable number of parameters. A common
+example from the Java world is `System.out.printf`:
+
+```java
+// Two parameters
+System.out.printf("%d", n);
+// Three parameters, but same method signature
+System.out.printf("%d %s", n, widgets);
+```
+
+In Java, `printf` method is defined like this:
+
+```java
+public class PrintStream {
+    public PrintStream printf(String fmt, Object... args) {
+        return format(fmt, args);
+    }
+}
+```
+
+The elipsis `...` is part of the Java code, and it denotes that the method can receive an arbitrary
+number of objects (in addition to the `fmt` parameter).
+
+In Scala, you can write varargs methods too. For example:
+
 ```scala
 def sum(args: Int*): Int = {
   var result = 0
   for (arg <- args)
     result += arg
   result
+}
 
 val s = sum(1 to 5: _*)
 ```
+
+Notice that you use a `*` after the type you are allowing to appear several times.
+
+******
+
+**Note**: Scala also supports the `@varargs` annotation that lets you call a Scala variable-argument
+method from Java. See [Scala vargars annotation scaladoc].
+
+```scala
+def foo(args: String*): Unit
+```
+
+is translated by the Scala compiler to
+
+```scala
+def foo(args: Seq[String]): Unit
+```
+
+But if you add the `@vargars` annotation
+
+```scala
+@varargs def foo(args: String*): Unit
+```
+
+then the following (equivalent) Java method signature will be generated:
+
+```java
+void foo(String... args)
+```
+
+******
+
+[Scala vargars annotation scaladoc]: https://www.scala-lang.org/api/current/scala/annotation/varargs.html
 
 ### Procedures have `Unit` return value
 
