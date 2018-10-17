@@ -150,7 +150,7 @@ def chooseEditor(p: Programmer): Editor =
 ## Scala OOP support
 
 - Abstraction
-- Encapsulation (information hiding)
+- Encapsulation
 - Inheritance
 - Polymorphism
 
