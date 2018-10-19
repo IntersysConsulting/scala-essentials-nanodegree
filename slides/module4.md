@@ -85,9 +85,7 @@ where
 
 ------
 
-::: {.admonition} :::
-
-### Naming conventions
+### Note: Naming conventions
 
 Scala names are case sensitive. See [Naming conventions for constants, values, variables
 and methods].
@@ -99,19 +97,15 @@ name?
 val Triple = (n: Float) => n * 3.0f
 ```
 
-::::::
-
 [Naming conventions for constants, values, variables and methods]: https://docs.scala-lang.org/style/naming-conventions.html#constants-values-variable-and-methods
 
 ------
 
 According to [Function Types]:
 
-* Function types associate to the right, e.g.
-
+- Function types associate to the right, e.g.  
   `S => T => U` is the same as `S => (T => U)`
-
-* An argument type of the form `=> T` represents a call-by-name parameter of type `T`.
+- An argument type of the form `=> T` represents a call-by-name parameter of type `T`.
 
 [Function Types]: https://www.scala-lang.org/files/archive/spec/2.12/03-types.html#function-types
 
@@ -196,9 +190,9 @@ Open [Current Scala Standard Library Scaladoc] and search documentation for trai
 
 Search the following methods:
 
-* `apply`
-* `andThen` and
-* `compose`.
+- `apply`
+- `andThen` and
+- `compose`.
 
 [Current Scala Standard Library Scaladoc]: https://www.scala-lang.org/api/current/
 
@@ -258,14 +252,10 @@ gf2(3)
 
 ------
 
-::: {.admonition .danger} :::
-
-#### Scala "Universal" `toString` method
+#### DANGER: Scala "Universal" `toString` method
 
 Scala creates a `toString()`{.scala} method automatically for all classes. Functions also get a
 useless implementation for `toString()`{.scala}.
-
-::::::
 
 **Note**: `FunctionN` traits are not sealed:
 [you can `override`{.scala} it's implementation]{.smallcaps}.
@@ -285,9 +275,8 @@ smaller parsers. Spend some time studying the section on [basic parsers].
 
 ### Exercises
 
-* Discuss your understanding on Basic Parsers with others.
-* Following [Parsing log entries] tutorial, replicate the example given in your development machine.
-* TBD: Build a parser for ...
+- Discuss your understanding on Basic Parsers with others.
+- Following [Parsing log entries] tutorial, replicate the example given in your development machine.
 
 [Parsing log entries]: http://tpolecat.github.io/atto/docs/next-steps.html
 
@@ -310,8 +299,6 @@ val add2: Int => Int => Int = a => b => a + b
 
 ------
 
-::: {.admonition } :::
-
 ## [Currying]{.smallcaps}
 
 ```{.scala .listing}
@@ -321,13 +308,10 @@ val add2: Int => Int => Int = a => b => a + b
 A => (B => C)
 ```
 
-* Turning a function that takes two arguments into a function that takes
-  one argument.
-* That function returns a function that consumes the second argument.
+- Turning a function that takes two arguments into a function that takes one argument.
+- That function returns a function that consumes the second argument.
 
 ([Scala for the Impatient, 2nd Edition])
-
-::::::
 
 [Scala for the Impatient, 2nd Edition]: http://www.informit.com/store/scala-for-the-impatient-9780134540634?ranMID=24808
 
@@ -372,8 +356,8 @@ From the Scala Standard Library, `List.foldRight()`:
 def foldRight[B](z: B)(op: (A, B) => B): B
 ```
 
-* The *type inferencer* can figure out what `B` is from the type of `z`, and
-* then it can use that information when analyzing the function that is passed for `op`.
+- The *type inferencer* can figure out what `B` is from the type of `z`, and
+- then it can use that information when analyzing the function that is passed for `op`.
 
 ------
 
@@ -383,15 +367,15 @@ def foldRight[B](z: B)(op: (A, B) => B): B
 
 ### [Generics]{.smallcaps}
 
-* Generics is a powerful tool from modern programming languages
-* "[For academics only]"?
+- Generics is a powerful tool from modern programming languages
+- "[For academics only]"?
 
 ------
 
 Generic collections in mainstream languages
 
-* [Java Collections API]
-* [C\# generics collections]
+- [Java Collections API]
+- [C\# generics collections]
 
 [For academics only]: https://blogs.msdn.microsoft.com/dsyme/2011/03/15/netc-generics-history-some-photos-from-feb-1999/
 [Java Collections API]: https://download.java.net/java/early_access/jdk11/docs/api/java.base/java/util/package-summary.html
@@ -411,16 +395,16 @@ In ACM Sigplan Notices, 45:341–360. ACM, 2010.
 
 ### Polymorphism
 
-* [Polymorphic]{.smallcaps}: made of many forms
-* [Monomorphic]{.smallcaps}: made of one form
+- [Polymorphic]{.smallcaps}: made of many forms
+- [Monomorphic]{.smallcaps}: made of one form
 
 ------
 
 #### Kinds of polymorphism (in Scala)
 
-* Subtyping/dynamic polymorphism
-* Parametric polymorphism
-* Ad hoc (or constrained) polymorphism
+- Subtyping/dynamic polymorphism
+- Parametric polymorphism
+- Ad hoc (or constrained) polymorphism
 
 ------
 
@@ -455,8 +439,8 @@ From `List.map`'s type signature:
 final def map[B](f: (A) => B): List[B]
 ```
 
-* `List[A]` is a polymorphic/generic collection.
-* `List.map` is a polymorphic method.
+- `List[A]` is a polymorphic/generic collection.
+- `List.map` is a polymorphic method.
 
 ------
 
@@ -481,11 +465,7 @@ case class Pair[A, B](first: A, second: B) {
 
 #### Ad hoc polymorphism
 
-::: {.admonition .prerequisite} :::
-
 **Prerequisite**: [Context Bounds]
-
-::::::
 
 [Context Bounds]: https://docs.scala-lang.org/tutorials/FAQ/context-bounds.html
 
@@ -546,11 +526,7 @@ def loop(assignments0: Array[Int],
 
 ## Functions and Dependency Injection
 
-::: {.admonition .prerequisite} :::
-
 **Prerequisite**: [Dead-Simple Dependency Injection]
-
-::::::
 
 [Dead-Simple Dependency Injection]: https://www.youtube.com/watch?v=ZasXwtTRkio
 
