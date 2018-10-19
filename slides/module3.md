@@ -162,6 +162,8 @@ def chooseEditor(p: Programmer): Editor =
 trait Shape {
   def draw(): Unit
 }
+
+abstract class Quadrangle extends Shape { }
 ```
 
 Traits can encode "interfaces"
