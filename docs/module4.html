@@ -98,14 +98,65 @@ after the <code class="highlighter-rouge">for</code> loop (no need for the <code
 
 <h3 id="varargs-syntax">Varargs syntax</h3>
 
+<p>The term varargs is often used to refer to methods with a variable number of parameters. A common
+example from the Java world is <code class="highlighter-rouge">System.out.printf</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Two parameters</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d"</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
+<span class="c1">// Three parameters, but same method signature</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d %s"</span><span class="o">,</span> <span class="n">n</span><span class="o">,</span> <span class="n">widgets</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>In Java, <code class="highlighter-rouge">printf</code> method is defined like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrintStream</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">PrintStream</span> <span class="nf">printf</span><span class="o">(</span><span class="n">String</span> <span class="n">fmt</span><span class="o">,</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">format</span><span class="o">(</span><span class="n">fmt</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The elipsis <code class="highlighter-rouge">...</code> is part of the Java code, and it denotes that the method can receive an arbitrary
+number of objects (in addition to the <code class="highlighter-rouge">fmt</code> parameter).</p>
+
+<p>In Scala, you can write varargs methods too. For example:</p>
+
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Int*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
   <span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="o">(</span><span class="n">arg</span> <span class="k">&lt;-</span> <span class="n">args</span><span class="o">)</span>
     <span class="n">result</span> <span class="o">+=</span> <span class="n">arg</span>
   <span class="n">result</span>
+<span class="o">}</span>
 
 <span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="n">sum</span><span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">5</span><span class="k">:</span> <span class="k">_</span><span class="kt">*</span><span class="o">)</span>
 </code></pre></div></div>
+
+<p>Notice that you use a <code class="highlighter-rouge">*</code> after the type you are allowing to appear several times.</p>
+
+<hr />
+
+<p><strong>Note</strong>: Scala also supports the <code class="highlighter-rouge">@varargs</code> annotation that lets you call a Scala variable-argument
+method from Java. See <a href="https://www.scala-lang.org/api/current/scala/annotation/varargs.html">Scala vargars annotation scaladoc</a>.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">String*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+</code></pre></div></div>
+
+<p>is translated by the Scala compiler to</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span>
+</code></pre></div></div>
+
+<p>But if you add the <code class="highlighter-rouge">@vargars</code> annotation</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@varargs</span> <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">String*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+</code></pre></div></div>
+
+<p>then the following (equivalent) Java method signature will be generated:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">foo</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span>
+</code></pre></div></div>
+
+<hr />
 
 <h3 id="procedures-have-unit-return-value">Procedures have <code class="highlighter-rouge">Unit</code> return value</h3>
 
@@ -218,13 +269,13 @@ machine.</li>
 functions that accept <em>two</em> arguments. For example:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span>
-<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4331</span><span class="o">/</span><span class="mi">462556018</span><span class="k">@</span><span class="mi">33</span><span class="n">beb428</span>
+<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$5078</span><span class="o">/</span><span class="mh">0x00000001019d5840</span><span class="k">@</span><span class="mf">4d</span><span class="n">ba6bec</span>
 </code></pre></div></div>
 
 <p>A <em>curried</em> version of the above is:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$4384</span><span class="o">/</span><span class="mi">1035300280</span><span class="k">@</span><span class="mf">3f</span><span class="mi">941497</span>
+<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$5131</span><span class="o">/</span><span class="mh">0x00000001019f8040</span><span class="k">@</span><span class="mi">2</span><span class="n">ba55024</span>
 </code></pre></div></div>
 
 <p>From <a href="http://www.informit.com/store/scala-for-the-impatient-9780134540634?ranMID=24808">Scala for the Impatient, 2nd Edition</a>:</p>
@@ -241,13 +292,13 @@ argument.</p>
 <p>You can get a curried version of a <code class="highlighter-rouge">FunctionN</code> by calling <code class="highlighter-rouge">curried</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="n">add1</span><span class="o">.</span><span class="n">curried</span> <span class="c1">// returns an equivalent of add2
-</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$4395</span><span class="o">/</span><span class="mi">736743800</span><span class="k">@</span><span class="mi">4109</span><span class="n">c348</span>
+</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$5142</span><span class="o">/</span><span class="mh">0x0000000101a00840</span><span class="k">@</span><span class="mi">25</span><span class="n">e3037e</span>
 </code></pre></div></div>
 
 <p>On the other hand, you can call <code class="highlighter-rouge">Function.uncurried</code> to “uncurry”:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="nc">Function</span><span class="o">.</span><span class="n">uncurried</span><span class="o">(</span><span class="n">add2</span><span class="o">)</span> <span class="c1">// returns an equivalent of add1
-</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$4411</span><span class="o">/</span><span class="mi">629789768</span><span class="k">@</span><span class="mf">50d</span><span class="mi">4</span><span class="n">cc29</span>
+</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$5158</span><span class="o">/</span><span class="mh">0x0000000101a0f040</span><span class="k">@</span><span class="mi">3369958</span><span class="n">c</span>
 </code></pre></div></div>
 
 <p>Currying buys us (at least) 2 things in Scala:</p>
@@ -261,7 +312,7 @@ argument.</p>
 arguments. For example</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">add2</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
-<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4418</span><span class="o">/</span><span class="mi">1095732886</span><span class="k">@</span><span class="mi">52136001</span>
+<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$5165</span><span class="o">/</span><span class="mh">0x0000000101a18840</span><span class="nd">@a0b6520</span>
 </code></pre></div></div>
 
 <p>Here is an example from the Scala Standard Library to explain the second

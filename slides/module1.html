@@ -9,43 +9,74 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -64,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Introduction</h1>
   <p class="author">Rodrigo Hernández Mota</p>
 </section>
@@ -100,26 +131,26 @@ Data and ML Engineer</p>
 </section>
 <section id="what-have-you-heard-about-scala" class="slide level2">
 <h2>What have you heard about Scala?</h2>
-<p>(let's be honest)</p>
+<p>(let’s be honest)</p>
 </section>
 <section id="first-impressions" class="slide level2">
 <h2>First impressions!</h2>
 </section>
 <section class="slide level2">
 
-<p>Consider the typical <strong>&quot;hello world&quot;</strong> application.</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> com.<span class="fu">intersysconsulting</span>.<span class="fu">nanodegree</span>.<span class="fu">scalaessentials</span>.<span class="fu">examples</span>
-
-<span class="kw">object</span> Hello {
-  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = 
-    <span class="fu">println</span>(<span class="st">&quot;Welcome to the Scala Essentials Nanodegree!&quot;</span>)
-}</code></pre></div>
+<p>Consider the typical <strong>“hello world”</strong> application.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">package</span> com.<span class="fu">intersysconsulting</span>.<span class="fu">nanodegree</span>.<span class="fu">scalaessentials</span>.<span class="fu">examples</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">object</span> Hello {</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="fu">println</span>(<span class="st">&quot;Welcome to the Scala Essentials Nanodegree!&quot;</span>)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">}</a></code></pre></div>
 <p>Any observations?</p>
 </section>
 <section class="slide level2">
 
-<p>Now consider a random <strong>&quot;one-liner&quot;</strong>.</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="dv">1</span> to <span class="dv">10</span> filter { _ % <span class="dv">2</span> == <span class="dv">1</span> } flatMap {x =&gt; x to x + <span class="dv">1</span>}</code></pre></div>
+<p>Now consider a random <strong>“one-liner”</strong>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="dv">1</span> to <span class="dv">10</span> filter { _ % <span class="dv">2</span> == <span class="dv">1</span> } flatMap {x =&gt; x to x + <span class="dv">1</span>}</a></code></pre></div>
 <p>Comments?</p>
 </section>
 <section id="is-scala-a-complex-language" class="slide level2">
@@ -129,11 +160,11 @@ Data and ML Engineer</p>
 
 <p>No, but <a href="https://www.youtube.com/watch?v=ugHsIj60VfQ">simple concepts can have a huge impact</a>.</p>
 <figure>
-<img src="../img/grammar-size.png" alt="Grammar size" /><figcaption>Grammar size</figcaption>
+<img data-src="../img/grammar-size.png" alt="Grammar size" /><figcaption>Grammar size</figcaption>
 </figure>
 </section>
-<section id="so...-what-is-scala" class="slide level2">
-<h2>So... What is Scala?</h2>
+<section id="so-what-is-scala" class="slide level2">
+<h2>So… What is Scala?</h2>
 </section>
 <section class="slide level2">
 
@@ -155,28 +186,28 @@ Data and ML Engineer</p>
 
 <h3 id="scala-is-functional">Scala is functional</h3>
 <p>In Scala <a href="https://docs.scala-lang.org/tour/unified-types.html">every function is a value</a>. It supports <a href="https://docs.scala-lang.org/tour/higher-order-functions.html">higher-order functions</a>, <a href="https://docs.scala-lang.org/tour/nested-functions.html">nesting</a>, <a href="https://alvinalexander.com/scala/fp-book/tail-recursive-algorithms">recursion</a>, and <a href="https://docs.scala-lang.org/tour/multiple-parameter-lists.html">currying</a>.</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> reverse[A](list: List[A]): List[A] = {
-  <span class="kw">def</span> <span class="fu">tailRecReverse</span>(result: List[A], prependOps: (List[A], A) =&gt; List[A])(current: List[A]): List[A] = current <span class="kw">match</span> {
-    <span class="kw">case</span> Nil =&gt; result
-    <span class="kw">case</span> head :: tail =&gt; <span class="fu">tailRecReverse</span>(<span class="fu">prependOps</span>(result, head), prependOps)(tail)
-  }
-  <span class="kw">val</span> reverseOp = <span class="fu">tailRecReverse</span>(List.<span class="fu">empty</span>[A], (xs: List[A], x: A) =&gt; x +: xs) _
-  <span class="fu">reverseOp</span>(list)
-}</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">def</span> reverse[A](list: List[A]): List[A] = {</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">def</span> <span class="fu">tailRecReverse</span>(result: List[A], prependOps: (List[A], A) =&gt; List[A])(current: List[A]): List[A] = current <span class="kw">match</span> {</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="kw">case</span> Nil =&gt; result</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    <span class="kw">case</span> head :: tail =&gt; <span class="fu">tailRecReverse</span>(<span class="fu">prependOps</span>(result, head), prependOps)(tail)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">  <span class="kw">val</span> reverseOp = <span class="fu">tailRecReverse</span>(List.<span class="fu">empty</span>[A], (xs: List[A], x: A) =&gt; x +: xs) _</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="fu">reverseOp</span>(list)</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">}</a></code></pre></div>
 <p>(unnecessarily complex example)</p>
 </section>
 <section class="slide level2">
 
-<h3 id="scala-is-statically-typed...-with-type-inference">Scala is statically typed... with type inference!</h3>
+<h3 id="scala-is-statically-typed-with-type-inference">Scala is statically typed… with type inference!</h3>
 <p>Scala has an strongly typed system that supports <a href="https://docs.scala-lang.org/tour/type-inference.html">type inference</a>.</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> courseName = <span class="st">&quot;Introduction&quot;</span>
-<span class="kw">def</span> <span class="fu">square</span>(x: Int) = x * x</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">val</span> courseName = <span class="st">&quot;Introduction&quot;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">def</span> <span class="fu">square</span>(x: Int) = x * x</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="scala-has-different-runtimes">Scala has different runtimes</h3>
 <p><a href="https://www.scala-lang.org/">JVM</a> - <a href="https://www.scala-js.org/">JS</a> - <a href="https://scala-native.readthedocs.io">LLVM</a><br />
-<img src="../img/runtimes.png" alt="Runtimes" /></p>
+<img data-src="../img/runtimes.png" alt="Runtimes" /></p>
 </section>
 <section class="slide level2">
 
@@ -194,87 +225,87 @@ Data and ML Engineer</p>
 <section class="slide level2">
 
 <h4 id="java-code">Java Code</h4>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span>
-
-<span class="kw">public</span> <span class="kw">class</span> Example {
-
-  <span class="kw">public</span> <span class="kw">class</span> Person {
-    <span class="kw">public</span> <span class="dt">final</span> <span class="bu">String</span> name;
-    <span class="kw">public</span> <span class="dt">final</span> <span class="dt">int</span> age;
-    <span class="fu">Person</span>(<span class="bu">String</span> name, <span class="dt">int</span> age) {
-      <span class="kw">this</span>.<span class="fu">name</span> = name;
-      <span class="kw">this</span>.<span class="fu">age</span>  = age;
-    }
-  }
-
-  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {
-    <span class="bu">ArrayList</span>&lt;Person&gt; peopleList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
-    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>));
-    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>));
-    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>));
-    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>));
-    Person[] people = <span class="kw">new</span> Person[<span class="dv">4</span>];
-    people = peopleList.<span class="fu">toArray</span>(people);
-    <span class="bu">ArrayList</span>&lt;Person&gt; minorList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
-    <span class="bu">ArrayList</span>&lt;Person&gt; adultList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();
-    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; people.<span class="fu">length</span>; i++)
-      (people[i].<span class="fu">age</span> &lt; <span class="dv">18</span> ? minorList : adultList).<span class="fu">add</span>(people[i]);
-    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(minorList.<span class="fu">size</span>());
-    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(adultList.<span class="fu">size</span>());
-  }
-
-  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
-    Example example = <span class="kw">new</span> <span class="fu">Example</span>();
-    example.<span class="fu">count</span>();
-  }
-}</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> Example {</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="kw">public</span> <span class="kw">class</span> Person {</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="kw">public</span> <span class="dt">final</span> <span class="bu">String</span> name;</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">    <span class="kw">public</span> <span class="dt">final</span> <span class="dt">int</span> age;</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="fu">Person</span>(<span class="bu">String</span> name, <span class="dt">int</span> age) {</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">      <span class="kw">this</span>.<span class="fu">name</span> = name;</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">      <span class="kw">this</span>.<span class="fu">age</span>  = age;</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">  }</a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">count</span>() {</a>
+<a class="sourceLine" id="cb5-15" data-line-number="15">    <span class="bu">ArrayList</span>&lt;Person&gt; peopleList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();</a>
+<a class="sourceLine" id="cb5-16" data-line-number="16">    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>));</a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>));</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18">    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>));</a>
+<a class="sourceLine" id="cb5-19" data-line-number="19">    peopleList.<span class="fu">add</span>(<span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>));</a>
+<a class="sourceLine" id="cb5-20" data-line-number="20">    Person[] people = <span class="kw">new</span> Person[<span class="dv">4</span>];</a>
+<a class="sourceLine" id="cb5-21" data-line-number="21">    people = peopleList.<span class="fu">toArray</span>(people);</a>
+<a class="sourceLine" id="cb5-22" data-line-number="22">    <span class="bu">ArrayList</span>&lt;Person&gt; minorList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();</a>
+<a class="sourceLine" id="cb5-23" data-line-number="23">    <span class="bu">ArrayList</span>&lt;Person&gt; adultList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;Person&gt;();</a>
+<a class="sourceLine" id="cb5-24" data-line-number="24">    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; people.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb5-25" data-line-number="25">      (people[i].<span class="fu">age</span> &lt; <span class="dv">18</span> ? minorList : adultList).<span class="fu">add</span>(people[i]);</a>
+<a class="sourceLine" id="cb5-26" data-line-number="26">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(minorList.<span class="fu">size</span>());</a>
+<a class="sourceLine" id="cb5-27" data-line-number="27">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(adultList.<span class="fu">size</span>());</a>
+<a class="sourceLine" id="cb5-28" data-line-number="28">  }</a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb5-30" data-line-number="30">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb5-31" data-line-number="31">    Example example = <span class="kw">new</span> <span class="fu">Example</span>();</a>
+<a class="sourceLine" id="cb5-32" data-line-number="32">    example.<span class="fu">count</span>();</a>
+<a class="sourceLine" id="cb5-33" data-line-number="33">  }</a>
+<a class="sourceLine" id="cb5-34" data-line-number="34">}</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <h4 id="scala-code">Scala Code</h4>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Example <span class="kw">extends</span> App {
-  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)
-  <span class="kw">val</span> people = Array(
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))
-  <span class="kw">val</span> (minors, adults) = people <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)
-  <span class="fu">println</span>(minors.<span class="fu">length</span>)
-  <span class="fu">println</span>(adults.<span class="fu">length</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">object</span> Example <span class="kw">extends</span> App {</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw">val</span> people = Array(</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">  <span class="kw">val</span> (minors, adults) = people <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">  <span class="fu">println</span>(minors.<span class="fu">length</span>)</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">  <span class="fu">println</span>(adults.<span class="fu">length</span>)</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">}</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <h4 id="scala-parallel-code">Scala Parallel Code</h4>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Example <span class="kw">extends</span> App {
-  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)
-  <span class="kw">val</span> people = Array(
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),
-    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))
-  <span class="kw">val</span> (minors, adults) = people.<span class="fu">par</span> <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)
-  <span class="fu">println</span>(minors.<span class="fu">length</span>)
-  <span class="fu">println</span>(adults.<span class="fu">length</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">object</span> Example <span class="kw">extends</span> App {</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="kw">class</span> <span class="fu">Person</span>(<span class="kw">val</span> name: String, <span class="kw">val</span> age: Int)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="kw">val</span> people = Array(</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">15</span>),</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">20</span>),</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;C&quot;</span>, <span class="dv">17</span>),</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">    <span class="kw">new</span> <span class="fu">Person</span>(<span class="st">&quot;D&quot;</span>, <span class="dv">22</span>))</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">  <span class="kw">val</span> (minors, adults) = people.<span class="fu">par</span> <span class="fu">partition</span> (_.<span class="fu">age</span> &lt; <span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">  <span class="fu">println</span>(minors.<span class="fu">length</span>)</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">  <span class="fu">println</span>(adults.<span class="fu">length</span>)</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">}</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="scala-empowers-concurrency-and-distribution">Scala empowers concurrency and distribution</h3>
 <p>You can use <a href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html">data-parallel operations</a> on collections, <a href="https://doc.akka.io/docs/akka/2.5/actors.html">actors</a> for concurrency/distribution or <a href="https://docs.scala-lang.org/overviews/core/futures.html">futures</a> for asynchronous programming. Scala was build with concurrency and <a href="https://docs.scala-lang.org/overviews/parallel-collections/configuration.html">parallelism</a> is mind.</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> x = Future { <span class="fu">someExpensiveComputation</span>() }
-<span class="kw">val</span> y = Future { <span class="fu">someOtherExpensiveComputation</span>() }
-<span class="kw">val</span> z = <span class="kw">for</span> (a &lt;- x; b &lt;- y) <span class="kw">yield</span> a * b
-<span class="kw">for</span> (c &lt;- z) <span class="fu">println</span>(<span class="st">&quot;Result: &quot;</span> + c)
-<span class="fu">println</span>(<span class="st">&quot;Meanwhile, the main thread goes on!&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">val</span> x = Future { <span class="fu">someExpensiveComputation</span>() }</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">val</span> y = Future { <span class="fu">someOtherExpensiveComputation</span>() }</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">val</span> z = <span class="kw">for</span> (a &lt;- x; b &lt;- y) <span class="kw">yield</span> a * b</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">for</span> (c &lt;- z) <span class="fu">println</span>(<span class="st">&quot;Result: &quot;</span> + c)</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="fu">println</span>(<span class="st">&quot;Meanwhile, the main thread goes on!&quot;</span>)</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="scala-in-the-industry">Scala in the industry</h3>
 <p>According to <a href="https://www.lightbend.com/scala">Lightbend</a>:</p>
 <blockquote>
-<p>Scala has taken over the world of Fast Data, which is what some are calling the next wave of computation engines [...] (ability to process event streams in real time).</p>
+<p>Scala has taken over the world of Fast Data, which is what some are calling the next wave of computation engines […] (ability to process event streams in real time).</p>
 </blockquote>
 </section>
 <section class="slide level2">
@@ -300,59 +331,59 @@ Data and ML Engineer</p>
 <section class="slide level2">
 
 <p>According to <a href="https://deanwampler.github.io/">Dean Wampler</a>, traditional big-data tools are <a href="https://www.youtube.com/watch?v=AHB6aJyhDSQ">inefficient and hard to implement</a>.</p>
-<p>Let's consider a <strong>word-count</strong> application.</p>
+<p>Let’s consider a <strong>word-count</strong> application.</p>
 </section>
 <section class="slide level2">
 
 <p><strong>WordCount Example</strong> using MapReduce with Java</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import</span><span class="im"> org.apache.hadoop.*;</span>
-
-<span class="kw">public</span> <span class="kw">class</span> WordCount {
-    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> TokenizerMapper 
-        <span class="kw">extends</span> Mapper&lt;<span class="bu">Object</span>, <span class="bu">Text</span>, <span class="bu">Text</span>, IntWriter&gt; {
-        <span class="kw">private</span> <span class="dt">final</span> <span class="dt">static</span> IntWritable one = <span class="kw">new</span> <span class="fu">IntWritable</span>(<span class="dv">1</span>);
-        <span class="kw">private</span> <span class="bu">Text</span> word = <span class="kw">new</span> <span class="bu">Text</span>();
-        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">map</span>(<span class="bu">Object</span> key, <span class="bu">Text</span> value, <span class="bu">Context</span> context)
-            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {
-            <span class="bu">StringTokenizer</span> strTokenizer = <span class="kw">new</span> <span class="bu">StringTokenizer</span>(value.<span class="fu">toString</span>());
-            <span class="kw">while</span> (strTokenizer.<span class="fu">hasMoreTokens</span>()) {
-                word.<span class="fu">set</span>(strTokenizer.<span class="fu">nextToken</span>());
-                context.<span class="fu">write</span>(word, one);
-            }
-        }
-    }
-    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> IntSumReducer
-        <span class="kw">extends</span> Reduces&lt;<span class="bu">Text</span>, IntWritable, <span class="bu">Text</span>, IntWritable&gt; {
-        <span class="kw">private</span> IntWritable result = <span class="kw">new</span> <span class="fu">IntWritable</span>();
-        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">reduce</span>(<span class="bu">Text</span> key, Interable&lt;IntWritable&gt; values, <span class="bu">Context</span> context) 
-            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {
-            <span class="dt">int</span> sum = <span class="dv">0</span>;
-            <span class="kw">for</span> (IntWritable val : values) {
-                sum += val.<span class="fu">get</span>();
-            }
-            resut.<span class="fu">set</span>(sum);
-            context.<span class="fu">write</span>(key, result);
-        }
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">import</span><span class="im"> org.apache.hadoop.*;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">public</span> <span class="kw">class</span> WordCount {</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> TokenizerMapper </a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">        <span class="kw">extends</span> Mapper&lt;<span class="bu">Object</span>, <span class="bu">Text</span>, <span class="bu">Text</span>, IntWriter&gt; {</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">        <span class="kw">private</span> <span class="dt">final</span> <span class="dt">static</span> IntWritable one = <span class="kw">new</span> <span class="fu">IntWritable</span>(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">        <span class="kw">private</span> <span class="bu">Text</span> word = <span class="kw">new</span> <span class="bu">Text</span>();</a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">map</span>(<span class="bu">Object</span> key, <span class="bu">Text</span> value, <span class="bu">Context</span> context)</a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">            <span class="bu">StringTokenizer</span> strTokenizer = <span class="kw">new</span> <span class="bu">StringTokenizer</span>(value.<span class="fu">toString</span>());</a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">            <span class="kw">while</span> (strTokenizer.<span class="fu">hasMoreTokens</span>()) {</a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">                word.<span class="fu">set</span>(strTokenizer.<span class="fu">nextToken</span>());</a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">                context.<span class="fu">write</span>(word, one);</a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">            }</a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">        }</a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">    }</a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">    <span class="kw">public</span> <span class="dt">static</span> <span class="kw">class</span> IntSumReducer</a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">        <span class="kw">extends</span> Reduces&lt;<span class="bu">Text</span>, IntWritable, <span class="bu">Text</span>, IntWritable&gt; {</a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">        <span class="kw">private</span> IntWritable result = <span class="kw">new</span> <span class="fu">IntWritable</span>();</a>
+<a class="sourceLine" id="cb9-20" data-line-number="20">        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">reduce</span>(<span class="bu">Text</span> key, Interable&lt;IntWritable&gt; values, <span class="bu">Context</span> context) </a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">            <span class="kw">throws</span> <span class="bu">IOException</span>, <span class="bu">InterruptedException</span> {</a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">            <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">            <span class="kw">for</span> (IntWritable val : values) {</a>
+<a class="sourceLine" id="cb9-24" data-line-number="24">                sum += val.<span class="fu">get</span>();</a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">            }</a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">            resut.<span class="fu">set</span>(sum);</a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">            context.<span class="fu">write</span>(key, result);</a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">        }</a>
+<a class="sourceLine" id="cb9-29" data-line-number="29">    }</a>
+<a class="sourceLine" id="cb9-30" data-line-number="30">}</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p><strong>Wordcount Example</strong> using Spark with Scala</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">sql</span>._
-
-<span class="kw">object</span> WordCount <span class="kw">extends</span> App <span class="kw">with</span> Context {
-  <span class="kw">import</span> spark.<span class="fu">implicits</span>._
-  <span class="kw">final</span> <span class="kw">case</span> <span class="kw">class</span> <span class="fu">WordCount</span>(word: String, count: Long)
-  <span class="kw">val</span> readPath = <span class="st">&quot;path/to/input/file&quot;</span>
-  <span class="kw">val</span> writePath = <span class="st">&quot;path/to/output/file&quot;</span>
-  <span class="kw">val</span> data: Dataset[String] = spark.<span class="fu">read</span>.<span class="fu">textFile</span>(readPath)
-  <span class="kw">val</span> wordCount: Dataset[WordCount] = data
-    .<span class="fu">flatMap</span>(_.<span class="fu">split</span>(<span class="st">&quot;&quot;&quot;\s+&quot;&quot;&quot;</span>)).<span class="fu">map</span>(_.<span class="fu">toLowerCase</span>.<span class="fu">replaceAll</span>(<span class="st">&quot;[^A-Za-z0-9]&quot;</span>, <span class="st">&quot;&quot;</span>)).<span class="fu">filter</span>(_.<span class="fu">length</span> &gt; <span class="dv">1</span>)
-    .<span class="fu">groupByKey</span>(identity).<span class="fu">count</span>().<span class="fu">map</span>({<span class="kw">case</span> (w, c) =&gt; <span class="fu">WordCount</span>(w, c)})
-    .<span class="fu">sort</span>($<span class="st">&quot;count&quot;</span>.<span class="fu">desc</span>)
-  wordCount.<span class="fu">coalesce</span>(<span class="dv">1</span>).<span class="fu">write</span>.<span class="fu">csv</span>(writePath)
-}</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">sql</span>._</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">object</span> WordCount <span class="kw">extends</span> App <span class="kw">with</span> Context {</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="kw">import</span> spark.<span class="fu">implicits</span>._</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="kw">final</span> <span class="kw">case</span> <span class="kw">class</span> <span class="fu">WordCount</span>(word: String, count: Long)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">  <span class="kw">val</span> readPath = <span class="st">&quot;path/to/input/file&quot;</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">  <span class="kw">val</span> writePath = <span class="st">&quot;path/to/output/file&quot;</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">  <span class="kw">val</span> data: Dataset[String] = spark.<span class="fu">read</span>.<span class="fu">textFile</span>(readPath)</a>
+<a class="sourceLine" id="cb10-9" data-line-number="9">  <span class="kw">val</span> wordCount: Dataset[WordCount] = data</a>
+<a class="sourceLine" id="cb10-10" data-line-number="10">    .<span class="fu">flatMap</span>(_.<span class="fu">split</span>(<span class="st">&quot;&quot;&quot;\s+&quot;&quot;&quot;</span>)).<span class="fu">map</span>(_.<span class="fu">toLowerCase</span>.<span class="fu">replaceAll</span>(<span class="st">&quot;[^A-Za-z0-9]&quot;</span>, <span class="st">&quot;&quot;</span>)).<span class="fu">filter</span>(_.<span class="fu">length</span> &gt; <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb10-11" data-line-number="11">    .<span class="fu">groupByKey</span>(identity).<span class="fu">count</span>().<span class="fu">map</span>({<span class="kw">case</span> (w, c) =&gt; <span class="fu">WordCount</span>(w, c)})</a>
+<a class="sourceLine" id="cb10-12" data-line-number="12">    .<span class="fu">sort</span>($<span class="st">&quot;count&quot;</span>.<span class="fu">desc</span>)</a>
+<a class="sourceLine" id="cb10-13" data-line-number="13">  wordCount.<span class="fu">coalesce</span>(<span class="dv">1</span>).<span class="fu">write</span>.<span class="fu">csv</span>(writePath)</a>
+<a class="sourceLine" id="cb10-14" data-line-number="14">}</a></code></pre></div>
 <p>See the complete example <a href="https://github.com/RHDZMOTA/spark-wordcount/blob/develop/src/main/scala/com/hdzco/spark/example/App.scala">here</a>.</p>
 </section>
 <section class="slide level2">
@@ -380,10 +411,10 @@ $ sudo dpkg -i scala-2.12.6.deb</code></pre>
 
 <h3 id="hello-world">Hello, World!</h3>
 <p>Create a <code>helloworld.scala</code> file with the following content:</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> HelloWorld {
-  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit =
-    <span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">object</span> HelloWorld {</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit =</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">    <span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>)</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">}</a></code></pre></div>
 <p>In the command line:</p>
 <pre class="commandline"><code>$ scala helloworld.scala
 $ scalac helloworld.scala &amp;&amp; scala HelloWorld</code></pre>
@@ -435,48 +466,48 @@ Hello, World!</code></pre>
 <section class="slide level2">
 
 <p>Create a file named <code>fibonacci.sc</code> containing:</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> scala.<span class="fu">annotation</span>.<span class="fu">tailrec</span>
-
-<span class="kw">def</span> <span class="fu">fibonacci</span>(n: Int): List[BigInt] = {
-  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int): BigInt =
-    <span class="kw">if</span> (n &lt; <span class="dv">2</span>) <span class="dv">1</span> <span class="kw">else</span> <span class="fu">recFibo</span>(n - <span class="dv">1</span>) + <span class="fu">recFibo</span>(n - <span class="dv">2</span>)
-  <span class="kw">if</span> (n &lt;= <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> <span class="dv">0</span> :: (<span class="dv">0</span> until n).<span class="fu">toList</span>.<span class="fu">map</span>(recFibo)
-}
-
-<span class="kw">def</span> <span class="fu">tailRecFibonacci</span>(n: Int): List[BigInt] = {
-  @tailrec
-  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int, a: BigInt = <span class="dv">0</span>, b: BigInt = <span class="dv">1</span>): BigInt = n <span class="kw">match</span> {
-    <span class="kw">case</span> <span class="dv">0</span> =&gt; a
-    <span class="kw">case</span> <span class="dv">1</span> =&gt; b
-    <span class="kw">case</span> _ =&gt; <span class="fu">recFibo</span>(n<span class="dv">-1</span>, b, a+b)
-  }
-  <span class="kw">if</span> (n &lt; <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> (<span class="dv">0</span> to n).<span class="fu">toList</span>.<span class="fu">map</span>(<span class="fu">recFibo</span>(_))
-}
-
-@main
-<span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>): Unit = {
-  <span class="fu">println</span>(s<span class="st">&quot;Fibonacci sequence for i=$i : ${tailRecFibonacci(i).toString}&quot;</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">import</span> scala.<span class="fu">annotation</span>.<span class="fu">tailrec</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">def</span> <span class="fu">fibonacci</span>(n: Int): List[BigInt] = {</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int): BigInt =</a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">    <span class="kw">if</span> (n &lt; <span class="dv">2</span>) <span class="dv">1</span> <span class="kw">else</span> <span class="fu">recFibo</span>(n - <span class="dv">1</span>) + <span class="fu">recFibo</span>(n - <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">  <span class="kw">if</span> (n &lt;= <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> <span class="dv">0</span> :: (<span class="dv">0</span> until n).<span class="fu">toList</span>.<span class="fu">map</span>(recFibo)</a>
+<a class="sourceLine" id="cb16-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="kw">def</span> <span class="fu">tailRecFibonacci</span>(n: Int): List[BigInt] = {</a>
+<a class="sourceLine" id="cb16-10" data-line-number="10">  @tailrec</a>
+<a class="sourceLine" id="cb16-11" data-line-number="11">  <span class="kw">def</span> <span class="fu">recFibo</span>(n: Int, a: BigInt = <span class="dv">0</span>, b: BigInt = <span class="dv">1</span>): BigInt = n <span class="kw">match</span> {</a>
+<a class="sourceLine" id="cb16-12" data-line-number="12">    <span class="kw">case</span> <span class="dv">0</span> =&gt; a</a>
+<a class="sourceLine" id="cb16-13" data-line-number="13">    <span class="kw">case</span> <span class="dv">1</span> =&gt; b</a>
+<a class="sourceLine" id="cb16-14" data-line-number="14">    <span class="kw">case</span> _ =&gt; <span class="fu">recFibo</span>(n<span class="dv">-1</span>, b, a+b)</a>
+<a class="sourceLine" id="cb16-15" data-line-number="15">  }</a>
+<a class="sourceLine" id="cb16-16" data-line-number="16">  <span class="kw">if</span> (n &lt; <span class="dv">0</span>) List[BigInt]() <span class="kw">else</span> (<span class="dv">0</span> to n).<span class="fu">toList</span>.<span class="fu">map</span>(<span class="fu">recFibo</span>(_))</a>
+<a class="sourceLine" id="cb16-17" data-line-number="17">}</a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19">@main</a>
+<a class="sourceLine" id="cb16-20" data-line-number="20"><span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>): Unit = {</a>
+<a class="sourceLine" id="cb16-21" data-line-number="21">  <span class="fu">println</span>(s<span class="st">&quot;Fibonacci sequence for i=$i : ${tailRecFibonacci(i).toString}&quot;</span>)</a>
+<a class="sourceLine" id="cb16-22" data-line-number="22">}</a></code></pre></div>
 <p>Run the script with <code>amm fibonacci.sc 10</code></p>
 </section>
 <section class="slide level2">
 
 <p>You can import other scripts and Ivy Dependencies.</p>
 <p>Create a file <code>fibosum.sc</code> containing:</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> $file.<span class="fu">fibonacci</span>
-<span class="kw">import</span> scala.<span class="fu">util</span>.<span class="fu">Try</span>
-
-<span class="kw">def</span> <span class="fu">fibosum</span>(i: Int)( fib: Int =&gt; List[BigInt]): BigInt = 
-  <span class="fu">fib</span>(i).<span class="fu">foldRight</span>(<span class="dv">0</span>: BigInt)(_ + _)
-
-@main 
-<span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>, tailrec: Boolean = <span class="kw">true</span>): Unit = {
-  <span class="kw">val</span> fiboSum = <span class="fu">fibosum</span>(i) _
-  <span class="kw">val</span> res: Option[BigInt] = <span class="fu">Try</span>(
-    <span class="kw">if</span> (tailrec) <span class="fu">fiboSum</span>(fibonacci.<span class="fu">tailRecFibonacci</span> _)
-    <span class="kw">else</span> <span class="fu">fiboSum</span>(fibonacci.<span class="fu">fibonacci</span> _)).<span class="fu">toOption</span> 
-  <span class="fu">println</span>(s<span class="st">&quot;The sum of the fibonacci sequence for i=$i is $res.&quot;</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">import</span> $file.<span class="fu">fibonacci</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">import</span> scala.<span class="fu">util</span>.<span class="fu">Try</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="kw">def</span> <span class="fu">fibosum</span>(i: Int)( fib: Int =&gt; List[BigInt]): BigInt = </a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">  <span class="fu">fib</span>(i).<span class="fu">foldRight</span>(<span class="dv">0</span>: BigInt)(_ + _)</a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7">@main </a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="kw">def</span> <span class="fu">main</span>(i: Int = <span class="dv">5</span>, tailrec: Boolean = <span class="kw">true</span>): Unit = {</a>
+<a class="sourceLine" id="cb17-9" data-line-number="9">  <span class="kw">val</span> fiboSum = <span class="fu">fibosum</span>(i) _</a>
+<a class="sourceLine" id="cb17-10" data-line-number="10">  <span class="kw">val</span> res: Option[BigInt] = <span class="fu">Try</span>(</a>
+<a class="sourceLine" id="cb17-11" data-line-number="11">    <span class="kw">if</span> (tailrec) <span class="fu">fiboSum</span>(fibonacci.<span class="fu">tailRecFibonacci</span> _)</a>
+<a class="sourceLine" id="cb17-12" data-line-number="12">    <span class="kw">else</span> <span class="fu">fiboSum</span>(fibonacci.<span class="fu">fibonacci</span> _)).<span class="fu">toOption</span> </a>
+<a class="sourceLine" id="cb17-13" data-line-number="13">  <span class="fu">println</span>(s<span class="st">&quot;The sum of the fibonacci sequence for i=$i is $res.&quot;</span>)</a>
+<a class="sourceLine" id="cb17-14" data-line-number="14">}</a></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -515,7 +546,7 @@ $ sbt about</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Let's create a minimal project:</p>
+<p>Let’s create a minimal project:</p>
 <pre class="commandline"><code>$ mkdir hello-world &amp;&amp; cd hello-world
 $ mkdir -p src/main/scala/example
 $ mkdir -p src/test/scala/example
@@ -524,13 +555,13 @@ $ touch build.sbt</code></pre>
 <section class="slide level2">
 
 <p>Create a source file at <code>src/main/scala/example/Hello.scala</code></p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
-
-<span class="kw">object</span> Hello {
-  <span class="kw">val</span> message = <span class="st">&quot;Hello, World!&quot;</span>
-  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = 
-    <span class="fu">println</span>(message)
-}</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">package</span> example</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="kw">object</span> Hello {</a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">  <span class="kw">val</span> message = <span class="st">&quot;Hello, World!&quot;</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]): Unit = </a>
+<a class="sourceLine" id="cb20-6" data-line-number="6">    <span class="fu">println</span>(message)</a>
+<a class="sourceLine" id="cb20-7" data-line-number="7">}</a></code></pre></div>
 <p>Now we can:</p>
 <ul>
 <li>Compile the project with <code>sbt compile</code></li>
@@ -540,27 +571,27 @@ $ touch build.sbt</code></pre>
 <section class="slide level2">
 
 <p>Add dependencies in the <code>build.sbt</code> file:</p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">ThisBuild / scalaVersion := <span class="st">&quot;2.12.7&quot;</span>
-ThisBuild / organization := <span class="st">&quot;com.example&quot;</span>
-
-<span class="kw">lazy</span> <span class="kw">val</span> hello = (project in <span class="fu">file</span>(<span class="st">&quot;.&quot;</span>))
-  .<span class="fu">settings</span>(
-    name := <span class="st">&quot;Hello&quot;</span>,
-    libraryDependencies += <span class="st">&quot;org.scalatest&quot;</span> %% <span class="st">&quot;scalatest&quot;</span> % <span class="st">&quot;3.0.5&quot;</span> % Test,
-  )</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb21-1" data-line-number="1">ThisBuild / scalaVersion := <span class="st">&quot;2.12.7&quot;</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">ThisBuild / organization := <span class="st">&quot;com.example&quot;</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="kw">lazy</span> <span class="kw">val</span> hello = (project in <span class="fu">file</span>(<span class="st">&quot;.&quot;</span>))</a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">  .<span class="fu">settings</span>(</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">    name := <span class="st">&quot;Hello&quot;</span>,</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">    libraryDependencies += <span class="st">&quot;org.scalatest&quot;</span> %% <span class="st">&quot;scalatest&quot;</span> % <span class="st">&quot;3.0.5&quot;</span> % Test,</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8">  )</a></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Now we can add tests in <code>src/test/scala/example/HelloSpec.scala</code></p>
-<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
-
-<span class="kw">import</span> org.<span class="fu">scalatest</span>.{FlatSpec, Matchers}
-
-<span class="kw">class</span> HelloSpec <span class="kw">extends</span> FlatSpec <span class="kw">with</span> Matchers {
-  <span class="st">&quot;The Hello object&quot;</span> should <span class="st">&quot;contain a message starting with &#39;Hello&#39;&quot;</span> in {
-    <span class="fu">assert</span>(Hello.<span class="fu">message</span> startsWith <span class="st">&quot;Hello&quot;</span>)
-  }
-}</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">package</span> example</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="kw">import</span> org.<span class="fu">scalatest</span>.{FlatSpec, Matchers}</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw">class</span> HelloSpec <span class="kw">extends</span> FlatSpec <span class="kw">with</span> Matchers {</a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">  <span class="st">&quot;The Hello object&quot;</span> should <span class="st">&quot;contain a message starting with &#39;Hello&#39;&quot;</span> in {</a>
+<a class="sourceLine" id="cb22-7" data-line-number="7">    <span class="fu">assert</span>(Hello.<span class="fu">message</span> startsWith <span class="st">&quot;Hello&quot;</span>)</a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">  }</a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">}</a></code></pre></div>
 <p>Run tests with <code>sbt test</code></p>
 </section>
 <section class="slide level2">
@@ -599,7 +630,7 @@ res0: String = Hello, World!
 </section>
 <section class="slide level2">
 
-<p><a href="https://www.jetbrains.com/idea/download/">IntelliJ Idea</a> is one of the bests IDEs with <a href="https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html">Scala support</a>. We'll be using this IDE for the Nanodegree.</p>
+<p><a href="https://www.jetbrains.com/idea/download/">IntelliJ Idea</a> is one of the bests IDEs with <a href="https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html">Scala support</a>. We’ll be using this IDE for the Nanodegree.</p>
 <p>Students are encouraged to donwload the Jetbrains <a href="https://www.jetbrains.com/toolbox/app/">Toolbox App</a>.</p>
 </section>
 <section class="slide level2">
@@ -615,7 +646,7 @@ $ idea . &amp;</code></pre>
 <ol type="1">
 <li>Use the <code>scala/hello-world.g8</code> giter8 template to create a project.</li>
 <li>Run the project using the <code>sbt run</code> command form the CLI.</li>
-<li>Use IntelliJ Idea to edit the project to print &quot;Howdy, World!&quot; instead of &quot;Hello, World!&quot;</li>
+<li>Use IntelliJ Idea to edit the project to print “Howdy, World!” instead of “Hello, World!”</li>
 </ol>
 </section>
 <section class="slide level2">
@@ -632,7 +663,7 @@ $ idea . &amp;</code></pre>
 <li><a href="https://www.youtube.com/watch?v=YXDm3WHZT5g">Plain Functional Programming</a> by Martin Odersky</li>
 <li><a href="https://www.youtube.com/watch?v=DFAdLCqDbLQ">Why Big Data Needs to be Functional</a> by Dean Wampler</li>
 <li><a href="https://www.youtube.com/watch?v=NW5h8d_ZyOs">Spark, the Ultimate Scala Collection</a> by Martin Odersky</li>
-<li><a href="https://www.youtube.com/watch?v=9lWrt6H6UdE">What's Different in Dotty</a> by Martin Odersky</li>
+<li><a href="https://www.youtube.com/watch?v=9lWrt6H6UdE">What’s Different in Dotty</a> by Martin Odersky</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -643,8 +674,8 @@ $ idea . &amp;</code></pre>
 <li><a href="https://docs.scala-lang.org/getting-started.html">Getting Started with Scala</a> official archive</li>
 <li><a href="https://www.artima.com/scalazine/articles/origins_of_scala.html">The Origins of Scala</a> by Bill Venners and Frank Sommers​</li>
 <li><a href="https://www.artima.com/scalazine/articles/goals_of_scala.html">Goals of Scala</a> by Bill Venners and Frank Sommers​</li>
-<li><a href="https://www.artima.com/scalazine/articles/scalas_type_system.html">Scala's Type System</a> by Bill Venners and Frank Sommers​</li>
-<li><a href="https://www.scala-lang.org/old/node/239.html">Scala's Prehistory</a> official archive</li>
+<li><a href="https://www.artima.com/scalazine/articles/scalas_type_system.html">Scala’s Type System</a> by Bill Venners and Frank Sommers​</li>
+<li><a href="https://www.scala-lang.org/old/node/239.html">Scala’s Prehistory</a> official archive</li>
 <li><a href="https://www.signifytechnology.com/blog/2018/01/why-scala">Why Scala?</a> by Martin Odersky</li>
 <li><a href="https://www.artima.com/pins1ed/">Programming in Scala</a> by Martin Odersky</li>
 </ul>
@@ -660,12 +691,31 @@ $ idea . &amp;</code></pre>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'reveal.js/plugin/math/math.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
