@@ -73,7 +73,7 @@ valid age (according to above definition).
 ### Adding/extending types with convenient syntax with implicit classes
 
 One possible way to define a new operation on an existing type is to create an utility method inside
-a (singleton, or "static" in Java terminology) object:
+a (singleton) object:
 
 ```scala
 object StringUtilities {
@@ -309,5 +309,31 @@ instances).
 But to be able to fully understand the details, we need to learn some other basic concepts first.
 
 ## Monoids
+
+### Warm-up and additional links
+
+For a mostly mathless discussion of monoids, please take a look at [Monoid without tears], by Scott
+Wlaschin. You will find more examples in part 2 of this series, in [Monoids in practice].
+
+The following links could help you realize further monoid applications. These are much more than
+intelectual curiosities!
+
+- [Google’s MapReduce Programming Model — Revisited]
+- [Streaming examples for Apache Spark]
+- [Hourglass: a Library for Incremental Processing on Hadoop]
+- [Apache Datafu Hourglass source code]
+
+For a discussion using more math, take a look at [Category Theory for Programmers].
+
+Finally, for the Scalaz perspective, please take a look at [Appendable Things].
+
+[Monoids without tears]: https://fsharpforfunandprofit.com/posts/monoids-without-tears/
+[Monoids in practice]: https://fsharpforfunandprofit.com/posts/monoids-part2/
+[Google’s MapReduce Programming Model — Revisited]: https://userpages.uni-koblenz.de/~laemmel/MapReduce/paper.pdf
+[Streaming examples for Apache Spark]: https://github.com/mesos/spark/pull/480
+[Hourglass: a Library for Incremental Processing on Hadoop]: https://www.slideshare.net/matthewterencehayes/hourglass-27038297
+[Apache Datafu Hourglass source code]: https://github.com/apache/datafu
+[Category Theory for Programmers]: https://github.com/hmemcpy/milewski-ctfp-pdf/releases/download/v1.0.0/category-theory-for-programmers.pdf
+[Appendable things]: https://leanpub.com/fpmortals/read#leanpub-auto-appendable-things
 
 ## Functional data structures and programming patterns
