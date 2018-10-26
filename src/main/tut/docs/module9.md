@@ -15,8 +15,8 @@ The following resources could be helpful:
 
 - Module 7 material
 - [Essential Scala], chapter 5
-- [Better monadic for plugin].
-- [For comprehensions] from Sam Halliday (@fommil).
+- [Better monadic for plugin]
+- [For comprehensions] from Sam Halliday (@fommil)
 
 [Essential Scala]: https://underscore.io/books/essential-scala/
 [Better monadic for plugin]: https://github.com/oleg-py/better-monadic-for
@@ -190,11 +190,11 @@ The above code forbids the creation of `Age` instances that do not obey the abov
 For more information on the rationale for the unlikely-sounding combination of keywords
 `sealed abstract case class` above, see [Case Classes w/ Smart Ctors] by Rob Norris.
 
-An alternative encoding using macros is explained in [Enforcing invariants in scala datatypes]. We
+An alternative encoding using macros is explained in [Enforcing invariants in Scala datatypes]. We
 will stick to the simpler variant illustrated above with `Age`.
 
 [Case Classes w/ Smart Ctors]: https://gist.github.com/tpolecat/a5cb0dc9adeacc93f846835ed21c92d2
-[Enforcing invariants in scala datatypes]: https://www.cakesolutions.net/teamblogs/enforcing-invariants-in-scala-datatypes
+[Enforcing invariants in Scala datatypes]: https://www.cakesolutions.net/teamblogs/enforcing-invariants-in-scala-datatypes
 
 ### `NonEmptyList` data structure
 
@@ -218,7 +218,8 @@ case object NameCannotBeEmpty extends NameError
 case object NameCannotBeWhitespaceOnly extends NameError
 ```
 
-So, given a input `String`, the following type models what could happen during validation of a name:
+So, given an input `String`, the following type models what could happen during validation of a
+name:
 
 ```scala
 Either[NonEmptyList[NameError, Name]]
@@ -244,8 +245,11 @@ sealed trait NameError extends ValidationError
 // same name error casas as before
 ```
 
-So, to model all the possible things that can go wrong with both a `Name` and an `Age` (and some
-others that we haven't yet considered!), or a validated `Person`:
+So, the following type could be used to model
+
+1. all the possible things that can go wrong with both a `Name` and an `Age` (and some others that
+   we haven't yet considered!), or
+2. a validated `Person`
 
 ```scala
 Either[NonEmptyList[ValidationError], Person]
@@ -253,7 +257,7 @@ Either[NonEmptyList[ValidationError], Person]
 
 The problem with `Either` is that a for comprehension using the `Either` Monad, shortcuts on the
 first error, and do not report all the things that could have gone wrong during the validation
-process. Study the following snippet (or skip it if you already understand which is the problem):
+process. Study the following snippet (or skip it if you already understand which the problem is):
 
 ```scala
 object EitherExample {
@@ -277,7 +281,6 @@ object EitherExample {
     n <- name
     a <- age
   } yield Person(n, a)
-
 
   // Reports "Age is too big" error, OK
   val p1: Validated[Person] = p(n3, a2)
