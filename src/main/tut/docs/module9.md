@@ -7,7 +7,7 @@ author: M.C. Oscar Vargas Torres
 
 # Module 9: Functional programming
 
-## Introduction and prerequisits
+## Introduction and prerequisites
 
 ### For comprehensions
 
@@ -308,7 +308,7 @@ instances).
 
 But to be able to fully understand the details, we need to learn some other basic concepts first.
 
-## Monoids
+## Monoids & Semigroups
 
 ### Warm-up and additional links
 
@@ -327,6 +327,163 @@ For a discussion using more math, take a look at [Category Theory for Programmer
 
 Finally, for the Scalaz perspective, please take a look at [Appendable Things].
 
+### Appendable things with Scalaz
+
+#### `MonoidExample1`
+
+From [Appendable Things]:
+
+> A **Semigroup** can be defined for a type if two values can be combined. The operation must be
+> associative.
+>
+> A Monoid is a Semigroup with a zero element (also called empty or identity).
+
+(Take a look at additional examples/explanations there!)
+
+`MonoidExample1` uses
+
+1. Addition over integers.
+2. Multiplication over integers.
+
+The first set of imports (inside a block comment) are more specific, and the second block, is the
+easiest to write in order to make the code compile.
+
+```scala
+/*
+import scalaz.Tags.Multiplication
+import scalaz.std.anyVal.{intInstance, intMultiplicationNewType}
+import scalaz.syntax.monoid._
+import scalaz.{@@, Tag}
+*/
+
+import scalaz._
+import Tags.Multiplication
+import Scalaz._
+
+object MonoidExample1 {
+  // implicit val intInstance: Monoid[Int] with Enum[Int] with Show[Int]
+  // https://github.com/scalaz/scalaz/blob/v7.2.26/core/src/main/scala/scalaz/std/AnyVal.scala#L234
+  // Uses Arithmetic sum as the binary operation
+  // https://github.com/scalaz/scalaz/blob/v7.2.26/core/src/main/scala/scalaz/std/AnyVal.scala#L237
+  val x1: Int = 1 |+| 2
+
+  // To use a different binary operation, use a tagged type
+  val x2: Int @@ Multiplication = Multiplication(1) |+| Multiplication(2)
+}
+```
+
+There can only be one implementation of a typeclass for a given type parameter. To avoid breaking
+typeclass coherence, `MonoidExample1` uses type tags (notice `@@` and `Multiplication`).
+
+#### `MonoidExample2`
+
+Defining an `Option[A] @@ Multiplication` monoid:
+
+```scala
+/*
+import scalaz.Tags.Multiplication
+import scalaz.std.anyVal.intInstance
+import scalaz.std.option.optionMonoid
+import scalaz.std.option.optionSyntax._
+import scalaz.syntax.monoid._
+import scalaz.{@@, Monoid, Tag, Tags}
+*/
+
+import scalaz._
+import Tags.Multiplication
+import Scalaz._
+
+object MonoidExample2 {
+
+  val x1: Option[Int] = 1.some |+| 2.some
+
+  type MultOption[A] = Option[A] @@ Multiplication
+
+  implicit def optionMult[A]
+  (implicit ev: Monoid[Option[A]]): Monoid[MultOption[A]] =
+    new Monoid[MultOption[A]] {
+      def zero: MultOption[A] = Tag(None)
+
+      def append(f1: MultOption[A],
+                 f2: => MultOption[A]): MultOption[A] =
+        Tag(Tag.unwrap(f1) |+| Tag.unwrap(f1))
+    }
+
+  val x2: MultOption[Int] =
+    Multiplication(1.some) |+| Multiplication(2.some)
+}
+```
+
+#### `MonoidExample3`
+
+Leveraging Scalaz' `LastMaybe[A]` monoid:
+
+```scala
+/*
+import scalaz.LastOption
+import scalaz.Tags.Last
+import scalaz.std.option.optionLast
+import scalaz.std.option.optionSyntax._
+import scalaz.syntax.monoid._
+*/
+
+import scalaz._
+import Maybe._
+import Scalaz._
+
+object MonoidExample3 {
+  val x1: LastMaybe[Int] =
+    1.just.last |+| 2.just.last
+
+  val ns: EphemeralStream[LastMaybe[Int]] =
+    (1 |=> 5).map(_.just.last)
+
+  val lastN: LastMaybe[Int] =
+    ns.fold
+
+  val x2: Maybe[Int] @@ Tags.Last =
+    empty.last
+}
+```
+
+#### `MonoidExample4`
+
+Monoids instances using
+
+- Disjunction (Logical Or) over `Boolean`s
+- Conjunction (Logical And) over `Boolean`s
+
+```scala
+import scalaz.@@
+import scalaz.Tags.{Conjunction, Disjunction}
+import scalaz.std.anyVal.{booleanConjunctionNewTypeInstance, booleanDisjunctionNewTypeInstance}
+import scalaz.syntax.monoid._
+import scalaz.syntax.std.boolean._
+//import scala.language.postfixOps
+
+object MonoidExample4 {
+  // Disjunction: Or
+  val b1: Boolean @@ Disjunction =
+    Disjunction(true) |+| false.disjunction
+
+  val b2: Boolean @@ Disjunction =
+    true.disjunction |+| false.disjunction
+
+  val b3: Boolean @@ Disjunction =
+    true.|\/| |+| false.|\/|
+
+  // Conjunction: And
+  val b4: Boolean @@ Conjunction =
+    true.conjunction |+| false.conjunction
+
+  val b5: Boolean @@ Conjunction =
+    Conjunction(true) |+| Conjunction(false)
+
+  val b6: Boolean @@ Conjunction =
+    true.|∧| |+| false.|∧|
+}
+```
+
 [Monoids without tears]: https://fsharpforfunandprofit.com/posts/monoids-without-tears/
 [Monoids in practice]: https://fsharpforfunandprofit.com/posts/monoids-part2/
 [Google’s MapReduce Programming Model — Revisited]: https://userpages.uni-koblenz.de/~laemmel/MapReduce/paper.pdf
@@ -334,6 +491,131 @@ Finally, for the Scalaz perspective, please take a look at [Appendable Things].
 [Hourglass: a Library for Incremental Processing on Hadoop]: https://www.slideshare.net/matthewterencehayes/hourglass-27038297
 [Apache Datafu Hourglass source code]: https://github.com/apache/datafu
 [Category Theory for Programmers]: https://github.com/hmemcpy/milewski-ctfp-pdf/releases/download/v1.0.0/category-theory-for-programmers.pdf
-[Appendable things]: https://leanpub.com/fpmortals/read#leanpub-auto-appendable-things
+[Appendable Things]: https://leanpub.com/fpmortals/read#leanpub-auto-appendable-things
+
+## Leveraging `Validation` and `ValidationNel`
+
+The following trait can be used for validation of business rules:
+
+```scala
+package semigroupexamples
+
+/*
+import scalaz._
+import Scalaz._
+import Validation.liftNel
+*/
+
+import scalaz.Validation.liftNel
+import scalaz.syntax.foldable1._
+import scalaz.{Failure, IList, NonEmptyList, Reader, Semigroup, Success}
+
+abstract class ValidationError
+
+trait ValidationRules[A] {
+  type E <: ValidationError
+  type Rule = Reader[A, Validated[A]]
+
+  def must(predicate: A => Boolean, error: E): Rule =
+    Reader { a =>
+      if (predicate(a)) Success(a)
+      else Failure(NonEmptyList.nel(error, IList.empty))
+    }
+
+  def mustNot(predicate: A => Boolean, error: E): Rule =
+    Reader { liftNel(_)(predicate, error) }
+
+  def rules: NonEmptyList[Rule]
+
+  implicit val firstSemigroup: Semigroup[A] =
+    Semigroup.firstSemigroup
+
+  def validate(candidate: A): Validated[A] =
+    rules.sumr1.run(candidate)
+}
+```
+
+A better definition of `Validated[A]` is:
+
+```scala
+import scalaz.ValidationNel
+
+package object semigroupexamples {
+  type Validated[A] = ValidationNel[ValidationError, A]
+}
+```
+
+Now, validation of `Name` with the Smart Constructor pattern is:
+
+```scala
+package semigroupexamples
+
+import scalaz.NonEmptyList
+import io.github.oscarvarto.stringsyntax.StringExtraOps
+
+object Name extends ValidationRules[Name] {
+  type E = NameError
+
+  sealed trait NameError extends ValidationError
+  case object NameCannotBeEmpty extends NameError
+  case object NameCannotBeWhitespaceOnly extends NameError
+
+  override def rules: NonEmptyList[Rule] =
+    NonEmptyList(
+      mustNot(_.value.isWhitespaceOnly,
+        NameCannotBeWhitespaceOnly),
+      mustNot(_.value.isEmpty, NameCannotBeEmpty)
+    )
+
+  def apply(s: String): Validated[Name] =
+    validate(new Name(s) {})
+}
+
+sealed abstract case class Name private(value: String)
+```
+
+Whereas `Age` now is:
+
+```scala
+package semigroupexamples
+
+import scalaz.NonEmptyList
+
+object Age extends ValidationRules[Age] {
+  type E = AgeError
+
+  sealed trait AgeError extends ValidationError
+  case object AgeNegative extends AgeError
+  case object AgeTooBig extends AgeError
+
+  val MaxAge: Int = Byte.MaxValue.toInt // 127
+
+  override def rules: NonEmptyList[Rule] =
+    NonEmptyList(
+      mustNot(_.value < 0, AgeNegative),
+      mustNot(_.value > MaxAge, AgeTooBig)
+    )
+
+  def apply(age: Int): Validated[Age] =
+    validate(new Age(age) {})
+}
+
+sealed abstract case class Age private(value: Int)
+```
+
+Finally, by means of `Apply` syntax:
+
+```scala
+package semigroupexamples
+
+import scalaz.syntax.apply._
+
+object Person {
+  def apply(name: String, age: Int): Validated[Person] =
+    ^(Name(name), Age(age)){ Person.apply }
+}
+
+case class Person(name: Name, age: Age)
+```
 
 ## Functional data structures and programming patterns
