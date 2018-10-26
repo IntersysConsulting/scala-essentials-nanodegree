@@ -101,9 +101,9 @@ It is used in the following way:
 ```scala
 (x: Int, y: Int, z:Int) => (x + y)*z 
 (a: Int) => {
-              println("hello human")
-              a*100
-             }
+  println("hello human")
+  a*100
+}
 ```
 As we previously anticipated, `def` can be used to define functions as `var/val`,
 type annotation is optional and type will be inferred.
@@ -172,9 +172,9 @@ For example:
 
 ```scala
 if (a > b) {
-             println("calculating percentage")
-             b/a*100
-           }
+  println("calculating percentage")
+  b/a*100
+}
 ```
 
 We can also use else statement, as usual
@@ -188,13 +188,13 @@ For example:
 
 ```scala
 if (a > b) {
-            println("calculating percentage")
-            b/a*100
-           }
+  println("calculating percentage")
+  b/a*100
+}
 else {
-      println("calculating percentage")
-      a/b*100
-     }
+  println("calculating percentage")
+  a/b*100
+}
 ```
 
 ### Types
@@ -484,8 +484,8 @@ def product(x: Int, y: Int, z:Int) = (x + y)*z
  * @return true 
  */
 def sameResultAlways(a: Int, b: Double): Boolean =  {
-println("I don't care about your input")
-true
+  println("I don't care about your input")
+  true
 }
 ```
 
