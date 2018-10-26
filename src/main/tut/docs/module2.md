@@ -29,7 +29,8 @@ We will further view in detail its differences
 and usages, but for now lets settle with only learning how to define them:
 
 #### val
-`val name: type = value`
+
+The usage of val is as follows: `val name: type = value`
  
 For example:
 ```scala
@@ -38,11 +39,11 @@ val word: String = "Hi!"
 val something = 45.6
 ```
 
-A variable defined with `val` will be immutable, the type annotation is optional, but
+A variable defined with `val` cannot change value, the type annotation is optional, but
 type will be inferred.
 
 #### var
-`var name: type = value`
+The usage of var is the following: `var name: type = value`
 
 For example :
 ````scala
@@ -51,13 +52,13 @@ variable = 15
 variable = 36
 ````
 
-As `val`, type annotation is optional and type will be inferred, but for this case, the value is not
-immutable, but variable. Type should be preserved, this means you cannot define a `var` as a Double
-and then use it as string. In order to follow functional paradigm `var` should
-not be used.
+As `val`, type annotation is optional and type will be inferred, but for this case, the value is 
+variable. Type should be preserved, this means you cannot define a `var` as a Double
+and then use it as a string. In order to follow functional paradigm `val` should
+be preferred over `var.
 
 #### def
-`def name: type = value`
+We can use def as follows: `def name: type = value`
 
 For example
 
@@ -67,7 +68,7 @@ def word = "Weird"
 def print = println("")
 ``` 
 
-When defining values, `def` works pretty much as `var` (except for some details that will be further
+When defining values, `def` works pretty much as `var/val` (except for some details that will be further
 addressed), the great difference comes from the fact that `def` will not only store the 
 final result of the expression, but the whole expression. Also, as we are going to see
 in detail next, it can be used to define functions.
@@ -80,10 +81,10 @@ For example:
 
 ```scala
 {
-val a = 5
-val b = 6
-println(a)
-println(b)
+  val a = 5
+  val b = 6
+  println(a)
+  println(b)
 } 
 ```
 
@@ -92,6 +93,7 @@ println(b)
 A function is an expression that takes parameters. Parameters need to specify type and 
 can be as many as needed.
  
+It is used in the following way: 
 `(param1: type, param2: type, ..., paramN: type) => block expression (function body)`
  
  For example:
@@ -99,11 +101,11 @@ can be as many as needed.
 ```scala
 (x: Int, y: Int, z:Int) => (x + y)*z 
 (a: Int) => {
-println("hello human")
-a*100
-}
+              println("hello human")
+              a*100
+             }
 ```
-As we previously anticipated `def` can be used to define functions as `var`,
+As we previously anticipated, `def` can be used to define functions as `var/val`,
 type annotation is optional and type will be inferred.
 
 `def name(param1: type, param2: type, ..., paramN: type): return_type = block expression (function body)`
@@ -112,9 +114,10 @@ Some examples are:
 
 ```scala
 def product(x: Int, y: Int, z:Int) = (x + y)*z
-def sameResultAlways(a: Int, b: Double): Boolean =  {
-println("I don't care about your input")
-true
+def sameResultAlways(a: Int, b: Double): Boolean = 
+{
+ println("I don't care about your input")
+ true
 } 
 ```
 
@@ -169,9 +172,9 @@ For example:
 
 ```scala
 if (a > b) {
-println("calculating percentage")
-b/a*100
-}
+             println("calculating percentage")
+             b/a*100
+           }
 ```
 
 We can also use else statement, as usual
@@ -185,13 +188,13 @@ For example:
 
 ```scala
 if (a > b) {
-println("calculating percentage")
-b/a*100
-}
+            println("calculating percentage")
+            b/a*100
+           }
 else {
-println("calculating percentage")
-a/b*100
-}
+      println("calculating percentage")
+      a/b*100
+     }
 ```
 
 ### Types
@@ -203,7 +206,7 @@ an assigned type that will not change, as well as functions and function's param
 The basic Scala types are illustrated on the following picture:
 
 <p style="text-align:center;">
-<img src="../img/ScalaTypes" alt="Scala Types" style="width: 20%"/>
+<img src="../img/ScalaTypes.png" alt="Scala Types" style="width: 90%"/>
 </p>
 
 As we can see they all come from a mother type called Any and then divide into
@@ -225,18 +228,20 @@ val probabilityOfExplotion: MyVerySpecialType[Boolean] = MyVerySpecialType(true)
 
 ### call-by-value and call-by-name
 The first important thing we need to know is that no matter the evaluation strategy used
-it will reduce to the same value as long we only have pure functions and the evaluation terminates.
+[it will reduce to the same value](https://www.coursera.org/learn/progfun1/lecture/vzbJj/lecture-1-2-elements-of-programming) 
+as long as we only have pure functions and the evaluation terminates.
 
-When evaluating by call by value (cbv) we first evaluate the arguments of the function and then we substitute
+When evaluating by call-by-value (cbv) we first evaluate the arguments of the function and then we substitute
 on the body of the function.
 
-When evaluating by call by name (cbn) we first substitute on the body of the function the arguments
+When evaluating by call-by-name (cbn) we first substitute on the body of the function the arguments
 as they are.
 
 Call-by-name has the advantage that a function argument is not evaluated if the corresponding parameter is not
 used in the body. But sometimes it can end up evaluating the same expression multiple times.
 
-In Scala the "standard" is cbv, but we can use cbn if a function parameter starts with =>
+[In Scala the "standard" is cbv](https://www.coursera.org/learn/progfun1/lecture/eervR/lecture-1-3-evaluation-strategies-and-termination)
+, but we can use cbn if a function parameter starts with =>
 
 This means:
 
@@ -270,6 +275,19 @@ for `sum_2`:
 sum_2(3*2+5, 2+3) = (3*2+5)+(2+3) = (6+5)+(2+3) = 11 + (2+3) = 11 + 5 = 16
 ```
 
+Finally, as we previously mentioned, using `val` and `def` to define a value can seem to be
+exactly the same. But now we can understand the difference. When we use `val`, we are using
+a cbv evaluation to define such value. On the other hand, when we use `def`, we are using
+cbn evaluation. For example in:
+
+```scala
+val a: Int = 1+2+3+4+5+6
+val b: Int = 1+2+3+4+5+6
+```
+The variable a will be carrying the value 15 while b will be carrying the value 1+2+3+4+5+6, that
+will eventually evaluate to 15 anyway.
+
+
 ## Understanding the JVM:  Basics of Scala interoperability
 The JVM has two main proposes: 
 
@@ -283,17 +301,60 @@ that can be expressed in terms of a valid class filed that can be hosted on de J
 - Clojure
 - Scala
 
-The main advantage Scala has as JVM language is the interoperability with Java and some other JVM languages. In
+The main advantage Scala has as JVM language is the 
+[interoperability with Java](https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html)
+and some other JVM languages. In
 particular the interaction with the mainstream object-oriented Java programming language is 
 [straight forward](https://docs.scala-lang.org/tour/tour-of-scala.html).
+
+Some of the most simple examples of Java/Scala interoperability are related to collections.
+Java and Scala have both very rich
+collections library, we can pass back and forth between Java and Scala for the [following 
+collection types](https://docs.scala-lang.org/overviews/collections/conversions-between-java-and-scala-collections.html):
+
+```
+Iterator               <=>     java.util.Iterator
+Iterator               <=>     java.util.Enumeration
+Iterable               <=>     java.lang.Iterable
+Iterable               <=>     java.util.Collection
+mutable.Buffer         <=>     java.util.List
+mutable.Set            <=>     java.util.Set
+mutable.Map            <=>     java.util.Map
+mutable.ConcurrentMap  <=>     java.util.concurrent.ConcurrentMap
+```  
+
+For example, we can declare a java List in scala and then convert it to a Scala Buffer: 
+
+```scala
+import collection.JavaConverters._
+import collection.mutable._
+
+val jul: java.util.List[Int] = ArrayBuffer(1, 2, 3).asJava
+val buf: Seq[Int] = jul.asScala
+```
+
+The whole [JavaConverters](https://www.scala-lang.org/api/2.12.0/scala/collection/JavaConverters$.html)
+object has many methods to interoperate between the two languages.
+
 In general we can say you can always use existing [Java code in Scala](https://www.scala-lang.org/old/faq/4), but
-using Scala features without analogues on Java in Java con get tricky, but 
-[not impossible](http://www.codecommit.com/blog/java/interop-between-java-and-scala).
+using Scala features without analogues on Java in Java can get tricky, but 
+[not impossible](http://www.codecommit.com/blog/java/interop-between-java-and-scala). Specially 
+since [Scala 2.12 release](https://www.scala-lang.org/news/2.12.0/) that takes advantage of 
+the features included in Java 8. Some examples are:
+
+- Traits compile directly to an inteface.
+- New lambda syntax for SAM types.
+- Improved type inference. 
 
 ## Consulting existing libraries Scaladocs and how to produce your own
-As in every modern language libraries play a major roll in Scala. The usage of SBT as build tool, simplifies 
-the integration of libraries, since the `build.sbt` file of the project will handle the dependencies needed by simply
-adding one or a few lines. For example to install the popular library [ScalaTest](http://www.scalatest.org/)
+As in every modern language libraries play a major roll in Scala. The usage of 
+[SBT](https://www.scala-sbt.org/) as build tool, simplifies 
+the integration of libraries, since the `build.sbt` file of the project will handle
+the dependencies needed by simply
+adding [one or a few lines](https://www.scala-sbt.org/1.0/docs/Library-Dependencies.html).
+The exact commands that need to be added to your build.sbt file will generally be shown in the
+readme of the library you are consulting.
+For example to install the popular library [ScalaTest](http://www.scalatest.org/)
  you only need to add:
 
 ```sbtshell
@@ -302,6 +363,12 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
 resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
 addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.3")
 ```
+
+The first line installs Scalactic, ScalaTest's sister library focused on quality through types, 
+from the `org.scalatic` repository on release `3.0.5`.
+The second line will Scalatest from `org.scalatest` on release `3.0.5`.
+The final two lines will install a plugin, the first specifies the repository the plugin lives in
+and the second one will handle about the plugin itself.
 
 Once installed we should only import it in the desired project as:
 
@@ -323,8 +390,32 @@ classes, traits, methods, and other members and the
 [result of a good documentation](http://doc.scalatest.org/3.0.0/#package) is such as the one on the following picture:
 
 <p style="text-align:center;">
-<img src="../img/ScalaDocTest" alt="Scaladoc of ScalaTest" style="width: 20%"/>
+<img src="../img/ScalaDocTest.png" alt="Scaladoc of ScalaTest" style="width: 90%"/>
 </p>
+
+The official Scaladoc for Scala is in the following page 
+[www.scala-lang.org/api/current/](https://www.scala-lang.org/api/current/) the documentation
+is sorted by packages. Specific classes can be sorted by name by using the top bar on the page.
+
+<p style="text-align:center;">
+<img src="../img/ScalaSearch.png" alt="Scala's Scaladoc's search bar" style="width: 90%"/>
+</p>
+
+Once you are browsing a package you will find the following window:
+
+<p style="text-align:center;">
+<img src="../img/ScalaMath.png" alt="Scala math" style="width: 90%"/>
+</p>
+
+On the center of the screen there are a list of methods with its description. On the right side
+of the screen you will find a list with a (t) symbol, (o) symbol or (c) symbol these will take
+you straight to the trait, object (or companion object) or class.
+
+Navigating through scaladoc will require experience and time, you can follow the advises 
+on the last section of the first chapter of "Scala for the impatient", which can be 
+[downloaded for free](https://info.lightbend.com/ebook-register-scala-for-the-impatient.html?utm_source=website&utm_medium=lb-scala-page&utm_campaign=EBK-20XX-Scala-for-the-Impatient&utm_term=none&utm_content=none).
+You can also check some features of Scaladoc on the official 
+[Scala page](https://docs.scala-lang.org/overviews/scaladoc/interface.html).
 
 ## Documenting your work
 
@@ -397,3 +488,27 @@ println("I don't care about your input")
 true
 }
 ```
+
+Once you have documented your project, you can 
+[automatically generate](https://alvinalexander.com/scala/how-to-generate-scala-documentation-scaladoc-command-examples) 
+developer documentation by either using the scaladoc command or a SBT task.
+
+The scaladoc command usage is the following:
+
+```bash
+$ scaladoc YourFile.scala
+```
+
+This will generate a root index.html file and other related files for your API documentation.
+
+On the other hand, running the command:
+
+```bash
+$ sbt doc
+```
+
+Will generate the same API documentation and will place it under the target directory of your
+SBT project. Specifically it will be located at target/scala-2.X/api/index.html.
+
+
+ 
