@@ -19,7 +19,7 @@ An expression is as simple as:
 "hello world"
 1 + 1
 5 < 3
-``` 
+```
 
 ### Variables
 
@@ -55,7 +55,7 @@ variable = 36
 As `val`, type annotation is optional and type will be inferred, but for this case, the value is 
 variable. Type should be preserved, this means you cannot define a `var` as a Double
 and then use it as a string. In order to follow functional paradigm `val` should
-be preferred over `var.
+be preferred over `var`.
 
 #### def
 We can use def as follows: `def name: type = value`
@@ -66,7 +66,7 @@ For example
 def number: Int = 15
 def word = "Weird"
 def print = println("")
-``` 
+```
 
 When defining values, `def` works pretty much as `var/val` (except for some details that will be further
 addressed), the great difference comes from the fact that `def` will not only store the 
@@ -85,7 +85,7 @@ For example:
   val b = 6
   println(a)
   println(b)
-} 
+}
 ```
 
 ### Functions
@@ -105,6 +105,7 @@ It is used in the following way:
   a*100
 }
 ```
+
 As we previously anticipated, `def` can be used to define functions as `var/val`,
 type annotation is optional and type will be inferred.
 
@@ -114,11 +115,11 @@ Some examples are:
 
 ```scala
 def product(x: Int, y: Int, z:Int) = (x + y)*z
-def sameResultAlways(a: Int, b: Double): Boolean = 
+def sameResultAlways(a: Int, b: Double): Boolean =
 {
- println("I don't care about your input")
- true
-} 
+  println("I don't care about your input")
+  true
+}
 ```
 
 In further modules we will talk more about functions, for now you know how to define them.
@@ -256,8 +257,7 @@ def sum_1(x: => Int, y: Int): Int = x + y
 def sum_2(x: => Int, y: => Int): Int = x + y
 ```
 
-This way, evaluating `sum`, `sum_1` and `sum_2` with the same parameters will result on different number of steps, but 
-same result. This is:
+This way, evaluating `sum`, `sum_1` and `sum_2` with the same parameters will result on different number of steps, but same result. This is:
 
 ```scala
 sum(3*2+5, 2+3)
@@ -265,12 +265,16 @@ sum(6+5, 2+3)
 sum(11, 2+3)
 sum(11,5) = 11 + 5 = 16
 ```
-for `sum_1`: 
+
+for `sum_1`:
+
 ```scala
 sum_1(3*2+5,2+3)
 sum_1(3*2+5,5) = (3*2+5)+5 = (6 + 5) + 5 = 11 + 5 = 16
 ```
+
 for `sum_2`:
+
 ```scala
 sum_2(3*2+5, 2+3) = (3*2+5)+(2+3) = (6+5)+(2+3) = 11 + (2+3) = 11 + 5 = 16
 ```
@@ -284,11 +288,12 @@ cbn evaluation. For example in:
 val a: Int = 1+2+3+4+5+6
 val b: Int = 1+2+3+4+5+6
 ```
+
 The variable a will be carrying the value 15 while b will be carrying the value 1+2+3+4+5+6, that
 will eventually evaluate to 15 anyway.
 
-
 ## Understanding the JVM:  Basics of Scala interoperability
+
 The JVM has two main proposes: 
 
 - Allowing any program to run in every device or operating system.
@@ -296,7 +301,8 @@ The JVM has two main proposes:
 
 Scala is built on top of the JVM, which makes it a JVM language. A JVM language is any language with functionality
 that can be expressed in terms of a valid class filed that can be hosted on de JVM, some examples of such languages are:
-- Kotlin 
+
+- Kotlin
 - Groovy
 - Clojure
 - Scala
@@ -321,7 +327,7 @@ mutable.Buffer         <=>     java.util.List
 mutable.Set            <=>     java.util.Set
 mutable.Map            <=>     java.util.Map
 mutable.ConcurrentMap  <=>     java.util.concurrent.ConcurrentMap
-```  
+```
 
 For example, we can declare a java List in scala and then convert it to a Scala Buffer: 
 
@@ -347,6 +353,7 @@ the features included in Java 8. Some examples are:
 - Improved type inference. 
 
 ## Consulting existing libraries Scaladocs and how to produce your own
+
 As in every modern language libraries play a major roll in Scala. The usage of 
 [SBT](https://www.scala-sbt.org/) as build tool, simplifies 
 the integration of libraries, since the `build.sbt` file of the project will handle
@@ -430,7 +437,7 @@ or the whole comment in the same line, this means:
 ```scala
 /**
  *
- * 
+ *
  * /
 ```
 
@@ -443,11 +450,13 @@ and
   *
   */
 ```
+
 and
 
 ```scala
 /** The whole comment */
 ```
+
 Are valid. Most editors with a Scala plugin will automatically fill a template for Scaladoc once
 `/**` is typed.
 
@@ -509,6 +518,3 @@ $ sbt doc
 
 Will generate the same API documentation and will place it under the target directory of your
 SBT project. Specifically it will be located at target/scala-2.X/api/index.html.
-
-
- 
