@@ -1,4 +1,595 @@
 <html><head><title>Scala Essentials: Functional programming</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Intersys Consulting" /><meta name="description" content="Scala Essentials Nanodegree" /><meta name="og:image" content="/scala-essentials-nanodegree/img/poster.png" /><meta name="og:title" content="Scala Essentials: Functional programming" /><meta name="og:site_name" content="Scala Essentials" /><meta name="og:url" content="https://intersysconsulting.github.io/scala-essentials-nanodegree" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala Essentials Nanodegree" /><link rel="icon" type="image/png" href="/scala-essentials-nanodegree/img/favicon.png" /><meta name="twitter:title" content="Scala Essentials: Functional programming" /><meta name="twitter:image" content="https://intersysconsulting.github.io/scala-essentials-nanodegreeimg/poster.png" /><meta name="twitter:description" content="Scala Essentials Nanodegree" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/scala-essentials-nanodegree/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/scala-essentials-nanodegree/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/scala-essentials-nanodegree/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/scala-essentials-nanodegree/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/scala-essentials-nanodegree/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/scala-essentials-nanodegree/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/scala-essentials-nanodegree/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/scala-essentials-nanodegree/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/scala-essentials-nanodegree/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/scala-essentials-nanodegree/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/scala-essentials-nanodegree/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/scala-essentials-nanodegree/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/scala-essentials-nanodegree/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/scala-essentials-nanodegree/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/scala-essentials-nanodegree/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/scala-essentials-nanodegree/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/scala-essentials-nanodegree/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/scala-essentials-nanodegree/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/scala-essentials-nanodegree/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/scala-essentials-nanodegree/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/highlight/styles/default.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/style.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/palette.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/codemirror.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/scala-essentials-nanodegree/" class="brand"><div class="brand-wrapper"><span>Scala Essentials</span></div></a></li> <li><a href="/scala-essentials-nanodegree/docs.html" class="">Welcome!</a></li> <li><a href="/scala-essentials-nanodegree/docs/module1.html" class="">M1 - Introduction</a></li> <li><a href="/scala-essentials-nanodegree/docs/module2.html" class="">M2 - Essentials</a></li> <li><a href="/scala-essentials-nanodegree/docs/module3.html" class="">M3 - Objects and classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module4.html" class="">M4 - Functions</a></li> <li><a href="/scala-essentials-nanodegree/docs/module5.html" class="">M5 - Traits for data modelling</a></li> <li><a href="/scala-essentials-nanodegree/docs/module6.html" class="">M6 - Sequencing computation</a></li> <li><a href="/scala-essentials-nanodegree/docs/module7.html" class="">M7 - Idiomatic Scala</a></li> <li><a href="/scala-essentials-nanodegree/docs/module8.html" class="">M8 - Typeclasses</a></li> <li><a href="/scala-essentials-nanodegree/docs/module9.html" class="">M9 - Functional programming</a></li> <li><a href="/scala-essentials-nanodegree/docs/module10.html" class="">M10 - Popular frameworks and toolkits</a></li>           </ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="intersysconsulting" data-github-repo="scala-essentials-nanodegree"><div class="content-wrapper"><section><h1 id="module-9-functional-programming">Module 9: Functional programming</h1>
+
+<h2 id="introduction-and-prerequisites">Introduction and prerequisites</h2>
+
+<h3 id="for-comprehensions">For comprehensions</h3>
+
+<p>The following resources could be helpful:</p>
+
+<ul>
+  <li>Module 7 material</li>
+  <li><a href="https://underscore.io/books/essential-scala/">Essential Scala</a>, chapter 5</li>
+  <li><a href="https://github.com/oleg-py/better-monadic-for">Better monadic for plugin</a></li>
+  <li><a href="https://leanpub.com/fpmortals/read#leanpub-auto-for-comprehensions">For comprehensions</a> from Sam Halliday (@fommil)</li>
+</ul>
+
+<h3 id="using-more-precise-types">Using more precise types</h3>
+
+<p>If you have been practicing with Scala, it is probable that you have noticed that using precise
+types reduces bugs. For example, given the following <code class="highlighter-rouge">Person</code> definition, you could possibly define
+instances that do not model reality:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+<span class="c1">// Bad input
+</span><span class="k">val</span> <span class="n">unrealPerson</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">"   "</span><span class="o">,</span> <span class="o">-</span><span class="mi">30</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>because, arguably, a person’s name cannot be “   “, and all ages are non-negative, and are
+reasonably (arbitrarily) bounded by 127 (or 200, if you wish).</p>
+
+<p>If it is possible, strive to use types that completely eliminate trivial bugs/errors. A simple way
+to define more precise/refined types, is by using <a href="https://github.com/fthomas/refined">Refined</a>. The above example could be rewritten
+with:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">eu.timepit.refined.W</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.api.Refined</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.auto._</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.boolean.</span><span class="o">{</span><span class="nc">And</span><span class="o">,</span> <span class="nc">Not</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.char.Whitespace</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.collection.</span><span class="o">{</span><span class="nc">Forall</span><span class="o">,</span> <span class="nc">NonEmpty</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">eu.timepit.refined.numeric.Interval</span>
+
+<span class="c1">// A person must have a NonEmpty name and a non-negative age.
+</span><span class="k">object</span> <span class="nc">RefinedExample</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">AgeAux</span> <span class="o">=</span> <span class="nc">Interval</span><span class="o">.</span><span class="nc">Closed</span><span class="o">[</span><span class="kt">W.`</span><span class="err">0</span><span class="kt">`.T</span>, <span class="kt">W.`</span><span class="err">127</span><span class="kt">`.T</span><span class="o">]</span>
+  <span class="k">case</span> <span class="k">class</span> <span class="nc">Age</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span> <span class="kt">Refined</span> <span class="kt">AgeAux</span><span class="o">)</span>
+
+  <span class="k">type</span> <span class="kt">NameAux</span> <span class="o">=</span> <span class="nc">NonEmpty</span> <span class="nc">And</span> <span class="nc">Not</span><span class="o">[</span><span class="kt">Forall</span><span class="o">[</span><span class="kt">Whitespace</span><span class="o">]]</span>
+  <span class="k">case</span> <span class="k">class</span> <span class="nc">Name</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span> <span class="kt">Refined</span> <span class="kt">NameAux</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">Name</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Age</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">spiderman</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="nc">Name</span><span class="o">(</span><span class="s">"Peter Parker"</span><span class="o">),</span> <span class="nc">Age</span><span class="o">(</span><span class="mi">25</span><span class="o">))</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now, if we have an instance of <code class="highlighter-rouge">Person</code>, we are sure that it has a name that is not blank, and has a
+valid age (according to above definition).</p>
+
+<h3 id="addingextending-types-with-convenient-syntax-through-implicit-classes">Adding/extending types with convenient syntax through implicit classes</h3>
+
+<p>One possible way to define a new operation on an existing type is to create an utility method inside
+a (singleton) object:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">StringUtilities</span> <span class="o">{</span>
+  <span class="cm">/** Returns true if not empty and every character is whitespace
+    *
+    * @note using scala APIs
+    */</span>
+  <span class="k">def</span> <span class="n">isWhitespaceOnly</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">nonEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="n">forall</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">isWhitespace</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Then you can to use the method as usual:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">StringUtilities._</span>
+
+<span class="k">val</span> <span class="n">name</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"   "</span>
+<span class="c1">// call site
+</span><span class="k">val</span> <span class="n">b</span> <span class="k">=</span> <span class="n">isWhiteSpaceOnly</span><span class="o">(</span><span class="n">name</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Calling the method with the convenient syntax <code class="highlighter-rouge">instance.method()</code> could be achieved with
+“implicit classes”:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalaz.syntax.std.string.ToStringOpsFromString</span>
+
+<span class="k">object</span> <span class="nc">stringsyntax</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">class</span> <span class="nc">StringExtraOps</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+    <span class="cm">/** Returns true if not empty and every character is whitespace
+      *
+      * @note using scala APIs
+      */</span>
+    <span class="k">def</span> <span class="n">isWhitespaceOnly</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+      <span class="n">s</span><span class="o">.</span><span class="n">nonEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="n">forall</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">isWhitespace</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now, in the call site:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">stringsyntax.StringExtraOps</span>
+
+<span class="k">val</span> <span class="n">name</span> <span class="k">=</span> <span class="s">"   "</span>
+<span class="c1">// call site
+</span><span class="k">val</span> <span class="n">b</span> <span class="k">=</span> <span class="n">name</span><span class="o">.</span><span class="n">isWhitespaceOnly</span>
+</code></pre></div></div>
+
+<p>See <a href="https://docs.scala-lang.org/overviews/core/implicit-classes.html">Implicit classes documentation</a> for more details.</p>
+
+<hr />
+
+<h4 id="note-using-javas-sam-methods-from-scala">Note: Using Java’s SAM methods from Scala</h4>
+
+<p>Next snippet contains an alternative (using Java’s 8+ APIs) implementation for <code class="highlighter-rouge">isWhitespaceOnly</code>
+“extension” method. Take a look at the scaladoc for more information.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">stringsyntax</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">class</span> <span class="nc">StringExtraOps</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+    <span class="cm">/** Returns true if not empty and every character is whitespace
+      *
+      * @note using Java APIs
+      *
+      * @note using lambda syntax for SAM types
+      * @see https://www.scala-lang.org/news/2.12.0/#lambda-syntax-for-sam-types
+      * @see https://www.scala-lang.org/files/archive/spec/2.12/06-expressions.html#sam-conversion
+      */</span>
+    <span class="k">def</span> <span class="n">isWhitespaceOnly</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="o">!</span><span class="n">s</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">&amp;&amp;</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">chars</span><span class="o">().</span><span class="n">allMatch</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="n">isWhitespace</span><span class="o">(</span><span class="k">_</span><span class="o">))</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="smart-constructors">Smart constructors</h2>
+
+<p>Other possibility to avoid nonsensical data, and to enforce business/reality rules, is to use the
+“smart constructor” pattern. We are explaining the basics here, and in future sections will get a
+(allegedly) better encoding of the pattern. We want to <strong>enforce correctness by construction</strong>.</p>
+
+<p>For this example, we are going to use a person’s age, and enforce the two following rules:</p>
+
+<ul>
+  <li>An age must be non-negative: zero or positive.</li>
+  <li>An age must be upper-bounded by a reasonable max integer: 127.</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">semigroupexamples</span>
+
+<span class="k">object</span> <span class="nc">Age</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nc">MaxAge</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">127</span>
+
+  <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AgeError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">AgeIsNegative</span> <span class="k">extends</span> <span class="nc">AgeError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">AgeIsTooBig</span> <span class="k">extends</span> <span class="nc">AgeError</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">AgeError</span>, <span class="kt">Age</span><span class="o">]</span> <span class="k">=</span> <span class="n">age</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="nc">AgeIsNegative</span><span class="o">)</span>
+    <span class="k">case</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="nc">MaxAge</span> <span class="k">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="nc">AgeIsTooBig</span><span class="o">)</span>
+    <span class="k">case</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="nc">Right</span><span class="o">(</span><span class="k">new</span> <span class="nc">Age</span><span class="o">(</span><span class="n">a</span><span class="o">){})</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Age</span> <span class="k">private</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>The above code forbids the creation of <code class="highlighter-rouge">Age</code> instances that do not obey the above “business” rules.
+For more information on the rationale for the unlikely-sounding combination of keywords
+<code class="highlighter-rouge">sealed abstract case class</code> above, see <a href="https://gist.github.com/tpolecat/a5cb0dc9adeacc93f846835ed21c92d2">Case Classes w/ Smart Ctors</a> by Rob Norris.</p>
+
+<p>An alternative encoding using macros is explained in <a href="https://www.cakesolutions.net/teamblogs/enforcing-invariants-in-scala-datatypes">Enforcing invariants in Scala datatypes</a>. We
+will stick to the simpler variant illustrated above with <code class="highlighter-rouge">Age</code>.</p>
+
+<h3 id="nonemptylist-data-structure"><code class="highlighter-rouge">NonEmptyList</code> data structure</h3>
+
+<p>Scalaz defines a <code class="highlighter-rouge">NonEmtyList[T]</code> that can be useful for its non-emtyness property. In the context
+of our discussion on enforcing invariants, we will use it to accumulate the errors that arise
+during validation of business rules.</p>
+
+<p>That is, if there were problems/validation errors, you should have at least one of them. If there
+were no errors, you should be able to get a valid instance. We will use the following rules to model
+a person’s name:</p>
+
+<ul>
+  <li>A name cannot be empty</li>
+  <li>A name cannot be whitespace only</li>
+</ul>
+
+<p>The following ADT (Algebraic Data Type) models the errors that result from violation of the
+aforementioned rules:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">NameError</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">NameCannotBeEmpty</span> <span class="k">extends</span> <span class="nc">NameError</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">NameCannotBeWhitespaceOnly</span> <span class="k">extends</span> <span class="nc">NameError</span>
+</code></pre></div></div>
+
+<p>So, given an input <code class="highlighter-rouge">String</code>, the following type models what could happen during validation of a
+name:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Either</span><span class="o">[</span><span class="kt">NonEmptyList</span><span class="o">[</span><span class="kt">NameError</span><span class="o">]</span>, <span class="kt">Name</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>Validation of rules would result in either one of the following two possibilities:</p>
+
+<ol>
+  <li>A (non-empty) list of name errors</li>
+  <li>A valid name</li>
+</ol>
+
+<h3 id="modelling-validation-errors-with-either">Modelling validation errors with <code class="highlighter-rouge">Either</code></h3>
+
+<p>Say we want to validate both a <code class="highlighter-rouge">Person</code>’s <code class="highlighter-rouge">Name</code> and an his/her <code class="highlighter-rouge">Age</code> using the previously defined
+rules. We are going to use the following variation for the error type</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">ValidationError</span>
+
+<span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AgeError</span> <span class="k">extends</span> <span class="nc">ValidationError</span>
+<span class="c1">// same age error cases as before.
+</span>
+<span class="k">sealed</span> <span class="k">trait</span> <span class="nc">NameError</span> <span class="k">extends</span> <span class="nc">ValidationError</span>
+<span class="c1">// same name error casas as before
+</span></code></pre></div></div>
+
+<p>So, the following type could be used to model</p>
+
+<ol>
+  <li>all the possible things that can go wrong with both a <code class="highlighter-rouge">Name</code> and an <code class="highlighter-rouge">Age</code> (and some others that
+we haven’t yet considered!), or</li>
+  <li>a validated <code class="highlighter-rouge">Person</code></li>
+</ol>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Either</span><span class="o">[</span><span class="kt">NonEmptyList</span><span class="o">[</span><span class="kt">ValidationError</span><span class="o">]</span>, <span class="kt">Person</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>The problem with <code class="highlighter-rouge">Either</code> is that a for comprehension using the <code class="highlighter-rouge">Either</code> Monad, shortcuts on the
+first error, and do not report all the things that could have gone wrong during the validation
+process. Study the following snippet (or skip it if you already understand which the problem is):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">EitherExample</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">Error</span> <span class="o">=</span> <span class="nc">String</span>
+  <span class="k">type</span> <span class="kt">Name</span> <span class="o">=</span> <span class="nc">String</span>
+  <span class="k">type</span> <span class="kt">Age</span> <span class="o">=</span> <span class="nc">Int</span>
+  <span class="k">type</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Either</span><span class="o">[</span><span class="kt">Error</span>, <span class="kt">A</span><span class="o">]</span>
+
+  <span class="k">val</span> <span class="n">n1</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Name</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Left</span><span class="o">(</span><span class="s">"Name is empty"</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">n2</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Name</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Left</span><span class="o">(</span><span class="s">"Name is whitespace only"</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">n3</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Name</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Right</span><span class="o">(</span><span class="s">"Peter Parker"</span><span class="o">)</span>
+
+  <span class="k">val</span> <span class="n">a1</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Age</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Left</span><span class="o">(</span><span class="s">"Age is negative"</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">a2</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Age</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Left</span><span class="o">(</span><span class="s">"Age is too big"</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">a3</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Age</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Right</span><span class="o">(</span><span class="mi">25</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">Name</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Age</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">p</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Name</span><span class="o">],</span>
+        <span class="n">age</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Age</span><span class="o">])</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span> <span class="k">for</span> <span class="o">{</span>
+    <span class="n">n</span> <span class="k">&lt;-</span> <span class="n">name</span>
+    <span class="n">a</span> <span class="k">&lt;-</span> <span class="n">age</span>
+  <span class="o">}</span> <span class="k">yield</span> <span class="nc">Person</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">a</span><span class="o">)</span>
+
+  <span class="c1">// Reports "Age is too big" error, OK
+</span>  <span class="k">val</span> <span class="n">p1</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span> <span class="n">p</span><span class="o">(</span><span class="n">n3</span><span class="o">,</span> <span class="n">a2</span><span class="o">)</span>
+
+  <span class="c1">// A valid `Person` instance, OK
+</span>  <span class="k">val</span> <span class="n">p2</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span> <span class="n">p</span><span class="o">(</span><span class="n">n3</span><span class="o">,</span> <span class="n">a3</span><span class="o">)</span>
+
+  <span class="c1">// Only reports "Name is empty" error
+</span>  <span class="c1">// but ignores "Age is negative" error
+</span>  <span class="c1">// *BUT* we want all errors reported!
+</span>  <span class="k">val</span> <span class="n">p3</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span> <span class="n">p</span><span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">a1</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="validation-can-accumulate-all-the-errors"><code class="highlighter-rouge">Validation</code> can accumulate all the errors</h3>
+
+<p>From section <em>6.7.3 Validation</em> of the book <a href="https://leanpub.com/fpmortals/read">Functional Programming for Mortals with Scalaz</a>:</p>
+
+<blockquote>
+  <p>The big advantage of restricting to Applicative is that <code class="highlighter-rouge">Validation</code> is explicitly for situations
+where we wish to report all failures, whereas <code class="highlighter-rouge">Disjunction</code> is used to stop at the first failure.
+To accommodate failure accumulation, a popular form of <code class="highlighter-rouge">Validation</code> is <code class="highlighter-rouge">ValidationNel</code>, having a
+<code class="highlighter-rouge">NonEmptyList[E]</code> in the failure position.</p>
+</blockquote>
+
+<p>(Note: <code class="highlighter-rouge">Either[E, A]</code> presents the same problem than <code class="highlighter-rouge">Disjunction[E, A]</code> because both have Monad
+instances).</p>
+
+<p>But to be able to fully understand the details, we need to learn some other basic concepts first.</p>
+
+<h2 id="monoids--semigroups">Monoids &amp; Semigroups</h2>
+
+<h3 id="warm-up-and-additional-links">Warm-up and additional links</h3>
+
+<p>For a mostly math-less discussion of monoids, please take a look at [Monoid without tears], by Scott
+Wlaschin. You will find more examples in part 2 of this series, in <a href="https://fsharpforfunandprofit.com/posts/monoids-part2/">Monoids in practice</a>.</p>
+
+<p>The following links could help you realize further monoid applications. These are much more than
+intellectual curiosities!</p>
+
+<ul>
+  <li><a href="https://userpages.uni-koblenz.de/~laemmel/MapReduce/paper.pdf">Google’s MapReduce Programming Model — Revisited</a></li>
+  <li><a href="https://github.com/mesos/spark/pull/480">Streaming examples for Apache Spark</a></li>
+  <li><a href="https://www.slideshare.net/matthewterencehayes/hourglass-27038297">Hourglass: a Library for Incremental Processing on Hadoop</a></li>
+  <li><a href="https://github.com/apache/datafu">Apache Datafu Hourglass source code</a></li>
+</ul>
+
+<p>For a discussion using more math, take a look at <a href="https://github.com/hmemcpy/milewski-ctfp-pdf/releases/download/v1.0.0/category-theory-for-programmers.pdf">Category Theory for Programmers</a>.</p>
+
+<p>Finally, for the Scalaz perspective, please take a look at <a href="https://leanpub.com/fpmortals/read#leanpub-auto-appendable-things">Appendable Things</a>.</p>
+
+<h3 id="appendable-things-with-scalaz">Appendable things with Scalaz</h3>
+
+<h4 id="monoidexample1"><code class="highlighter-rouge">MonoidExample1</code></h4>
+
+<p>From <a href="https://leanpub.com/fpmortals/read#leanpub-auto-appendable-things">Appendable Things</a>:</p>
+
+<blockquote>
+  <p>A <strong>Semigroup</strong> can be defined for a type if two values can be combined. The operation must be
+associative.</p>
+
+  <p>A Monoid is a Semigroup with a zero element (also called empty or identity).</p>
+</blockquote>
+
+<p>(Take a look at additional examples/explanations there!)</p>
+
+<p><code class="highlighter-rouge">MonoidExample1</code> uses</p>
+
+<ol>
+  <li>Addition over integers.</li>
+  <li>Multiplication over integers.</li>
+</ol>
+
+<p>The first set of imports (inside a block comment) are more specific, and the second block, is the
+easiest to write in order to make the code compile.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+import scalaz.Tags.Multiplication
+import scalaz.std.anyVal.{intInstance, intMultiplicationNewType}
+import scalaz.syntax.monoid._
+import scalaz.{@@, Tag}
+*/</span>
+
+<span class="k">import</span> <span class="nn">scalaz._</span>
+<span class="k">import</span> <span class="nn">Tags.Multiplication</span>
+<span class="k">import</span> <span class="nn">Scalaz._</span>
+
+<span class="k">object</span> <span class="nc">MonoidExample1</span> <span class="o">{</span>
+  <span class="c1">// implicit val intInstance: Monoid[Int] with Enum[Int] with Show[Int]
+</span>  <span class="c1">// https://github.com/scalaz/scalaz/blob/v7.2.26/core/src/main/scala/scalaz/std/AnyVal.scala#L234
+</span>  <span class="c1">// Uses Arithmetic sum as the binary operation
+</span>  <span class="c1">// https://github.com/scalaz/scalaz/blob/v7.2.26/core/src/main/scala/scalaz/std/AnyVal.scala#L237
+</span>  <span class="k">val</span> <span class="n">x1</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">|+|</span> <span class="mi">2</span>
+
+  <span class="c1">// To use a different binary operation, use a tagged type
+</span>  <span class="k">val</span> <span class="n">x2</span><span class="k">:</span> <span class="kt">Int</span> <span class="kt">@@</span> <span class="kt">Multiplication</span> <span class="o">=</span> <span class="nc">Multiplication</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">|+|</span> <span class="nc">Multiplication</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>There can only be one implementation of a typeclass for a given type parameter. To avoid breaking
+typeclass coherence, <code class="highlighter-rouge">MonoidExample1</code> uses type tags (notice <code class="highlighter-rouge">@@</code> and <code class="highlighter-rouge">Multiplication</code>).</p>
+
+<h4 id="monoidexample2"><code class="highlighter-rouge">MonoidExample2</code></h4>
+
+<p>Defining an <code class="highlighter-rouge">Option[A] @@ Multiplication</code> monoid:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+import scalaz.Tags.Multiplication
+import scalaz.std.anyVal.intInstance
+import scalaz.std.option.optionMonoid
+import scalaz.std.option.optionSyntax._
+import scalaz.syntax.monoid._
+import scalaz.{@@, Monoid, Tag, Tags}
+*/</span>
+
+<span class="k">import</span> <span class="nn">scalaz._</span>
+<span class="k">import</span> <span class="nn">Tags.Multiplication</span>
+<span class="k">import</span> <span class="nn">Scalaz._</span>
+
+<span class="k">object</span> <span class="nc">MonoidExample2</span> <span class="o">{</span>
+
+  <span class="k">val</span> <span class="n">x1</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="mf">1.</span><span class="n">some</span> <span class="o">|+|</span> <span class="mf">2.</span><span class="n">some</span>
+
+  <span class="k">type</span> <span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Option</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">@@</span> <span class="nc">Multiplication</span>
+
+  <span class="k">implicit</span> <span class="k">def</span> <span class="n">optionMult</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="n">ev</span><span class="k">:</span> <span class="kt">Monoid</span><span class="o">[</span><span class="kt">Option</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Monoid</span><span class="o">[</span><span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+    <span class="k">new</span> <span class="nc">Monoid</span><span class="o">[</span><span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="n">zero</span><span class="k">:</span> <span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Tag</span><span class="o">(</span><span class="nc">None</span><span class="o">)</span>
+
+      <span class="k">def</span> <span class="n">append</span><span class="o">(</span><span class="n">f1</span><span class="k">:</span> <span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+                 <span class="n">f2</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">MultOption</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+        <span class="nc">Tag</span><span class="o">(</span><span class="nc">Tag</span><span class="o">.</span><span class="n">unwrap</span><span class="o">(</span><span class="n">f1</span><span class="o">)</span> <span class="o">|+|</span> <span class="nc">Tag</span><span class="o">.</span><span class="n">unwrap</span><span class="o">(</span><span class="n">f1</span><span class="o">))</span>
+    <span class="o">}</span>
+
+  <span class="k">val</span> <span class="n">x2</span><span class="k">:</span> <span class="kt">MultOption</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">Multiplication</span><span class="o">(</span><span class="mf">1.</span><span class="n">some</span><span class="o">)</span> <span class="o">|+|</span> <span class="nc">Multiplication</span><span class="o">(</span><span class="mf">2.</span><span class="n">some</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="monoidexample3"><code class="highlighter-rouge">MonoidExample3</code></h4>
+
+<p>Leveraging Scalaz’ <code class="highlighter-rouge">LastMaybe[A]</code> monoid:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+import scalaz.LastOption
+import scalaz.Tags.Last
+import scalaz.std.option.optionLast
+import scalaz.std.option.optionSyntax._
+import scalaz.syntax.monoid._
+*/</span>
+
+<span class="k">import</span> <span class="nn">scalaz._</span>
+<span class="k">import</span> <span class="nn">Maybe._</span>
+<span class="k">import</span> <span class="nn">Scalaz._</span>
+
+<span class="k">object</span> <span class="nc">MonoidExample3</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">x1</span><span class="k">:</span> <span class="kt">LastMaybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+    <span class="mf">1.</span><span class="n">just</span><span class="o">.</span><span class="n">last</span> <span class="o">|+|</span> <span class="mf">2.</span><span class="n">just</span><span class="o">.</span><span class="n">last</span>
+
+  <span class="k">val</span> <span class="n">ns</span><span class="k">:</span> <span class="kt">EphemeralStream</span><span class="o">[</span><span class="kt">LastMaybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="k">=</span>
+    <span class="o">(</span><span class="mi">1</span> <span class="o">|=&gt;</span> <span class="mi">5</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">just</span><span class="o">.</span><span class="n">last</span><span class="o">)</span>
+
+  <span class="k">val</span> <span class="n">lastN</span><span class="k">:</span> <span class="kt">LastMaybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">ns</span><span class="o">.</span><span class="n">fold</span>
+
+  <span class="k">val</span> <span class="n">x2</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="o">@@</span> <span class="nc">Tags</span><span class="o">.</span><span class="nc">Last</span> <span class="k">=</span>
+    <span class="n">empty</span><span class="o">.</span><span class="n">last</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="monoidexample4"><code class="highlighter-rouge">MonoidExample4</code></h4>
+
+<p>Monoids instances using</p>
+
+<ul>
+  <li>Disjunction (Logical Or) over <code class="highlighter-rouge">Boolean</code>s</li>
+  <li>Conjunction (Logical And) over <code class="highlighter-rouge">Boolean</code>s</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalaz.</span><span class="o">@@</span>
+<span class="k">import</span> <span class="nn">scalaz.Tags.</span><span class="o">{</span><span class="nc">Conjunction</span><span class="o">,</span> <span class="nc">Disjunction</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">scalaz.std.anyVal.</span><span class="o">{</span><span class="n">booleanConjunctionNewTypeInstance</span><span class="o">,</span> <span class="n">booleanDisjunctionNewTypeInstance</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">scalaz.syntax.monoid._</span>
+<span class="k">import</span> <span class="nn">scalaz.syntax.std.boolean._</span>
+<span class="c1">//import scala.language.postfixOps
+</span>
+<span class="k">object</span> <span class="nc">MonoidExample4</span> <span class="o">{</span>
+  <span class="c1">// Disjunction: Or
+</span>  <span class="k">val</span> <span class="n">b1</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Disjunction</span> <span class="o">=</span>
+    <span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">|+|</span> <span class="kc">false</span><span class="o">.</span><span class="n">disjunction</span>
+
+  <span class="k">val</span> <span class="n">b2</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Disjunction</span> <span class="o">=</span>
+    <span class="kc">true</span><span class="o">.</span><span class="n">disjunction</span> <span class="o">|+|</span> <span class="kc">false</span><span class="o">.</span><span class="n">disjunction</span>
+
+  <span class="k">val</span> <span class="n">b3</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Disjunction</span> <span class="o">=</span>
+    <span class="kc">true</span><span class="o">.|\/|</span> <span class="o">|+|</span> <span class="kc">false</span><span class="o">.|\/|</span>
+
+  <span class="c1">// Conjunction: And
+</span>  <span class="k">val</span> <span class="n">b4</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Conjunction</span> <span class="o">=</span>
+    <span class="kc">true</span><span class="o">.</span><span class="n">conjunction</span> <span class="o">|+|</span> <span class="kc">false</span><span class="o">.</span><span class="n">conjunction</span>
+
+  <span class="k">val</span> <span class="n">b5</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Conjunction</span> <span class="o">=</span>
+    <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">|+|</span> <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+
+  <span class="k">val</span> <span class="n">b6</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="kt">@@</span> <span class="kt">Conjunction</span> <span class="o">=</span>
+    <span class="kc">true</span><span class="o">.|∧|</span> <span class="o">|+|</span> <span class="kc">false</span><span class="o">.|∧|</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="leveraging-validation-and-validationnel">Leveraging <code class="highlighter-rouge">Validation</code> and <code class="highlighter-rouge">ValidationNel</code></h2>
+
+<p>The following trait can be used for validation of business rules:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">semigroupexamples</span>
+
+<span class="cm">/*
+import scalaz._
+import Scalaz._
+import Validation.liftNel
+*/</span>
+
+<span class="k">import</span> <span class="nn">scalaz.Validation.liftNel</span>
+<span class="k">import</span> <span class="nn">scalaz.syntax.foldable1._</span>
+<span class="k">import</span> <span class="nn">scalaz.</span><span class="o">{</span><span class="nc">Failure</span><span class="o">,</span> <span class="nc">IList</span><span class="o">,</span> <span class="nc">NonEmptyList</span><span class="o">,</span> <span class="nc">Reader</span><span class="o">,</span> <span class="nc">Semigroup</span><span class="o">,</span> <span class="nc">Success</span><span class="o">}</span>
+
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">ValidationError</span>
+
+<span class="k">trait</span> <span class="nc">ValidationRules</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">E</span> <span class="k">&lt;:</span> <span class="kt">ValidationError</span>
+  <span class="k">type</span> <span class="kt">Rule</span> <span class="o">=</span> <span class="nc">Reader</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">Validated</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span>
+
+  <span class="k">def</span> <span class="n">must</span><span class="o">(</span><span class="n">predicate</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">,</span> <span class="n">error</span><span class="k">:</span> <span class="kt">E</span><span class="o">)</span><span class="k">:</span> <span class="kt">Rule</span> <span class="o">=</span>
+    <span class="nc">Reader</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">predicate</span><span class="o">(</span><span class="n">a</span><span class="o">))</span> <span class="nc">Success</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
+      <span class="k">else</span> <span class="nc">Failure</span><span class="o">(</span><span class="nc">NonEmptyList</span><span class="o">.</span><span class="n">nel</span><span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="nc">IList</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+    <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">mustNot</span><span class="o">(</span><span class="n">predicate</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">,</span> <span class="n">error</span><span class="k">:</span> <span class="kt">E</span><span class="o">)</span><span class="k">:</span> <span class="kt">Rule</span> <span class="o">=</span>
+    <span class="nc">Reader</span> <span class="o">{</span> <span class="n">liftNel</span><span class="o">(</span><span class="k">_</span><span class="o">)(</span><span class="n">predicate</span><span class="o">,</span> <span class="n">error</span><span class="o">)</span> <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">rules</span><span class="k">:</span> <span class="kt">NonEmptyList</span><span class="o">[</span><span class="kt">Rule</span><span class="o">]</span>
+
+  <span class="k">implicit</span> <span class="k">val</span> <span class="n">firstSemigroup</span><span class="k">:</span> <span class="kt">Semigroup</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">Semigroup</span><span class="o">.</span><span class="n">firstSemigroup</span>
+
+  <span class="k">def</span> <span class="n">validate</span><span class="o">(</span><span class="n">candidate</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">rules</span><span class="o">.</span><span class="n">sumr1</span><span class="o">.</span><span class="n">run</span><span class="o">(</span><span class="n">candidate</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>A better definition of <code class="highlighter-rouge">Validated[A]</code> is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalaz.ValidationNel</span>
+
+<span class="k">package</span> <span class="nn">object</span> <span class="n">semigroupexamples</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">ValidationNel</span><span class="o">[</span><span class="kt">ValidationError</span>, <span class="kt">A</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now, validation of <code class="highlighter-rouge">Name</code> with the Smart Constructor pattern is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">semigroupexamples</span>
+
+<span class="k">import</span> <span class="nn">scalaz.NonEmptyList</span>
+<span class="k">import</span> <span class="nn">stringsyntax.StringExtraOps</span>
+
+<span class="k">object</span> <span class="nc">Name</span> <span class="k">extends</span> <span class="nc">ValidationRules</span><span class="o">[</span><span class="kt">Name</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">E</span> <span class="o">=</span> <span class="nc">NameError</span>
+
+  <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">NameError</span> <span class="k">extends</span> <span class="nc">ValidationError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">NameCannotBeEmpty</span> <span class="k">extends</span> <span class="nc">NameError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">NameCannotBeWhitespaceOnly</span> <span class="k">extends</span> <span class="nc">NameError</span>
+
+  <span class="k">override</span> <span class="k">def</span> <span class="n">rules</span><span class="k">:</span> <span class="kt">NonEmptyList</span><span class="o">[</span><span class="kt">Rule</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">NonEmptyList</span><span class="o">(</span>
+      <span class="n">mustNot</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">isWhitespaceOnly</span><span class="o">,</span>
+        <span class="nc">NameCannotBeWhitespaceOnly</span><span class="o">),</span>
+      <span class="n">mustNot</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">,</span> <span class="nc">NameCannotBeEmpty</span><span class="o">)</span>
+    <span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Name</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">validate</span><span class="o">(</span><span class="k">new</span> <span class="nc">Name</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{})</span>
+<span class="o">}</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Name</span> <span class="k">private</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Whereas <code class="highlighter-rouge">Age</code> now is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">semigroupexamples</span>
+
+<span class="k">import</span> <span class="nn">scalaz.NonEmptyList</span>
+
+<span class="k">object</span> <span class="nc">Age</span> <span class="k">extends</span> <span class="nc">ValidationRules</span><span class="o">[</span><span class="kt">Age</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">E</span> <span class="o">=</span> <span class="nc">AgeError</span>
+
+  <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">AgeError</span> <span class="k">extends</span> <span class="nc">ValidationError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">AgeNegative</span> <span class="k">extends</span> <span class="nc">AgeError</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">AgeTooBig</span> <span class="k">extends</span> <span class="nc">AgeError</span>
+
+  <span class="k">val</span> <span class="nc">MaxAge</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="nc">Byte</span><span class="o">.</span><span class="nc">MaxValue</span><span class="o">.</span><span class="n">toInt</span> <span class="c1">// 127
+</span>
+  <span class="k">override</span> <span class="k">def</span> <span class="n">rules</span><span class="k">:</span> <span class="kt">NonEmptyList</span><span class="o">[</span><span class="kt">Rule</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">NonEmptyList</span><span class="o">(</span>
+      <span class="n">mustNot</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">,</span> <span class="nc">AgeNegative</span><span class="o">),</span>
+      <span class="n">mustNot</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="nc">MaxAge</span><span class="o">,</span> <span class="nc">AgeTooBig</span><span class="o">)</span>
+    <span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Age</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">validate</span><span class="o">(</span><span class="k">new</span> <span class="nc">Age</span><span class="o">(</span><span class="n">age</span><span class="o">)</span> <span class="o">{})</span>
+<span class="o">}</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Age</span> <span class="k">private</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Finally, by means of <code class="highlighter-rouge">Apply</code> syntax:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">semigroupexamples</span>
+
+<span class="k">import</span> <span class="nn">scalaz.syntax.apply._</span>
+
+<span class="k">object</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Validated</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span>
+    <span class="o">^(</span><span class="nc">Name</span><span class="o">(</span><span class="n">name</span><span class="o">),</span> <span class="nc">Age</span><span class="o">(</span><span class="n">age</span><span class="o">)){</span> <span class="nc">Person</span><span class="o">.</span><span class="n">apply</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">Name</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Age</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="functional-data-structures-and-programming-patterns">Functional data structures and programming patterns</h2>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/scala-essentials-nanodegree/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fsharp.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script><script>hljs.configure({languages:['scala','java','bash','haskell','fsharp','scala','python','java']});
 hljs.initHighlighting();
               </script><script src="/scala-essentials-nanodegree/js/mathjax-config.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML,https://oscarvarto.github.io/learning-scala/js/mathjax-config.js"></script><script>((window.gitter = {}).chat = {}).options = {
