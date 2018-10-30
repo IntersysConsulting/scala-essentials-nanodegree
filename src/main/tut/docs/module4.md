@@ -155,7 +155,7 @@ Notice that you use a `*` after the type you are allowing to appear several time
 ******
 
 **Note**: Scala also supports the `@varargs` annotation that lets you call a Scala variable-argument
-method from Java. See [Scala vargars annotation scaladoc].
+method from Java. See [Scala varargs annotation scaladoc].
 
 ```scala
 def foo(args: String*): Unit
@@ -167,7 +167,7 @@ is translated by the Scala compiler to
 def foo(args: Seq[String]): Unit
 ```
 
-But if you add the `@vargars` annotation
+But if you add the `@varargs` annotation
 
 ```scala
 @varargs def foo(args: String*): Unit
@@ -181,7 +181,7 @@ void foo(String... args)
 
 ******
 
-[Scala vargars annotation scaladoc]: https://www.scala-lang.org/api/current/scala/annotation/varargs.html
+[Scala varargs annotation scaladoc]: https://www.scala-lang.org/api/current/scala/annotation/varargs.html
 
 ### Procedures have `Unit` return value
 
@@ -403,7 +403,7 @@ kinds of polymorphism:
 #### Subtyping/dynamic polymorphism
 
 The following snippet illustrates subtyping polymorphism, and how we can
-constraint type parameters with the [upper type bound] `T <: Shape` ().
+constraint type parameters with the [upper type bound] `T <: Shape`.
 
 ```scala
 sealed trait Shape
