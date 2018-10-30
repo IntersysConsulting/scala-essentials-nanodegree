@@ -158,7 +158,7 @@ object stringsyntax {
 
 Other possibility to avoid nonsensical data, and to enforce business/reality rules, is to use the
 "smart constructor" pattern. We are explaining the basics here, and in future sections will get a
-(alledgedlly) better encoding of the pattern. We want to **enforce correctness by construction**.
+(allegedly) better encoding of the pattern. We want to **enforce correctness by construction**.
 
 For this example, we are going to use a person's age, and enforce the two following rules:
 
@@ -314,11 +314,11 @@ But to be able to fully understand the details, we need to learn some other basi
 
 ### Warm-up and additional links
 
-For a mostly mathless discussion of monoids, please take a look at [Monoid without tears], by Scott
+For a mostly math-less discussion of monoids, please take a look at [Monoid without tears], by Scott
 Wlaschin. You will find more examples in part 2 of this series, in [Monoids in practice].
 
 The following links could help you realize further monoid applications. These are much more than
-intelectual curiosities!
+intellectual curiosities!
 
 - [Google’s MapReduce Programming Model — Revisited]
 - [Streaming examples for Apache Spark]
