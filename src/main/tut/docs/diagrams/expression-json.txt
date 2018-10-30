@@ -1,0 +1,6 @@
+@startuml
+Json <|-- Expression
+Expression <|-- Number
+Expression <|-- Plus
+Expression <|-- Minus
+@enduml

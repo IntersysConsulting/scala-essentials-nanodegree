@@ -23,19 +23,15 @@ Scala Developer and
 
 ### What skills will the trainee obtain?
 
-[Epic decoupling!]{.smallcaps}
+- EPIC DECOUPLING!
 
 ------
 
 ### Agenda
 
-specify the agenda
-
-------
-
-**Prerequisite**: [Typeclass pattern]
-
-[Typeclass pattern]: https://www.youtube.com/watch?v=sVMES4RZF-8
+- Implicits reminder
+- Context bound syntax
+- Typeclass examples/exercises
 
 ------
 
@@ -43,7 +39,7 @@ specify the agenda
 
 Different definitions of `add`:
 
-```{.scala .listing}
+```scala
 def add1(a: Int, b: Int) = a + b
 // curried
 def add2(a: Int)(b: Int) = a + b
@@ -63,7 +59,7 @@ def addOne(a: Int) = add3(a)
 
 `Ordering[T]` from the Scala Standard Library.
 
-```{.scala .listing}
+```scala
 import scala.math.Ordering.Implicits._
 
 // Typeclass constraint
@@ -165,7 +161,7 @@ import simulacrum._
 }
 ```
 
-**Goal**: [Epic Decoupling]{.smallcaps}  
+**Goal**: *EPIC DECOUPLING*
 See [Simulacrum].
 
 [Simulacrum]: https://bit.ly/2ROJvXH
@@ -242,3 +238,11 @@ object TypeclassExample extends App {
   val json1: JsonValue = exp1.json
 }
 ```
+
+------
+
+**Remark**: [Typeclass pattern]
+
+[Typeclass pattern]: https://www.youtube.com/watch?v=sVMES4RZF-8
+
+------
