@@ -1,5 +1,493 @@
 <html><head><title>Scala Essentials: Essentials</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Intersys Consulting" /><meta name="description" content="Scala Essentials Nanodegree" /><meta name="og:image" content="/scala-essentials-nanodegree/img/poster.png" /><meta name="og:title" content="Scala Essentials: Essentials" /><meta name="og:site_name" content="Scala Essentials" /><meta name="og:url" content="https://intersysconsulting.github.io/scala-essentials-nanodegree" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala Essentials Nanodegree" /><link rel="icon" type="image/png" href="/scala-essentials-nanodegree/img/favicon.png" /><meta name="twitter:title" content="Scala Essentials: Essentials" /><meta name="twitter:image" content="https://intersysconsulting.github.io/scala-essentials-nanodegreeimg/poster.png" /><meta name="twitter:description" content="Scala Essentials Nanodegree" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/scala-essentials-nanodegree/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/scala-essentials-nanodegree/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/scala-essentials-nanodegree/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/scala-essentials-nanodegree/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/scala-essentials-nanodegree/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/scala-essentials-nanodegree/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/scala-essentials-nanodegree/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/scala-essentials-nanodegree/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/scala-essentials-nanodegree/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/scala-essentials-nanodegree/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/scala-essentials-nanodegree/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/scala-essentials-nanodegree/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/scala-essentials-nanodegree/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/scala-essentials-nanodegree/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/scala-essentials-nanodegree/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/scala-essentials-nanodegree/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/scala-essentials-nanodegree/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/scala-essentials-nanodegree/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/scala-essentials-nanodegree/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/scala-essentials-nanodegree/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/highlight/styles/default.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/style.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/palette.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/codemirror.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/scala-essentials-nanodegree/" class="brand"><div class="brand-wrapper"><span>Scala Essentials</span></div></a></li> <li><a href="/scala-essentials-nanodegree/docs.html" class="">Welcome!</a></li> <li><a href="/scala-essentials-nanodegree/docs/module1.html" class="">M1 - Introduction</a></li> <li><a href="/scala-essentials-nanodegree/docs/module2.html" class="">M2 - Essentials</a></li> <li><a href="/scala-essentials-nanodegree/docs/module3.html" class="">M3 - Objects and classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module4.html" class="">M4 - Functions</a></li> <li><a href="/scala-essentials-nanodegree/docs/module5.html" class="">M5 - Traits for data modelling</a></li> <li><a href="/scala-essentials-nanodegree/docs/module6.html" class="">M6 - Sequencing computation</a></li> <li><a href="/scala-essentials-nanodegree/docs/module7.html" class="">M7 - Idiomatic Scala</a></li> <li><a href="/scala-essentials-nanodegree/docs/module8.html" class="">M8 - Type classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module9.html" class="">M9 - Functional programming</a></li> <li><a href="/scala-essentials-nanodegree/docs/module10.html" class="">M10 - Popular frameworks and toolkits</a></li>           </ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="intersysconsulting" data-github-repo="scala-essentials-nanodegree"><div class="content-wrapper"><section><h1 id="module-2-essentials">Module 2: Essentials</h1>
 
+<h2 id="scala-expressions-types-and-values">Scala expressions, types and values</h2>
+
+<p>In functional programming an expression is a unit of code that returns a value after 
+executed. Expressions make a foundation of functional programming since they allow to
+return data instead of modifying existing data.</p>
+
+<p>An expression is as simple as:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"hello world"</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<h3 id="variables">Variables</h3>
+
+<p>In this context, we can define a variable as the result of an expression. In Scala,
+you can define variables in three basic ways.
+We will further view in detail its differences
+and usages, but for now lets settle with only learning how to define them:</p>
+
+<h4 id="val">val</h4>
+
+<p>The usage of val is as follows: <code class="highlighter-rouge">val name: type = value</code></p>
+
+<p>For example:</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">number</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">val</span> <span class="n">word</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Hi!"</span>
+<span class="k">val</span> <span class="n">something</span> <span class="k">=</span> <span class="mf">45.6</span>
+</code></pre></div></div>
+
+<p>A variable defined with <code class="highlighter-rouge">val</code> cannot change value, the type annotation is optional, but
+type will be inferred.</p>
+
+<h4 id="var">var</h4>
+<p>The usage of var is the following: <code class="highlighter-rouge">var name: type = value</code></p>
+
+<p>For example :</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">variable</span> <span class="k">=</span> <span class="mi">8</span>
+<span class="n">variable</span> <span class="k">=</span> <span class="mi">15</span>
+<span class="n">variable</span> <span class="k">=</span> <span class="mi">36</span>
+</code></pre></div></div>
+
+<p>As <code class="highlighter-rouge">val</code>, type annotation is optional and type will be inferred, but for this case, the value is 
+variable. Type should be preserved, this means you cannot define a <code class="highlighter-rouge">var</code> as a Double
+and then use it as a string. In order to follow functional paradigm <code class="highlighter-rouge">val</code> should
+be preferred over <code class="highlighter-rouge">var</code>.</p>
+
+<h4 id="def">def</h4>
+<p>We can use def as follows: <code class="highlighter-rouge">def name: type = value</code></p>
+
+<p>For example</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">number</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="k">def</span> <span class="n">word</span> <span class="k">=</span> <span class="s">"Weird"</span>
+<span class="k">def</span> <span class="n">print</span> <span class="k">=</span> <span class="n">println</span><span class="o">(</span><span class="s">""</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>When defining values, <code class="highlighter-rouge">def</code> works pretty much as <code class="highlighter-rouge">var/val</code> (except for some details that will be further
+addressed), the great difference comes from the fact that <code class="highlighter-rouge">def</code> will not only store the 
+final result of the expression, but the whole expression. Also, as we are going to see
+in detail next, it can be used to define functions.</p>
+
+<h3 id="expression-blocks">Expression blocks</h3>
+
+<p>You can have a set of expressions surrounded by <code class="highlighter-rouge">{ }</code>, these groups are called
+expression blocks and can be composed of any of the expressions previously mentioned.
+For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+  <span class="k">val</span> <span class="n">a</span> <span class="k">=</span> <span class="mi">5</span>
+  <span class="k">val</span> <span class="n">b</span> <span class="k">=</span> <span class="mi">6</span>
+  <span class="n">println</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
+  <span class="n">println</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="functions">Functions</h3>
+
+<p>A function is an expression that takes parameters. Parameters need to specify type and 
+can be as many as needed.</p>
+
+<p>It is used in the following way: 
+<code class="highlighter-rouge">(param1: type, param2: type, ..., paramN: type) =&gt; block expression (function body)</code></p>
+
+<p>For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)*</span><span class="n">z</span> 
+<span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"hello human"</span><span class="o">)</span>
+  <span class="n">a</span><span class="o">*</span><span class="mi">100</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>As we previously anticipated, <code class="highlighter-rouge">def</code> can be used to define functions as <code class="highlighter-rouge">var/val</code>,
+type annotation is optional and type will be inferred.</p>
+
+<p><code class="highlighter-rouge">def name(param1: type, param2: type, ..., paramN: type): return_type = block expression (function body)</code></p>
+
+<p>Some examples are:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">product</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)*</span><span class="n">z</span>
+<span class="k">def</span> <span class="n">sameResultAlways</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+<span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"I don't care about your input"</span><span class="o">)</span>
+  <span class="kc">true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>In further modules we will talk more about functions, for now you know how to define them.</p>
+
+<h3 id="boolean-expressions">Boolean expressions</h3>
+
+<p>In Scala as in most languages we have the standard boolean expressions:</p>
+
+<h4 id="constant">Constant</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span>
+<span class="kc">false</span>
+</code></pre></div></div>
+
+<h4 id="negation">Negation</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">a</span><span class="k">:</span> <span class="kt">Boolean</span>
+<span class="o">!</span><span class="n">a</span>
+</code></pre></div></div>
+
+<h4 id="conjunctions-and-disjuntions">Conjunctions and disjuntions</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">a</span><span class="k">:</span> <span class="kt">Boolean</span>
+<span class="k">val</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Boolean</span>
+<span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">||</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<h4 id="comparisons">Comparisons</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> 
+<span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<h3 id="conditionals">Conditionals</h3>
+<p>We can build conditional expressions by using a boolean expression and an expression
+block.</p>
+
+<p><code class="highlighter-rouge">if (boolean expresion) expression block</code></p>
+
+<p>For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"calculating percentage"</span><span class="o">)</span>
+  <span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="o">*</span><span class="mi">100</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>We can also use else statement, as usual</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">boolean</span> <span class="n">expresion</span><span class="o">)</span> <span class="n">expression</span> <span class="n">block</span>
+<span class="k">else</span> <span class="n">expression</span> <span class="n">block</span>
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"calculating percentage"</span><span class="o">)</span>
+  <span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="o">*</span><span class="mi">100</span>
+<span class="o">}</span>
+<span class="k">else</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"calculating percentage"</span><span class="o">)</span>
+  <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">*</span><span class="mi">100</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="types">Types</h3>
+
+<p>Scala is a statically typed with type inference language. This means all variables
+and functions have a specific type, but you don’t need to always annotate the type.
+This makes types a big deal in Scala. As we have previously reviewed, all variables have
+an assigned type that will not change, as well as functions and function’s parameters.
+The basic Scala types are illustrated on the following picture:</p>
+
+<p style="text-align:center;">
+<img src="../img/ScalaTypes.png" alt="Scala Types" style="width: 90%" />
+</p>
+
+<p>As we can see they all come from a mother type called Any and then divide into
+two families: AnyVal and AnyRef. AnyVal types are common to every programmer, but
+AnyRef family might not be so, we are going to elaborate a little on this.</p>
+
+<h4 id="anyref">AnyRef</h4>
+<p>AnyRef types should take parameters, this means that an AnyRef type cannot be defined
+on its own. This is, you can only have a list of some type, you cannot have
+a list of anything. For example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">height</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Double</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mf">1.70</span><span class="o">,</span> <span class="mf">1.77</span><span class="o">,</span> <span class="mf">1.52</span><span class="o">,</span> <span class="mf">1.92</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">middleName</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Option</span><span class="o">(</span><span class="s">"Carlos"</span><span class="o">),</span> <span class="nc">None</span><span class="o">,</span> <span class="nc">Option</span><span class="o">(</span><span class="s">"Guadalupe"</span><span class="o">))</span>
+<span class="k">val</span> <span class="n">probabilityOfExplotion</span><span class="k">:</span> <span class="kt">MyVerySpecialType</span><span class="o">[</span><span class="kt">Boolean</span><span class="o">]</span> <span class="k">=</span> <span class="nc">MyVerySpecialType</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>  
+</code></pre></div></div>
+
+<h2 id="evaluation-strategies">Evaluation Strategies</h2>
+
+<h3 id="call-by-value-and-call-by-name">call-by-value and call-by-name</h3>
+<p>The first important thing we need to know is that no matter the evaluation strategy used
+<a href="https://www.coursera.org/learn/progfun1/lecture/vzbJj/lecture-1-2-elements-of-programming">it will reduce to the same value</a> 
+as long as we only have pure functions and the evaluation terminates.</p>
+
+<p>When evaluating by call-by-value (cbv) we first evaluate the arguments of the function and then we substitute
+on the body of the function.</p>
+
+<p>When evaluating by call-by-name (cbn) we first substitute on the body of the function the arguments
+as they are.</p>
+
+<p>Call-by-name has the advantage that a function argument is not evaluated if the corresponding parameter is not
+used in the body. But sometimes it can end up evaluating the same expression multiple times.</p>
+
+<p><a href="https://www.coursera.org/learn/progfun1/lecture/eervR/lecture-1-3-evaluation-strategies-and-termination">In Scala the “standard” is cbv</a>
+, but we can use cbn if a function parameter starts with =&gt;</p>
+
+<p>This means:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//This function will be evaluated as cbv
+</span><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1">//x parameter will be evaluated as cbn
+</span><span class="k">def</span> <span class="n">sum_1</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1">//both parameter will be evaluated as cbn
+</span><span class="k">def</span> <span class="n">sum_2</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p>This way, evaluating <code class="highlighter-rouge">sum</code>, <code class="highlighter-rouge">sum_1</code> and <code class="highlighter-rouge">sum_2</code> with the same parameters will result on different number of steps, but same result. This is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span>
+<span class="n">sum</span><span class="o">(</span><span class="mi">6</span><span class="o">+</span><span class="mi">5</span><span class="o">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span>
+<span class="n">sum</span><span class="o">(</span><span class="mi">11</span><span class="o">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span>
+<span class="n">sum</span><span class="o">(</span><span class="mi">11</span><span class="o">,</span><span class="mi">5</span><span class="o">)</span> <span class="k">=</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">=</span> <span class="mi">16</span>
+</code></pre></div></div>
+
+<p>for <code class="highlighter-rouge">sum_1</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum_1</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span>
+<span class="n">sum_1</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">,</span><span class="mi">5</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">)+</span><span class="mi">5</span> <span class="k">=</span> <span class="o">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">5</span><span class="o">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">=</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">=</span> <span class="mi">16</span>
+</code></pre></div></div>
+
+<p>for <code class="highlighter-rouge">sum_2</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum_2</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">)+(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="mi">6</span><span class="o">+</span><span class="mi">5</span><span class="o">)+(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span> <span class="k">=</span> <span class="mi">11</span> <span class="o">+</span> <span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">)</span> <span class="k">=</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">=</span> <span class="mi">16</span>
+</code></pre></div></div>
+
+<p>Finally, as we previously mentioned, using <code class="highlighter-rouge">val</code> and <code class="highlighter-rouge">def</code> to define a value can seem to be
+exactly the same. But now we can understand the difference. When we use <code class="highlighter-rouge">val</code>, we are using
+a cbv evaluation to define such value. On the other hand, when we use <code class="highlighter-rouge">def</code>, we are using
+cbn evaluation. For example in:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">a</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="mi">6</span>
+<span class="k">val</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="mi">6</span>
+</code></pre></div></div>
+
+<p>The variable a will be carrying the value 15 while b will be carrying the value 1+2+3+4+5+6, that
+will eventually evaluate to 15 anyway.</p>
+
+<h2 id="understanding-the-jvm--basics-of-scala-interoperability">Understanding the JVM:  Basics of Scala interoperability</h2>
+
+<p>The JVM has two main proposes:</p>
+
+<ul>
+  <li>Allowing any program to run in every device or operating system.</li>
+  <li>Managing and optimizing memory usage.</li>
+</ul>
+
+<p>Scala is built on top of the JVM, which makes it a JVM language. A JVM language is any language with functionality
+that can be expressed in terms of a valid class filed that can be hosted on de JVM, some examples of such languages are:</p>
+
+<ul>
+  <li>Kotlin</li>
+  <li>Groovy</li>
+  <li>Clojure</li>
+  <li>Scala</li>
+</ul>
+
+<p>The main advantage Scala has as JVM language is the 
+<a href="https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html">interoperability with Java</a>
+and some other JVM languages. In
+particular the interaction with the mainstream object-oriented Java programming language is 
+<a href="https://docs.scala-lang.org/tour/tour-of-scala.html">straight forward</a>.</p>
+
+<p>Some of the most simple examples of Java/Scala interoperability are related to collections.
+Java and Scala have both very rich
+collections library, we can pass back and forth between Java and Scala for the <a href="https://docs.scala-lang.org/overviews/collections/conversions-between-java-and-scala-collections.html">following 
+collection types</a>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Iterator               &lt;=&gt;     java.util.Iterator
+Iterator               &lt;=&gt;     java.util.Enumeration
+Iterable               &lt;=&gt;     java.lang.Iterable
+Iterable               &lt;=&gt;     java.util.Collection
+mutable.Buffer         &lt;=&gt;     java.util.List
+mutable.Set            &lt;=&gt;     java.util.Set
+mutable.Map            &lt;=&gt;     java.util.Map
+mutable.ConcurrentMap  &lt;=&gt;     java.util.concurrent.ConcurrentMap
+</code></pre></div></div>
+
+<p>For example, we can declare a java List in scala and then convert it to a Scala Buffer:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">collection.JavaConverters._</span>
+<span class="k">import</span> <span class="nn">collection.mutable._</span>
+
+<span class="k">val</span> <span class="n">jul</span><span class="k">:</span> <span class="kt">java.util.List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">ArrayBuffer</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">).</span><span class="n">asJava</span>
+<span class="k">val</span> <span class="n">buf</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="n">jul</span><span class="o">.</span><span class="n">asScala</span>
+</code></pre></div></div>
+
+<p>The whole <a href="https://www.scala-lang.org/api/2.12.0/scala/collection/JavaConverters$.html">JavaConverters</a>
+object has many methods to interoperate between the two languages.</p>
+
+<p>In general we can say you can always use existing <a href="https://www.scala-lang.org/old/faq/4">Java code in Scala</a>, but
+using Scala features without analogues on Java in Java can get tricky, but 
+<a href="http://www.codecommit.com/blog/java/interop-between-java-and-scala">not impossible</a>. Specially 
+since <a href="https://www.scala-lang.org/news/2.12.0/">Scala 2.12 release</a> that takes advantage of 
+the features included in Java 8. Some examples are:</p>
+
+<ul>
+  <li>Traits compile directly to an inteface.</li>
+  <li>New lambda syntax for SAM types.</li>
+  <li>Improved type inference.</li>
+</ul>
+
+<h2 id="consulting-existing-libraries-scaladocs-and-how-to-produce-your-own">Consulting existing libraries Scaladocs and how to produce your own</h2>
+
+<p>As in every modern language libraries play a major roll in Scala. The usage of 
+<a href="https://www.scala-sbt.org/">SBT</a> as build tool, simplifies 
+the integration of libraries, since the <code class="highlighter-rouge">build.sbt</code> file of the project will handle
+the dependencies needed by simply
+adding <a href="https://www.scala-sbt.org/1.0/docs/Library-Dependencies.html">one or a few lines</a>.
+The exact commands that need to be added to your build.sbt file will generally be shown in the
+readme of the library you are consulting.
+For example to install the popular library <a href="http://www.scalatest.org/">ScalaTest</a>
+ you only need to add:</p>
+
+<pre><code class="language-sbtshell">libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
+addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.3")
+</code></pre>
+
+<p>The first line installs Scalactic, ScalaTest’s sister library focused on quality through types, 
+from the <code class="highlighter-rouge">org.scalatic</code> repository on release <code class="highlighter-rouge">3.0.5</code>.
+The second line will Scalatest from <code class="highlighter-rouge">org.scalatest</code> on release <code class="highlighter-rouge">3.0.5</code>.
+The final two lines will install a plugin, the first specifies the repository the plugin lives in
+and the second one will handle about the plugin itself.</p>
+
+<p>Once installed we should only import it in the desired project as:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">org.scalatest._</span>
+</code></pre></div></div>
+
+<p>In this case the <code class="highlighter-rouge">_</code> works as <code class="highlighter-rouge">*</code> sign in java.</p>
+
+<p>As we can see, installing and using a library is pretty straight forward, now it’s time to talk about how we can
+decide if a library contains what we need and how we should use it. In aid to this issue it exists a model to
+document Scala code called Scaladoc.</p>
+
+<h3 id="scaladoc">Scaladoc</h3>
+
+<p>Scaladoc <a href="https://docs.scala-lang.org/style/scaladoc.html">is based on Javadoc</a>, and as Javadoc it works by 
+using comments directly before the items that are going to be commented. It should be used in all packages,
+classes, traits, methods, and other members and the 
+<a href="http://doc.scalatest.org/3.0.0/#package">result of a good documentation</a> is such as the one on the following picture:</p>
+
+<p style="text-align:center;">
+<img src="../img/ScalaDocTest.png" alt="Scaladoc of ScalaTest" style="width: 90%" />
+</p>
+
+<p>The official Scaladoc for Scala is in the following page 
+<a href="https://www.scala-lang.org/api/current/">www.scala-lang.org/api/current/</a> the documentation
+is sorted by packages. Specific classes can be sorted by name by using the top bar on the page.</p>
+
+<p style="text-align:center;">
+<img src="../img/ScalaSearch.png" alt="Scala's Scaladoc's search bar" style="width: 90%" />
+</p>
+
+<p>Once you are browsing a package you will find the following window:</p>
+
+<p style="text-align:center;">
+<img src="../img/ScalaMath.png" alt="Scala math" style="width: 90%" />
+</p>
+
+<p>On the center of the screen there are a list of methods with its description. On the right side
+of the screen you will find a list with a (t) symbol, (o) symbol or (c) symbol these will take
+you straight to the trait, object (or companion object) or class.</p>
+
+<p>Navigating through scaladoc will require experience and time, you can follow the advises 
+on the last section of the first chapter of “Scala for the impatient”, which can be 
+<a href="https://info.lightbend.com/ebook-register-scala-for-the-impatient.html?utm_source=website&amp;utm_medium=lb-scala-page&amp;utm_campaign=EBK-20XX-Scala-for-the-Impatient&amp;utm_term=none&amp;utm_content=none">downloaded for free</a>.
+You can also check some features of Scaladoc on the official 
+<a href="https://docs.scala-lang.org/overviews/scaladoc/interface.html">Scala page</a>.</p>
+
+<h2 id="documenting-your-work">Documenting your work</h2>
+
+<p>As we previously saw, a good documentation translates in an easy understanding on when to use and how to use
+libraries of packages. So now lets focus on how to document our work. We are going to use 
+<a href="https://docs.scala-lang.org/overviews/scaladoc/for-library-authors.html">Scaladoc style guide</a>.</p>
+
+<p>Scaladoc comments should start with <code class="highlighter-rouge">/**</code> and end with <code class="highlighter-rouge">*/</code>. An advantage of Scaladoc over Javadoc
+is that the format of the rest of the comments is flexible between <code class="highlighter-rouge">*</code> in the second or third row
+or the whole comment in the same line, this means:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ *
+ *
+ * /
+</span></code></pre></div></div>
+
+<p>and</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+  *
+  *
+  *
+  */</span>
+</code></pre></div></div>
+
+<p>and</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/** The whole comment */</span>
+</code></pre></div></div>
+
+<p>Are valid. Most editors with a Scala plugin will automatically fill a template for Scaladoc once
+<code class="highlighter-rouge">/**</code> is typed.</p>
+
+<p>In general a good Scaladoc should contain a quick summary of the function, at the beginning. A more
+complex description of the subject documented can go next. Finally a group of tags, should close
+the documentation of the subject, which can be:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">@constructor</code></li>
+  <li><code class="highlighter-rouge">@return</code></li>
+  <li><code class="highlighter-rouge">@throws</code></li>
+  <li><code class="highlighter-rouge">@param</code></li>
+  <li><code class="highlighter-rouge">@tparam</code></li>
+  <li><code class="highlighter-rouge">@see</code></li>
+  <li><code class="highlighter-rouge">@note</code></li>
+  <li><code class="highlighter-rouge">@example</code></li>
+  <li><code class="highlighter-rouge">@usecase</code></li>
+</ul>
+
+<p>Among some others. For example we can document the functions we created previously:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/** This function multiplies the addition of two numbers
+ * 
+ * @param x term1
+ * @param y term2
+ * @param z multiplier
+ * @return (x + y)*z
+ */</span>
+<span class="k">def</span> <span class="n">product</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)*</span><span class="n">z</span>
+
+<span class="cm">/** This function always returns true and mocks about you
+ * 
+ * @param a a non important Int
+ * @param b a non important Double
+ * @return true 
+ */</span>
+<span class="k">def</span> <span class="n">sameResultAlways</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>  <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">"I don't care about your input"</span><span class="o">)</span>
+  <span class="kc">true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Once you have documented your project, you can 
+<a href="https://alvinalexander.com/scala/how-to-generate-scala-documentation-scaladoc-command-examples">automatically generate</a> 
+developer documentation by either using the scaladoc command or a SBT task.</p>
+
+<p>The scaladoc command usage is the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scaladoc YourFile.scala
+</code></pre></div></div>
+
+<p>This will generate a root index.html file and other related files for your API documentation.</p>
+
+<p>On the other hand, running the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sbt doc
+</code></pre></div></div>
+
+<p>Will generate the same API documentation and will place it under the target directory of your
+SBT project. Specifically it will be located at target/scala-2.X/api/index.html.</p>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/scala-essentials-nanodegree/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fsharp.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script><script>hljs.configure({languages:['scala','java','bash','haskell','fsharp','scala','python','java']});
 hljs.initHighlighting();
               </script><script src="/scala-essentials-nanodegree/js/mathjax-config.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML,https://oscarvarto.github.io/learning-scala/js/mathjax-config.js"></script><script>((window.gitter = {}).chat = {}).options = {

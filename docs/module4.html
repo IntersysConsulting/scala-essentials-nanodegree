@@ -136,7 +136,7 @@ number of objects (in addition to the <code class="highlighter-rouge">fmt</code>
 <hr />
 
 <p><strong>Note</strong>: Scala also supports the <code class="highlighter-rouge">@varargs</code> annotation that lets you call a Scala variable-argument
-method from Java. See <a href="https://www.scala-lang.org/api/current/scala/annotation/varargs.html">Scala vargars annotation scaladoc</a>.</p>
+method from Java. See <a href="https://www.scala-lang.org/api/current/scala/annotation/varargs.html">Scala varargs annotation scaladoc</a>.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">String*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 </code></pre></div></div>
@@ -146,7 +146,7 @@ method from Java. See <a href="https://www.scala-lang.org/api/current/scala/anno
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span>
 </code></pre></div></div>
 
-<p>But if you add the <code class="highlighter-rouge">@vargars</code> annotation</p>
+<p>But if you add the <code class="highlighter-rouge">@varargs</code> annotation</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@varargs</span> <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">String*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 </code></pre></div></div>
@@ -269,13 +269,13 @@ machine.</li>
 functions that accept <em>two</em> arguments. For example:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span>
-<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$5078</span><span class="o">/</span><span class="mh">0x00000001019d5840</span><span class="k">@</span><span class="mf">4d</span><span class="n">ba6bec</span>
+<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4354</span><span class="o">/</span><span class="mi">794834022</span><span class="k">@</span><span class="mi">5</span><span class="n">b072a86</span>
 </code></pre></div></div>
 
 <p>A <em>curried</em> version of the above is:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$5131</span><span class="o">/</span><span class="mh">0x00000001019f8040</span><span class="k">@</span><span class="mi">2</span><span class="n">ba55024</span>
+<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$4407</span><span class="o">/</span><span class="mi">438484598</span><span class="k">@</span><span class="mi">7597274</span><span class="n">b</span>
 </code></pre></div></div>
 
 <p>From <a href="http://www.informit.com/store/scala-for-the-impatient-9780134540634?ranMID=24808">Scala for the Impatient, 2nd Edition</a>:</p>
@@ -292,13 +292,13 @@ argument.</p>
 <p>You can get a curried version of a <code class="highlighter-rouge">FunctionN</code> by calling <code class="highlighter-rouge">curried</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="n">add1</span><span class="o">.</span><span class="n">curried</span> <span class="c1">// returns an equivalent of add2
-</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$5142</span><span class="o">/</span><span class="mh">0x0000000101a00840</span><span class="k">@</span><span class="mi">25</span><span class="n">e3037e</span>
+</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$4418</span><span class="o">/</span><span class="mi">1453283643</span><span class="k">@</span><span class="mi">7</span><span class="n">e729f85</span>
 </code></pre></div></div>
 
 <p>On the other hand, you can call <code class="highlighter-rouge">Function.uncurried</code> to “uncurry”:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="nc">Function</span><span class="o">.</span><span class="n">uncurried</span><span class="o">(</span><span class="n">add2</span><span class="o">)</span> <span class="c1">// returns an equivalent of add1
-</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$5158</span><span class="o">/</span><span class="mh">0x0000000101a0f040</span><span class="k">@</span><span class="mi">3369958</span><span class="n">c</span>
+</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$4434</span><span class="o">/</span><span class="mi">2090410500</span><span class="k">@</span><span class="mf">5d</span><span class="mi">782</span><span class="n">e4f</span>
 </code></pre></div></div>
 
 <p>Currying buys us (at least) 2 things in Scala:</p>
@@ -312,7 +312,7 @@ argument.</p>
 arguments. For example</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">add2</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
-<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$5165</span><span class="o">/</span><span class="mh">0x0000000101a18840</span><span class="nd">@a0b6520</span>
+<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4441</span><span class="o">/</span><span class="mi">1118785527</span><span class="k">@</span><span class="mf">1168225f</span>
 </code></pre></div></div>
 
 <p>Here is an example from the Scala Standard Library to explain the second
@@ -367,7 +367,7 @@ kinds of polymorphism:</p>
 <h4 id="subtypingdynamic-polymorphism">Subtyping/dynamic polymorphism</h4>
 
 <p>The following snippet illustrates subtyping polymorphism, and how we can
-constraint type parameters with the <a href="https://docs.scala-lang.org/tour/upper-type-bounds.html">upper type bound</a> <code class="highlighter-rouge">T &lt;: Shape</code> ().</p>
+constraint type parameters with the <a href="https://docs.scala-lang.org/tour/upper-type-bounds.html">upper type bound</a> <code class="highlighter-rouge">T &lt;: Shape</code>.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Shape</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Shape</span>
