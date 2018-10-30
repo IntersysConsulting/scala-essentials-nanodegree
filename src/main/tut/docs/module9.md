@@ -42,8 +42,6 @@ to define more precise/refined types, is by using [Refined]. The above example c
 with:
 
 ```scala
-package io.github.oscarvarto
-
 import eu.timepit.refined.W
 import eu.timepit.refined.api.Refined
 import eu.timepit.refined.auto._
@@ -70,7 +68,7 @@ valid age (according to above definition).
 
 [Refined]: https://github.com/fthomas/refined
 
-### Adding/extending types with convenient syntax with implicit classes
+### Adding/extending types with convenient syntax through implicit classes
 
 One possible way to define a new operation on an existing type is to create an utility method inside
 a (singleton) object:
@@ -86,7 +84,7 @@ object StringUtilities {
 }
 ```
 
-Then you have to use the method as usual:
+Then you can to use the method as usual:
 
 ```scala
 import StringUtilities._
@@ -110,6 +108,7 @@ object stringsyntax {
       */
     def isWhitespaceOnly: Boolean =
       s.nonEmpty && s.forall(_.isWhitespace)
+  }
 }
 ```
 
@@ -167,7 +166,7 @@ For this example, we are going to use a person's age, and enforce the two follow
 - An age must be upper-bounded by a reasonable max integer: 127.
 
 ```scala
-package io.github.oscarvarto.semigroupexamples
+package semigroupexamples
 
 object Age {
   val MaxAge: Int = 127
@@ -222,7 +221,7 @@ So, given an input `String`, the following type models what could happen during 
 name:
 
 ```scala
-Either[NonEmptyList[NameError, Name]]
+Either[NonEmptyList[NameError], Name]
 ```
 
 Validation of rules would result in either one of the following two possibilities:
@@ -554,7 +553,7 @@ Now, validation of `Name` with the Smart Constructor pattern is:
 package semigroupexamples
 
 import scalaz.NonEmptyList
-import io.github.oscarvarto.stringsyntax.StringExtraOps
+import stringsyntax.StringExtraOps
 
 object Name extends ValidationRules[Name] {
   type E = NameError
