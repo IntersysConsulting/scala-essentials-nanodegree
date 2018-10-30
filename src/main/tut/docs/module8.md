@@ -117,7 +117,7 @@ import simulacrum._
 }
 ```
 
-**Goal**: [Epic Decoupling]{.smallcaps}  
+**Goal**: *EPIC DECOUPLING*
 See [Simulacrum].
 
 [Simulacrum]: https://bit.ly/2ROJvXH

@@ -1,0 +1,5 @@
+@startuml
+Expression <|-- Number
+Expression <|-- Plus
+Expression <|-- Minus
+@enduml
