@@ -7,15 +7,11 @@ author: M.C. Oscar Vargas Torres
 
 # Module 8: Type classes
 
-**Prerequisite**: [Typeclass pattern]
-
-[Typeclass pattern]: https://www.youtube.com/watch?v=sVMES4RZF-8
-
 ## Implicits (reminder)
 
 Different definitions of `add`:
 
-```{.scala .listing}
+```scala
 def add1(a: Int, b: Int) = a + b
 // curried
 def add2(a: Int)(b: Int) = a + b
@@ -33,7 +29,7 @@ def addOne(a: Int) = add3(a)
 
 `Ordering[T]` from the Scala Standard Library.
 
-```{.scala .listing}
+```scala
 import scala.math.Ordering.Implicits._
 
 // Typeclass constraint
@@ -188,3 +184,10 @@ object TypeclassExample extends App {
   val json1: JsonValue = exp1.json
 }
 ```
+
+## Remarks
+
+The [Typeclass pattern] video could be of great help for a better understanding of some
+of the material presented here.
+
+[Typeclass pattern]: https://www.youtube.com/watch?v=sVMES4RZF-8
