@@ -16,7 +16,7 @@ author: M.C. Oscar Vargas Torres
 A list of `Int`s, notice that type inference works here and assigns the most obvious type here.
 
 ```tut
-val x: List = List(1, 2, 3)
+val x = List(1, 2, 3)
 ```
 
 Notice also, that the default implementation for `List`s is from `scala.collection.immutable` namespace.
