@@ -140,4 +140,6 @@ For more information see the `CONTRIBUTING.md` file.
 
 ## License
 
-Read the `LICENSE.md` file. 
+This nanodegree uses the [Creative Commons Attribution ShareAlike 4.0 International] license. Read the `LICENSE.md` file for more information.
+
+[Creative Commons Attribution ShareAlike 4.0 International]: https://creativecommons.org/licenses/by-sa/4.0/legalcode 
