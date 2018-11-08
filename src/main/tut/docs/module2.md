@@ -229,7 +229,7 @@ val probabilityOfExplotion: MyVerySpecialType[Boolean] = MyVerySpecialType(true)
 
 ### call-by-value and call-by-name
 The first important thing we need to know is that no matter the evaluation strategy used
-[it will reduce to the same value](https://www.coursera.org/learn/progfun1/lecture/vzbJj/lecture-1-2-elements-of-programming) 
+[it will reduce to the same value](https://www.youtube.com/watch?v=Lgx-KvpIoS4) 
 as long as we only have pure functions and the evaluation terminates.
 
 When evaluating by call-by-value (cbv) we first evaluate the arguments of the function and then we substitute
@@ -241,19 +241,19 @@ as they are.
 Call-by-name has the advantage that a function argument is not evaluated if the corresponding parameter is not
 used in the body. But sometimes it can end up evaluating the same expression multiple times.
 
-[In Scala the "standard" is cbv](https://www.coursera.org/learn/progfun1/lecture/eervR/lecture-1-3-evaluation-strategies-and-termination)
-, but we can use cbn if a function parameter starts with =>
+[In Scala the "standard" is cbv](https://www.youtube.com/watch?v=bVTUCzJ2-aE),
+but we can use cbn to evaluate a parameter if we use `: =>` in the definition instead of `:` simply. 
 
 This means:
 
 ```scala
-//This function will be evaluated as cbv
+//This function will be evaluated as cbv, since x and y are defined with : only
 def sum(x: Int, y: Int): Int = x + y
 
-//x parameter will be evaluated as cbn
+//x parameter will be evaluated as cbn, since it is defined with : =>
 def sum_1(x: => Int, y: Int): Int = x + y
 
-//both parameter will be evaluated as cbn
+//both parameter will be evaluated as cbn, since both x and y are defined with : =>
 def sum_2(x: => Int, y: => Int): Int = x + y
 ```
 
