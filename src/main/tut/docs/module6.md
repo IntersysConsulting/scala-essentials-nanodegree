@@ -63,7 +63,8 @@ avoiding boiler plate.
 def len(a: LinkedList[A]) = a.fold(0, (len, list) =>list + 1)
 ```
 
-Each Scala class has its own implementation of `fold`. 
+Some Scala classes have their own implementation of `fold`, we can see details in the
+[Scala official documentation](https://www.scala-lang.org/api/2.12.6/?search=fold). 
 
 <p style="text-align:center;">
 <img src="../img/Fold.png" alt="Fold in different classes" style="width: 35%"/>
@@ -117,7 +118,8 @@ final case class Full[A](value: A) extends Maybe[A]
 final case class Empty[A]() extends Maybe[A]
 ```
 
-Again as in fold, each class has its own implementation.
+Again as in fold, some classes have their own implementation, and can be found in the 
+[documentation](https://www.scala-lang.org/api/2.12.6/?search=map).
 
 <p style="text-align:center;">
 <img src="../img/Map.png" alt="map and flatMap in different classes" style="width: 35%"/>
