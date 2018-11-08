@@ -66,7 +66,7 @@ def len(a: LinkedList[A]) = a.fold(0, (len, list) =>list + 1)
 Each Scala class has its own implementation of `fold`. 
 
 <p style="text-align:center;">
-<img src="../img/Fold.png" alt="Fold in different classes" style="width: 90%"/>
+<img src="../img/Fold.png" alt="Fold in different classes" style="width: 35%"/>
 </p>
 
 One cool way of using `fold` is to [work with Option](https://alvinalexander.com/scala/how-use-fold-scala-option-some-none-syntax).
@@ -120,7 +120,7 @@ final case class Empty[A]() extends Maybe[A]
 Again as in fold, each class has its own implementation.
 
 <p style="text-align:center;">
-<img src="../img/Maps.png" alt="map and flatMap in different classes" style="width: 90%"/>
+<img src="../img/Map.png" alt="map and flatMap in different classes" style="width: 35%"/>
 </p>
   
 ## Functional programming constructs in action
