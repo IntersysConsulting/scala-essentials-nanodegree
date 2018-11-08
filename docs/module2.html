@@ -206,7 +206,7 @@ a list of anything. For example:</p>
 
 <h3 id="call-by-value-and-call-by-name">call-by-value and call-by-name</h3>
 <p>The first important thing we need to know is that no matter the evaluation strategy used
-<a href="https://www.coursera.org/learn/progfun1/lecture/vzbJj/lecture-1-2-elements-of-programming">it will reduce to the same value</a> 
+<a href="https://www.youtube.com/watch?v=Lgx-KvpIoS4">it will reduce to the same value</a> 
 as long as we only have pure functions and the evaluation terminates.</p>
 
 <p>When evaluating by call-by-value (cbv) we first evaluate the arguments of the function and then we substitute
@@ -218,18 +218,18 @@ as they are.</p>
 <p>Call-by-name has the advantage that a function argument is not evaluated if the corresponding parameter is not
 used in the body. But sometimes it can end up evaluating the same expression multiple times.</p>
 
-<p><a href="https://www.coursera.org/learn/progfun1/lecture/eervR/lecture-1-3-evaluation-strategies-and-termination">In Scala the “standard” is cbv</a>
-, but we can use cbn if a function parameter starts with =&gt;</p>
+<p><a href="https://www.youtube.com/watch?v=bVTUCzJ2-aE">In Scala the “standard” is cbv</a>,
+but we can use cbn to evaluate a parameter if we use <code class="highlighter-rouge">: =&gt;</code> in the definition instead of <code class="highlighter-rouge">:</code> simply.</p>
 
 <p>This means:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//This function will be evaluated as cbv
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//This function will be evaluated as cbv, since x and y are defined with : only
 </span><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="c1">//x parameter will be evaluated as cbn
+<span class="c1">//x parameter will be evaluated as cbn, since it is defined with : =&gt;
 </span><span class="k">def</span> <span class="n">sum_1</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="c1">//both parameter will be evaluated as cbn
+<span class="c1">//both parameter will be evaluated as cbn, since both x and y are defined with : =&gt;
 </span><span class="k">def</span> <span class="n">sum_2</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div></div>
 

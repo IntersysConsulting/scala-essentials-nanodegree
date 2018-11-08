@@ -1,4 +1,155 @@
 <html><head><title>Scala Essentials: Sequencing computation</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Intersys Consulting" /><meta name="description" content="Scala Essentials Nanodegree" /><meta name="og:image" content="/scala-essentials-nanodegree/img/poster.png" /><meta name="og:title" content="Scala Essentials: Sequencing computation" /><meta name="og:site_name" content="Scala Essentials" /><meta name="og:url" content="https://intersysconsulting.github.io/scala-essentials-nanodegree" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala Essentials Nanodegree" /><link rel="icon" type="image/png" href="/scala-essentials-nanodegree/img/favicon.png" /><meta name="twitter:title" content="Scala Essentials: Sequencing computation" /><meta name="twitter:image" content="https://intersysconsulting.github.io/scala-essentials-nanodegreeimg/poster.png" /><meta name="twitter:description" content="Scala Essentials Nanodegree" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/scala-essentials-nanodegree/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/scala-essentials-nanodegree/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/scala-essentials-nanodegree/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/scala-essentials-nanodegree/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/scala-essentials-nanodegree/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/scala-essentials-nanodegree/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/scala-essentials-nanodegree/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/scala-essentials-nanodegree/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/scala-essentials-nanodegree/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/scala-essentials-nanodegree/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/scala-essentials-nanodegree/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/scala-essentials-nanodegree/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/scala-essentials-nanodegree/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/scala-essentials-nanodegree/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/scala-essentials-nanodegree/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/scala-essentials-nanodegree/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/scala-essentials-nanodegree/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/scala-essentials-nanodegree/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/scala-essentials-nanodegree/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/scala-essentials-nanodegree/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/highlight/styles/default.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/style.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/palette.css" /><link rel="stylesheet" href="/scala-essentials-nanodegree/css/codemirror.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/scala-essentials-nanodegree/" class="brand"><div class="brand-wrapper"><span>Scala Essentials</span></div></a></li> <li><a href="/scala-essentials-nanodegree/docs.html" class="">Welcome!</a></li> <li><a href="/scala-essentials-nanodegree/docs/module1.html" class="">M1 - Introduction</a></li> <li><a href="/scala-essentials-nanodegree/docs/module2.html" class="">M2 - Essentials</a></li> <li><a href="/scala-essentials-nanodegree/docs/module3.html" class="">M3 - Objects and classes</a></li> <li><a href="/scala-essentials-nanodegree/docs/module4.html" class="">M4 - Functions</a></li> <li><a href="/scala-essentials-nanodegree/docs/module5.html" class="">M5 - Traits for data modelling</a></li> <li><a href="/scala-essentials-nanodegree/docs/module6.html" class="">M6 - Sequencing computation</a></li> <li><a href="/scala-essentials-nanodegree/docs/module7.html" class="">M7 - Idiomatic Scala</a></li> <li><a href="/scala-essentials-nanodegree/docs/module8.html" class="">M8 - Typeclasses</a></li> <li><a href="/scala-essentials-nanodegree/docs/module9.html" class="">M9 - Functional programming</a></li> <li><a href="/scala-essentials-nanodegree/docs/module10.html" class="">M10 - Popular frameworks and toolkits</a></li>           </ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/intersysconsulting/scala-essentials-nanodegree"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('Scala Essentials Scala Essentials Nanodegree');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="intersysconsulting" data-github-repo="scala-essentials-nanodegree"><div class="content-wrapper"><section><h1 id="module-6-sequencing-computation">Module 6: Sequencing computation</h1>
+
+<p>As we saw in module 4, generics is a very powerful tool, but can get tricky and
+it may seem to limit us, since we don’t have a concrete type, and types define
+the available operations. We might get the feeling we are loosing functionality or
+we have to introduce too much boilerplate code in order to make something useful.
+One way to take advantage of generics is sequencing computation. On this module we will
+review a couple of patterns for using generic data.</p>
+
+<h2 id="fold">fold</h2>
+
+<p>In an academic definition, we can define the fold pattern as:</p>
+
+<blockquote>
+
+  <p>Given an <code class="highlighter-rouge">A</code> datatype, fold converts it to a <code class="highlighter-rouge">B</code> datatype. Fold is a structural recursion with:</p>
+
+  <ul>
+    <li>one function parameter for each case in A.</li>
+    <li>each function takes as parameters the fields for its associated class.</li>
+    <li>if A is recursive, any function parameters that refer to a recursive field take a parameter of type B.</li>
+  </ul>
+
+  <p>The right-hand side of pattern matching cases, or the polymorphic methods as appropriate,
+consists of calls to the appropriate function.</p>
+
+</blockquote>
+
+<p>This means a fold will take you from type <code class="highlighter-rouge">A</code> to type <code class="highlighter-rouge">B</code> by means of a function.
+Lets take advantage of the example in 
+<a href="https://books.underscore.io/essential-scala/essential-scala.pdf">Essential Scala</a> to
+go a bit further into `fold.
+If we have created the type LinkedList[A]:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="nc">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">End</span><span class="o">[</span><span class="kt">A</span><span class="o">]()</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>We would define <code class="highlighter-rouge">fold</code> as:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fold</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">end</span><span class="k">:</span> <span class="kt">B</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span> <span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span>
+    <span class="k">this</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">End</span><span class="o">()</span> <span class="k">=&gt;</span> <span class="n">end</span>
+      <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">hd</span><span class="o">,</span> <span class="n">tl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">hd</span><span class="o">,</span> <span class="n">tl</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="n">end</span><span class="o">,</span> <span class="n">f</span><span class="o">))</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">End</span><span class="o">[</span><span class="kt">A</span><span class="o">]()</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>As we can see, fold is applied over a <code class="highlighter-rouge">LinkedList[A]</code> and returns a <code class="highlighter-rouge">B</code>, by means
+of a function <code class="highlighter-rouge">f:(A, B) =&gt; B</code>. Fold will allow us to implement the following method
+avoiding boiler plate.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">len</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">a</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="o">(</span><span class="n">len</span><span class="o">,</span> <span class="n">list</span><span class="o">)</span> <span class="k">=&gt;</span><span class="n">list</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Some Scala classes have their own implementation of <code class="highlighter-rouge">fold</code>, we can see details in the
+<a href="https://www.scala-lang.org/api/2.12.6/?search=fold">Scala official documentation</a>.</p>
+
+<p style="text-align:center;">
+<img src="../img/Fold.png" alt="Fold in different classes" style="width: 35%" />
+</p>
+
+<p>One cool way of using <code class="highlighter-rouge">fold</code> is to <a href="https://alvinalexander.com/scala/how-use-fold-scala-option-some-none-syntax">work with Option</a>.</p>
+
+<p>For example, if we have:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">aux</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="n">value</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> <span class="n">aux</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="n">default</span><span class="o">)(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="map-and-flatmap">map and flatMap</h2>
+
+<p><code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">flatMap</code> are in certain sense very similar to <code class="highlighter-rouge">fold</code>, but with a small twist.
+Now we want to go from a <code class="highlighter-rouge">F[A]</code> type to a <code class="highlighter-rouge">F[B]</code> type by means of a function. 
+In the case of <code class="highlighter-rouge">map</code>, the function should be of type <code class="highlighter-rouge">A =&gt; B</code>. Following the example 
+we used to implement <code class="highlighter-rouge">fold</code>, we can implement <code class="highlighter-rouge">map</code> as follows:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">LinkedList</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="k">this</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">End</span><span class="o">()</span> <span class="k">=&gt;</span> <span class="nc">End</span><span class="o">[</span><span class="kt">B</span><span class="o">]()</span>
+      <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">hd</span><span class="o">,</span> <span class="n">tl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="o">(</span><span class="n">hd</span><span class="o">),</span> <span class="n">tl</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">f</span><span class="o">))</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">End</span><span class="o">[</span><span class="kt">A</span><span class="o">]()</span> <span class="k">extends</span> <span class="nc">LinkedList</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</code></pre></div></div>
+<p>As we can see we follow almost the same structure as in <code class="highlighter-rouge">fold</code> with the difference
+that now we only apply the function to each individual element of the
+<code class="highlighter-rouge">LinkedList</code>.</p>
+
+<p>Now, <code class="highlighter-rouge">flatMap</code> has a slight difference with <code class="highlighter-rouge">map</code>. Again we want to go from
+<code class="highlighter-rouge">F[A]</code> to <code class="highlighter-rouge">F[B]</code>, but this time with an <code class="highlighter-rouge">A =&gt; F[B]</code> function. In order to implement
+<code class="highlighter-rouge">flatMap</code> on <code class="highlighter-rouge">LinkedList</code> we would need to implement and append method, so lets
+implement it on another type called <code class="highlighter-rouge">Maybe</code>, which will turn familiar to you.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span> 
+    <span class="k">this</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">Full</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">f</span><span class="o">(</span><span class="n">x</span><span class="o">)</span>
+      <span class="k">case</span> <span class="nc">Empty</span><span class="o">()</span> <span class="k">=&gt;</span> <span class="nc">Empty</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Full</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]()</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>Again as in fold, some classes have their own implementation, and can be found in the 
+<a href="https://www.scala-lang.org/api/2.12.6/?search=map">documentation</a>.</p>
+
+<p style="text-align:center;">
+<img src="../img/Map.png" alt="map and flatMap in different classes" style="width: 35%" />
+</p>
+
+<h2 id="functional-programming-constructs-in-action">Functional programming constructs in action</h2>
+
+<p>Now that we know how to use <code class="highlighter-rouge">fold</code>, <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">flatMap</code> we can work with them
+on a very easy way by letting us be guided by types. For example, lets suppose
+we have the following:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">MyOwnType</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fold</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">param</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span> <span class="o">???</span>
+  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">MyOwnType</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>How would we go to:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">value1</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">Double</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="n">value2</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="n">value3</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span> 
+</code></pre></div></div>
+
+<p>By using:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">funct1</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">arg</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">def</span> <span class="n">funct2</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">arg1</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">arg2</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">???</span>
+<span class="k">def</span> <span class="n">funct3</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">arg</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="o">???</span>
+</code></pre></div></div>
+
+<p>The solution is:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">subject</span><span class="k">:</span> <span class="kt">MyOwnType</span> <span class="o">=</span> <span class="nc">MyOwnType</span><span class="o">(</span><span class="s">"This is a String"</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">value1</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">Double</span><span class="o">]</span> <span class="k">=</span> <span class="n">subject</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">funct3</span><span class="o">[</span><span class="kt">String</span><span class="o">](???))</span>
+<span class="k">val</span> <span class="n">value2</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">subject</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="s">"Hi"</span><span class="o">)(</span><span class="n">funct2</span><span class="o">[</span><span class="kt">String</span><span class="o">](???,</span> <span class="o">???))</span>
+<span class="k">val</span> <span class="n">value3</span><span class="k">:</span> <span class="kt">MyOwnType</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="n">subject</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="n">funct1</span><span class="o">[</span><span class="kt">Int</span><span class="o">](???))</span>
+</code></pre></div></div>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/scala-essentials-nanodegree/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fsharp.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script><script>hljs.configure({languages:['scala','java','bash','haskell','fsharp','scala','python','java']});
 hljs.initHighlighting();
               </script><script src="/scala-essentials-nanodegree/js/mathjax-config.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML,https://oscarvarto.github.io/learning-scala/js/mathjax-config.js"></script><script>((window.gitter = {}).chat = {}).options = {
