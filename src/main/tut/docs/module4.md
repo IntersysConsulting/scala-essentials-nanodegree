@@ -50,7 +50,7 @@ def compose[A](g: (A) => T1): (A) => R
 ```
 
 It models the mathematical function composition. For example, if
-\(f(x) = x + 1\) and $g(x) = 2x$,
+$f(x) = x + 1$ and $g(x) = 2x$,
 
 $$
 \begin{align}
@@ -99,7 +99,9 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-With JavaScript, from <https://github.com/tensorflow/tfjs>:
+## Using JavaScript
+
+From <https://github.com/tensorflow/tfjs>:
 
 ```javascript
 import * as tf from '@tensorflow/tfjs';
@@ -122,7 +124,9 @@ model.fit(xs, ys).then(() => {
 });
 ```
 
-With Java, from [Train.java](https://raw.githubusercontent.com/tensorflow/models/master/samples/languages/java/training/src/main/java/Train.java):
+## Using Java
+
+From [Train.java](https://raw.githubusercontent.com/tensorflow/models/master/samples/languages/java/training/src/main/java/Train.java):
 
 ```java
 /* Copyright 2018 The TensorFlow Authors. All Rights Reserved.
