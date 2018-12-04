@@ -24,8 +24,8 @@ do
 			rm -rf target/
 			rm -rf _site
 			makeSlides
-            		sbt makeMicrosite
-			jekyll serve -s target/site
+            sbt makeMicrosite
+			jekyll serve -s target/site --livereload --host 0.0.0.0
 			exit
 			;;
 		--site | -s)
