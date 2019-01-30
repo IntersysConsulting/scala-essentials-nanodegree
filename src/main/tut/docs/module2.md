@@ -63,7 +63,7 @@ We can use def as follows: `def name: type = value`
 For example
 
 ```scala
-def number: Int = 15
+def number: Int = 15 + 5
 def word = "Weird"
 def print = println("")
 ```
