@@ -5,7 +5,7 @@ makeSlides () {
   do
 	module="$(basename $slide .md)"
 	echo "Generating reveal.js slide for: $module"
-	pandoc --from markdown+tex_math_single_backslash+inline_code_attributes --standalone --mathjax --variable colorlinks=true --to revealjs --output src/main/resources/microsite/slides/${module}.html -V theme:night slides/${module}.md
+	pandoc --from markdown+tex_math_single_backslash+inline_code_attributes --standalone --mathjax --variable colorlinks=true --to revealjs --output src/main/resources/microsite/slides/${module}.html -V theme:white slides/${module}.md
   done < <(find slides -name "module*")	
 }
 
@@ -24,7 +24,7 @@ do
 			rm -rf target/
 			rm -rf _site
 			makeSlides
-            		sbt makeMicrosite
+      sbt makeMicrosite
 			jekyll serve -s target/site
 			exit
 			;;

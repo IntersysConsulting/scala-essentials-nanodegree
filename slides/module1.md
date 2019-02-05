@@ -16,7 +16,7 @@ Data and ML Engineer
 
 ## Training objectives
 
-* Provide a the resources to understand the context and history of the Scala programming language.
+* Provide the resources to understand the context and history of the Scala programming language.
 * Present the setup and tools that will be used along this Nanodegree. ​
 
 ------
@@ -132,11 +132,19 @@ def reverse[A](list: List[A]): List[A] = {
 ```
 (unnecessarily complex example)
 
-[every function is a value]: https://docs.scala-lang.org/tour/unified-types.html
-[higher-order functions]: https://docs.scala-lang.org/tour/higher-order-functions.html
-[nesting]: https://docs.scala-lang.org/tour/nested-functions.html
-[recursion]: https://alvinalexander.com/scala/fp-book/tail-recursive-algorithms
-[currying]: https://docs.scala-lang.org/tour/multiple-parameter-lists.html
+------
+
+- [Every function is a value]
+- [Higher-order functions]
+- [Nesting]
+- [Recursion]
+- [Currying]
+
+[Every function is a value]: https://docs.scala-lang.org/tour/unified-types.html
+[Higher-order functions]: https://docs.scala-lang.org/tour/higher-order-functions.html
+[Nesting]: https://docs.scala-lang.org/tour/nested-functions.html
+[Recursion]: https://alvinalexander.com/scala/fp-book/tail-recursive-algorithms
+[Currying]: https://docs.scala-lang.org/tour/multiple-parameter-lists.html
 
 ------
 
