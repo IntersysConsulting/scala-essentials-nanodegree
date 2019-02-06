@@ -269,13 +269,13 @@ machine.</li>
 functions that accept <em>two</em> arguments. For example:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span>
-<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4228</span><span class="o">/</span><span class="mi">709729064</span><span class="k">@</span><span class="mf">5f97f</span><span class="mi">67</span><span class="n">a</span>
+<span class="n">add1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4246</span><span class="o">/</span><span class="mi">65203040</span><span class="k">@</span><span class="mi">1</span><span class="n">a1497d3</span>
 </code></pre></div></div>
 
 <p>A <em>curried</em> version of the above is:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$4281</span><span class="o">/</span><span class="mi">1783571569</span><span class="k">@</span><span class="mi">2</span><span class="n">bdac4c4</span>
+<span class="n">add2</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">$$Lambda$4299</span><span class="o">/</span><span class="mi">874187625</span><span class="k">@</span><span class="mi">770686</span><span class="n">b</span>
 </code></pre></div></div>
 
 <p>From <a href="http://www.informit.com/store/scala-for-the-impatient-9780134540634?ranMID=24808">Scala for the Impatient, 2nd Edition</a>:</p>
@@ -292,13 +292,13 @@ argument.</p>
 <p>You can get a curried version of a <code class="highlighter-rouge">FunctionN</code> by calling <code class="highlighter-rouge">curried</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="n">add1</span><span class="o">.</span><span class="n">curried</span> <span class="c1">// returns an equivalent of add2
-</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$4292</span><span class="o">/</span><span class="mi">1109359852</span><span class="k">@</span><span class="mi">7099</span><span class="n">edc3</span>
+</span><span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function2$$Lambda$4310</span><span class="o">/</span><span class="mi">375850982</span><span class="k">@</span><span class="mi">55</span><span class="n">e50fc9</span>
 </code></pre></div></div>
 
 <p>On the other hand, you can call <code class="highlighter-rouge">Function.uncurried</code> to “uncurry”:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="nc">Function</span><span class="o">.</span><span class="n">uncurried</span><span class="o">(</span><span class="n">add2</span><span class="o">)</span> <span class="c1">// returns an equivalent of add1
-</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$4308</span><span class="o">/</span><span class="mi">2113316999</span><span class="k">@</span><span class="mi">36676205</span>
+</span><span class="n">res1</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">scala</span><span class="o">.</span><span class="nc">Function$$$Lambda$4326</span><span class="o">/</span><span class="mi">963248854</span><span class="k">@</span><span class="mi">3</span><span class="n">af9f63e</span>
 </code></pre></div></div>
 
 <p>Currying buys us (at least) 2 things in Scala:</p>
@@ -312,7 +312,7 @@ argument.</p>
 arguments. For example</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">add2</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
-<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4315</span><span class="o">/</span><span class="mi">1640496918</span><span class="k">@</span><span class="mi">528772</span><span class="n">e2</span>
+<span class="n">addTen</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nc">$$Lambda$4333</span><span class="o">/</span><span class="mi">1213289156</span><span class="k">@</span><span class="mf">6d5d371f</span>
 </code></pre></div></div>
 
 <p>Here is an example from the Scala Standard Library to explain the second
