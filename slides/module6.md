@@ -1,30 +1,37 @@
----
+-----
 layout: docs
-title: "Sequencing"
+title: "Sequencing computation"
 section: "slides"
 author: author
----
+-----
 
-### Consultant branding
 
-add consultant branding
-
-------
 
 ### Training objectives
 
-add a couple of training objectives
+- Get familiar with fold, map and flatMap.
+- Identify the ideal pattern one should use to get certain results.
 
 ------
 
 ### What skills will the trainee obtain?
 
-add the skills the trainee will obtain
+- Will brighten its scope about generics.
+- Will know how to use and implement fold, map and flatMap.
 
 ------
 
 ### Agenda
 
-specify the agenda
+- fold
+- map and flatMap
+- Functional programming constructs in action 
 
 ------
+
+### Sequencing computation
+
+One way to take advantage of generics is sequencing computation. On this module we will
+review a couple of patterns for using generic data.
+
+-----
