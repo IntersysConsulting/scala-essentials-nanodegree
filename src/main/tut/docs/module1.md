@@ -37,7 +37,7 @@ According to Martin Odersky in his [Scala with Style] conference:
 > Because of the representation of concepts and the things you could do with that. 
 
 
-The first OOP languages (Simula 96 and Smalltalk) allowed a way to execute a fixed API with an unknown implementation. 
+The first OOP languages (Simula 67 and Smalltalk) allowed a way to execute a fixed API with an unknown implementation. 
 This generated a rising popularity of the OO paradigm. 
 
 Object oriented design (SOLID):
